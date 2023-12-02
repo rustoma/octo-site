@@ -1,101 +1,345 @@
 h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+address,
+p,
+pre,
+blockquote,
+menu,
+ol,
+ul,
+table,
+hr {
+  margin: 0 0 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  word-break: break-word;
+  font-family: useThemeVariable($--secondary-font);
+  line-height: 1.4074;
+  color: useThemeVariable($--color-heading);
+}
+
+h1,
 .h1 {
-  font-size: toREm(36);
-  line-height: toREm(42);
-  font-weight: 400;
-  font-family: useThemeVariable($--font-display);
-  letter-spacing: toRem(2);
-
-  @include respond-below(sm) {
-    font-size: toRem(28);
-    line-height: toRem(36);
-  }
-
-  &.page-title {
-    margin-top: 20px;
-    margin-bottom: 10px;
-    @include respond-above(md) {
-      margin-top: 36px;
-    }
-    &--updated-at {
-      margin-bottom: 20px;
-      @include respond-above(md) {
-        margin-bottom: 48px;
-      }
-    }
-  }
+  font-size: useThemeVariable($--h1);
+  line-height: 1.19;
 }
 
 h2,
 .h2 {
-  font-size: toRem(27);
-  line-height: toRem(32);
-  font-weight: 400;
-  margin: 0;
-  font-family: useThemeVariable($--font-display);
-  letter-spacing: toRem(2);
-
-  @include respond-below(sm) {
-    font-size: toRem(22);
-    line-height: toRem(28);
-  }
+  font-size: useThemeVariable($--h2);
+  line-height: 1.23;
 }
 
 h3,
 .h3 {
-  font-size: toRem(22);
-  line-height: toRem(28);
-  font-weight: 400;
-  margin: 0;
-  font-family: useThemeVariable($--font-body);
-  letter-spacing: toRem(1);
-
-  @include respond-below(sm) {
-    font-size: toRem(18);
-    line-height: toRem(24);
-  }
+  font-size: useThemeVariable($--h3);
+  line-height: 1.14;
 }
 
 h4,
 .h4 {
-  font-size: toRem(18);
-  line-height: toRem(21);
-  font-weight: 400;
-  margin: 0;
-  font-family: useThemeVariable($--font-body);
+  font-size: useThemeVariable($--h4);
+  line-height: 1.25;
+}
 
-  @include respond-below(sm) {
-    font-size: toRem(16);
-    line-height: toRem(22);
+h5,
+.h5 {
+  font-size: useThemeVariable($--h5);
+  line-height: 1.24;
+}
+
+h6,
+.h6 {
+  font-size: useThemeVariable($--h6);
+  line-height: 1.25;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  a {
+    color: inherit;
   }
 }
 
-body {
-  font-size: toRem(16);
-  line-height: toRem(28);
-  font-weight: 300;
-  font-family: useThemeVariable($--font-body);
-  color: useThemeVariable($--theme-typography-default);
+@include respond-below(lg) {
+  h1,
+  .h1 {
+    font-size: 38px;
+  }
+  h2,
+  .h2 {
+    font-size: 32px;
+  }
 
+  h3,
+  .h3 {
+    font-size: 28px;
+  }
+
+  h4,
+  .h4 {
+    font-size: 24px;
+  }
+  h5,
+  .h5 {
+    font-size: 18px;
+  }
+}
+
+@include respond-below(md) {
+  h1,
+  .h1 {
+    font-size: 34px;
+  }
+  h2,
+  .h2 {
+    font-size: 28px;
+  }
+
+  h3,
+  .h3 {
+    font-size: 24px;
+  }
+
+  h4,
+  .h4 {
+    font-size: 20px;
+  }
+  h5,
+  .h5 {
+    font-size: 16px;
+  }
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3 {
+  font-weight: useThemeVariable($--s-bold);
+}
+
+h4,
+.h4,
+h5,
+.h5 {
+  font-weight: useThemeVariable($--s-bold);
+}
+
+h6,
+.h6 {
+  font-weight: useThemeVariable($--s-medium);
+}
+
+p {
+  font-size: useThemeVariable($--font-size-b1);
+  line-height: useThemeVariable($--line-height-b1);
+  font-weight: useThemeVariable($--p-regular);
+  color: useThemeVariable($--color-body);
+  margin: 0 0 40px;
   @include respond-below(md) {
-    font-size: toRem(14);
+    margin: 0 0 20px;
+    font-size: useThemeVariable($--font-size-b2);
+    line-height: useThemeVariable($--line-height-b2);
+  }
+  &.has-large-font-size {
+    line-height: 1.5;
+    font-size: 36px;
+  }
+  &.has-medium-font-size {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  &.has-small-font-size {
+    font-size: 13px;
+  }
+
+  &.has-very-light-gray-color {
+    color: useThemeVariable($--color-white);
+  }
+
+  &.has-background {
+    padding: 20px 30px;
+  }
+
+  &.b1 {
+    font-size: useThemeVariable($--font-size-b1);
+    line-height: useThemeVariable($--line-height-b1);
+  }
+
+  &.b2 {
+    font-size: useThemeVariable($--font-size-b2);
+    line-height: useThemeVariable($--line-height-b2);
+  }
+
+  &.b3 {
+    font-size: useThemeVariable($--font-size-b3);
+    line-height: useThemeVariable($--line-height-b3);
+  }
+
+  &.b4 {
+    font-size: useThemeVariable($--font-size-b4);
+    line-height: useThemeVariable($--line-height-b4);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
-a {
-  font-family: useThemeVariable($--font-display);
-  font-weight: 300;
-  text-decoration: none;
-  display: inline-block;
-  color: useThemeVariable($--theme-typography-default);
-  transition: all 0.2s ease-out;
+.b1 {
+  font-size: useThemeVariable($--font-size-b1);
+  line-height: useThemeVariable($--line-height-b1);
+}
 
-  &.link-inline {
-    color: useThemeVariable($--theme-secondary);
-    font-family: useThemeVariable($--font-body);
-    &:hover {
-      color: useThemeVariable($--theme-primary);
+.b2 {
+  font-size: useThemeVariable($--font-size-b2);
+  line-height: useThemeVariable($--line-height-b2);
+}
+
+.b3 {
+  font-size: useThemeVariable($--font-size-b3);
+  line-height: useThemeVariable($--line-height-b3);
+}
+
+.b4 {
+  font-size: useThemeVariable($--font-size-b4);
+  line-height: useThemeVariable($--line-height-b4);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin: 0 0 20px;
+  width: 100%;
+}
+
+table a,
+table a:link,
+table a:visited {
+  text-decoration: none;
+}
+
+var {
+  font-family: "Courier 10 Pitch", Courier, monospace;
+}
+
+/*---------------------------
+	List Style 
+---------------------------*/
+ul,
+ol {
+  padding-left: 18px;
+}
+
+ul {
+  list-style: square;
+  margin-bottom: 30px;
+  padding-left: 20px;
+  &.liststyle {
+    &.bullet {
+      li {
+        font-size: 18px;
+        line-height: 30px;
+        color: useThemeVariable($--color-body);
+        position: relative;
+        padding-left: 30px;
+
+        @include respond-below(md) {
+          padding-left: 19px;
+        }
+
+        &::before {
+          position: absolute;
+          content: "";
+          width: 6px;
+          height: 6px;
+          border-radius: 100%;
+          background: useThemeVariable($--color-body);
+          left: 0;
+          top: 10px;
+        }
+
+        & + li {
+          margin-top: 8px;
+        }
+      }
     }
   }
+  li {
+    font-size: useThemeVariable($--font-size-b1);
+    line-height: useThemeVariable($--line-height-b1);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: useThemeVariable($--color-body);
+    a {
+      text-decoration: none;
+      color: useThemeVariable($--color-gray);
+      @extend %transition;
+
+      &:hover {
+        color: useThemeVariable($--color-primary);
+      }
+    }
+  }
+  ul {
+    margin-bottom: 0;
+  }
 }
 
+ol {
+  margin-bottom: 30px;
+  li {
+    font-size: useThemeVariable($--font-size-b1);
+    line-height: useThemeVariable($--line-height-b1);
+    color: useThemeVariable($--color-body);
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    a {
+      @extend %transition;
+      text-decoration: none;
+
+      &:hover {
+        color: useThemeVariable($--color-primary);
+      }
+    }
+  }
+  ul {
+    padding-left: 30px;
+  }
+}

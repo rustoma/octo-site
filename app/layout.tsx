@@ -1,24 +1,16 @@
 import React, { ReactNode, Suspense } from "react";
-import { Bebas_Neue, Oxygen } from "next/font/google";
+import { Red_Hat_Display } from "next/font/google";
 
 import GoogleAnalytics from "@/components/googleAnalytics/GoogleAnalytics";
 import { WindowDimensionsProvider } from "@/context/WindowDimensionsContext";
 
 import "./globals.scss";
 
-const oxygen = Oxygen({
-  weight: ["400", "700"],
-  display: "swap",
-  variable: "--theme-font-body",
-  fallback: ["Helvetica", "sans-serif"],
-  subsets: ["latin", "latin-ext"],
-});
-
-const bebas = Bebas_Neue({
-  weight: ["400"],
+const redHatDisplay = Red_Hat_Display({
+  weight: ["400", "500", "700", "900"],
   display: "swap",
   variable: "--theme-font-display",
-  fallback: ["cursive"],
+  fallback: ["sans-serif"],
   subsets: ["latin", "latin-ext"],
 });
 
@@ -29,10 +21,10 @@ export const metadata = {
   },
 };
 
-const RootLayout = async ({ children }: { children: ReactNode }) => {
+const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <WindowDimensionsProvider>
-      <html lang="pl" className={`${oxygen.variable} ${bebas.variable} light`}>
+      <html lang="pl" className={`${redHatDisplay.variable} light`}>
         <body>
           {children}
           <Suspense>

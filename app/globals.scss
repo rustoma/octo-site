@@ -1,3 +1,4 @@
+@import "../styles/extend";
 @import "../styles/variables";
 @import "../styles/functions";
 @import "../styles/mixins";
@@ -15,6 +16,14 @@ body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  font-size: useThemeVariable($--font-size-b1);
+  line-height: useThemeVariable($--line-height-b1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: useThemeVariable($--font-primary);
+  color: useThemeVariable($--color-body);
+  font-weight: useThemeVariable($--p-regular);
 }
 
 html,

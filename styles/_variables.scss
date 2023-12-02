@@ -1,15 +1,98 @@
-$--theme-primary: --theme-primary;
-$--theme-secondary: --theme-secondary;
+//Themes colors
+$--color-primary: --color-primary;
+$--color-secondary: --color-secondary;
+$--color-secondary-alt: --color-secondary-alt;
+$--color-tertiary: --color-tertiary;
 
-$--theme-gray-primary: --theme-gray;
-$--theme-gray-secondary: --theme-gray-dark;
+// Typo Color
+$--color-heading: --color-heading;
+$--color-body: --color-body;
 
-$--theme-background-subtle: --theme-background-subtle;
-$--theme-background-primary-header: --theme-background-primary-header;
+// Gery Colors
+$--color-gray: --color-gray;
+$--color-midgray: --color-midgray;
+$--color-light: --color-light;
+$--color-lighter: --color-lighter;
+$--color-lightest: --color-lightest;
+$--color-border: --color-border;
+$--color-white: --color-white;
 
-$--theme-border-subtle: --theme-border-subtle;
+// Notify Colors
+$--color-success: --color-success;
+$--color-danger: --color-danger;
+$--color-warning: --color-warning;
+$--color-info: --color-info;
 
-$--theme-typography-default: --theme-typography-default;
+// Social icon colors
+$--color-facebook: --color-facebook;
+$--color-twitter: --color-twitter;
+$--color-youtube: --color-youtube;
+$--color-linkedin: --color-linkedin;
+$--color-pinterest: --color-pinterest;
+$--color-instagram: --color-instagram;
+$--color-vimeo: --color-vimeo;
+$--color-twitch: --color-twitch;
+$--color-discord: --color-discord;
 
-$--font-display: --theme-font-display;
-$--font-body: --theme-font-body;
+// Extra Color
+$--color-extra01: --color-extra01;
+$--color-extra02: --color-extra02;
+$--color-extra03: --color-extra03;
+$--color-extra04: --color-extra04;
+$--color-extra05: --color-extra05;
+
+// Border-radius
+$--radius: --radius;
+$--radius-big: --radius-big;
+$--radius-small: --radius-small;
+$--border-width: --border-width;
+
+// Font weight
+// primary font
+$--p-light: --p-light;
+$--p-regular: --p-regular;
+$--p-medium: --p-medium;
+$--p-semi-bold: --p-semi-bold;
+$--p-bold: --p-bold;
+$--p-extra-bold: --p-extra-bold;
+$--p-black: --p-black;
+
+// secondary font
+$--s-light: --s-light;
+$--s-regular: --s-regular;
+$--s-medium: --s-medium;
+$--s-bold: --s-bold;
+$--s-black: --s-black;
+
+// Shadows
+$--shadow-primary: --shadow-primary;
+$--shadow-light: --shadow-light;
+$--shadow-dark: --shadow-dark;
+
+// Transition easing
+$--transition: --transition;
+
+// Font Family
+$--font-primary: --theme-font-display;
+$--secondary-font: --theme-font-display;
+$--font-awesome: --font-awesome;
+
+// Fonts Size
+$--font-size-b1: --font-size-b1;
+$--font-size-b2: --font-size-b2;
+$--font-size-b3: --font-size-b3;
+$--font-size-b4: --font-size-b4;
+
+// Line Height
+$--line-height-b1: --line-height-b1;
+$--line-height-b2: --line-height-b2;
+$--line-height-b3: --line-height-b3;
+$--line-height-b4: --line-height-b4;
+
+// Heading Font
+$--h1: --h1;
+$--h2: --h2;
+$--h3: --h3;
+$--h4: --h4;
+$--h5: --h5;
+$--h6: --h6;
