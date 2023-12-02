@@ -96,50 +96,50 @@ h6,
 @include respond-below(lg) {
   h1,
   .h1 {
-    font-size: 38px;
+    font-size: toRem(38);
   }
   h2,
   .h2 {
-    font-size: 32px;
+    font-size: toRem(32);
   }
 
   h3,
   .h3 {
-    font-size: 28px;
+    font-size: toRem(28);
   }
 
   h4,
   .h4 {
-    font-size: 24px;
+    font-size: toRem(24);
   }
   h5,
   .h5 {
-    font-size: 18px;
+    font-size: toRem(18);
   }
 }
 
 @include respond-below(md) {
   h1,
   .h1 {
-    font-size: 34px;
+    font-size: toRem(34);
   }
   h2,
   .h2 {
-    font-size: 28px;
+    font-size: toRem(28);
   }
 
   h3,
   .h3 {
-    font-size: 24px;
+    font-size: toRem(24);
   }
 
   h4,
   .h4 {
-    font-size: 20px;
+    font-size: toRem(20);
   }
   h5,
   .h5 {
-    font-size: 16px;
+    font-size: toRem(16);
   }
 }
 
@@ -183,7 +183,6 @@ p {
     font-size: 24px;
     line-height: 36px;
   }
-
   &.has-small-font-size {
     font-size: 13px;
   }

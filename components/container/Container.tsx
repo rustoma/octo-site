@@ -3,7 +3,7 @@ import clsx from "clsx";
 
 import "./container.style.scss";
 
-type ContainerSize = "sm" | "xl";
+type ContainerSize = "xl";
 
 interface ContainerProps {
   size?: ContainerSize;
@@ -12,7 +12,6 @@ interface ContainerProps {
 }
 
 const containerSizes = {
-  sm: "container container--small",
   xl: "container",
 };
 
