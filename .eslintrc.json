@@ -14,7 +14,6 @@
   ],
   "plugins": ["react", "simple-import-sort", "@typescript-eslint", "prettier"],
   "rules": {
-    "react-hooks/exhaustive-deps": 0,
     "simple-import-sort/exports": 0,
     "no-unused-expressions": "warn",
     "no-console": "warn",
