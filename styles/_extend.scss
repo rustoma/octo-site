@@ -1,3 +1,4 @@
 %transition {
-  transition: var(--transition);
+  transition-duration: useThemeVariable($--transition);
+  transition-property: all;
 }
