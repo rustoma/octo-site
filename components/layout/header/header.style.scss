@@ -1,3 +1,48 @@
-@import "styles/variables";
-@import "styles/media-queries";
-@import "styles/functions";
+.header {
+  .header-top {
+    background-color: useThemeVariable($--color-lightest);
+    padding: 12px 0;
+    &__wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    &__date {
+      display: inline-block;
+      margin-right: 20px;
+      line-height: 1;
+      font-size: useThemeVariable($--font-size-b3);
+      color: useThemeVariable($--color-midgray);
+
+      @include respond-below(md) {
+        margin-right: 5px;
+      }
+    }
+
+    &__menu {
+      display: flex;
+      &-item {
+        margin: 0 20px;
+        display: flex;
+        a {
+          color: useThemeVariable($--color-midgray);
+          font-size: toRem(14);
+          line-height: toRem(22);
+          &:hover {
+            color: useThemeVariable($--color-primary);
+          }
+        }
+      }
+    }
+  }
+
+  .header-middle {
+    padding: 20px 0;
+    border-bottom: 1px solid useThemeVariable($--color-lightest);
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
