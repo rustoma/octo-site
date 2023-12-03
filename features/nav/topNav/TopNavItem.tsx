@@ -41,28 +41,26 @@ export const TopNavItem = ({ menuItem, depthLevel, classes }: MenuItemProps) => 
     }
   };
 
-  return (
-    <li
-      className={clsx("top-nav__item", depthLevel > 0 && "top-nav__item--deep", classes?.listItem)}
-      onClick={closeDropdown}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}>
-      {menuItem.items ? (
-        <>
-          <TopNavLink
-            menuLink={menuItem}
-            dropdown={dropdown}
-            depthLevel={depthLevel}
-            classes={{
-              menuLink: classes?.menuLink,
-              menuDeepLink: classes?.menuDeepLink,
-            }}
-          />
-          {Array.isArray(menuItem.items) && menuItem.items.length ? (
-            <TopNavDropdown submenus={menuItem.items} dropdown={dropdown} depthLevel={depthLevel} classes={classes} />
-          ) : null}
-        </>
-      ) : !menuItem.href ? (
+  const renderLinkWithDropdown = (menuItem: NavItem) => (
+    <>
+      <TopNavLink
+        menuLink={menuItem}
+        dropdown={dropdown}
+        depthLevel={depthLevel}
+        classes={{
+          menuLink: classes?.menuLink,
+          menuDeepLink: classes?.menuDeepLink,
+        }}
+      />
+      {Array.isArray(menuItem.items) && menuItem.items.length ? (
+        <TopNavDropdown submenus={menuItem.items} dropdown={dropdown} depthLevel={depthLevel} classes={classes} />
+      ) : null}
+    </>
+  );
+
+  const renderLinkWithoutDropdown = (menuItem: NavItem) => (
+    <>
+      {!menuItem.href ? (
         <span
           className={clsx(
             "top-nav__link top-nav__link--no-url",
@@ -87,6 +85,16 @@ export const TopNavItem = ({ menuItem, depthLevel, classes }: MenuItemProps) => 
           {menuItem.title}
         </Link>
       )}
+    </>
+  );
+
+  return (
+    <li
+      className={clsx("top-nav__item", depthLevel > 0 && "top-nav__item--deep", classes?.listItem)}
+      onClick={closeDropdown}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}>
+      {menuItem.items ? renderLinkWithDropdown(menuItem) : renderLinkWithoutDropdown(menuItem)}
     </li>
   );
 };
