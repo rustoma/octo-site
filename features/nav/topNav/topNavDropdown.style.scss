@@ -1,0 +1,52 @@
+.top-nav__dropdown {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: auto;
+  top: 100%;
+  z-index: 10;
+  min-width: 240px;
+  padding: 20px;
+  border-radius: 0 0 10px 10px;
+  box-shadow: useThemeVariable($--shadow-primary);
+  background-color: #fff;
+
+  &--visible {
+    display: block;
+  }
+
+  &--deep {
+    top: 0;
+    left: 100%;
+    right: auto;
+  }
+
+  &--flat-animation {
+    animation: 0.4s forwards topNavFirstLevel;
+  }
+  &--deep-animation {
+    animation: 0.4s forwards topNavNestedLevel;
+  }
+}
+
+@keyframes topNavFirstLevel {
+  0% {
+    top: 90%;
+    opacity: 0;
+  }
+  100% {
+    top: 100%;
+    opacity: 1;
+  }
+}
+
+@keyframes topNavNestedLevel {
+  0% {
+    left: 96%;
+    opacity: 0.9;
+  }
+  100% {
+    left: 100%;
+    opacity: 1;
+  }
+}

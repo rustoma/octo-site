@@ -1,0 +1,14 @@
+.top-nav {
+  display: none;
+
+  @include respond-above(lg) {
+    display: block;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0 -18px;
+  }
+}

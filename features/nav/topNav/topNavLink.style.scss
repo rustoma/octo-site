@@ -1,0 +1,49 @@
+.top-nav__link {
+  font-size: useThemeVariable($--font-size-b2);
+  color: useThemeVariable($--color-midgray);
+  font-weight: useThemeVariable($--p-medium);
+  height: 80px;
+  display: block;
+  line-height: 80px;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background: useThemeVariable($--color-primary);
+    content: "";
+    left: 0;
+    border-radius: 10px 10px 0 0;
+
+    @extend %transition;
+  }
+
+  &:hover {
+    color: useThemeVariable($--color-primary);
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+  &--no-url {
+    cursor: default;
+  }
+
+  &--deep {
+    font-size: useThemeVariable($--font-size-b2);
+    line-height: useThemeVariable($--line-height-b2);
+    color: useThemeVariable($--color-midgray);
+    font-weight: useThemeVariable($--p-medium);
+  }
+
+  &--active {
+    color: useThemeVariable($--color-primary);
+
+    &::after {
+      width: 100%;
+    }
+  }
+}

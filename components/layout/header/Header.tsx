@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { Container } from "@/components/container/Container";
 import { Logo } from "@/components/icons/Logo";
+import { TopNav } from "@/features/nav/topNav/TopNav";
 
 import "./header.style.scss";
 
@@ -41,12 +42,59 @@ export const Header = () => {
         </Container>
       </div>
       <Container>
-        <div className="main-menu">
-          <Link href="/">
-            <Logo />
-          </Link>
-          <Image src="/img/jpg/advertisement.jpg" alt="reklama" width={728} height={92} />
-        </div>
+        <TopNav
+          menuTree={[
+            {
+              id: "Home",
+              title: "Home",
+              href: "/",
+              items: [],
+            },
+            {
+              id: "Lifestyle",
+              title: "Lifestyle",
+              href: "/lifestyle",
+              items: [],
+            },
+            {
+              id: "Technology",
+              title: "Technology",
+              href: "/technology",
+              items: [],
+            },
+            {
+              id: "Pages",
+              title: "Pages",
+              items: [
+                {
+                  id: "Page 1",
+                  title: "Page 1",
+                  href: "/page-1",
+                  items: [],
+                },
+                {
+                  id: "Page 2",
+                  title: "Page 2",
+                  href: "/page-2",
+                  items: [
+                    {
+                      id: "Page 1-1",
+                      title: "Page 1",
+                      href: "/page-1-1",
+                      items: [],
+                    },
+                    {
+                      id: "Page 2-2",
+                      title: "Page 1",
+                      href: "/page-2-2",
+                      items: [],
+                    },
+                  ],
+                },
+              ],
+            },
+          ]}
+        />
       </Container>
     </header>
   );

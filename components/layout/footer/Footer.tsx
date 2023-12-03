@@ -1,14 +1,18 @@
 import React from "react";
+import Link from "next/link";
 
 import { Container } from "@/components/container/Container";
+import { Logo } from "@/components/icons/Logo";
 
 import "./footer.style.scss";
 
 export const Footer = () => {
   return (
-    <footer>
+    <footer className="footer">
       <Container>
-        Footer
+        <Link href="/">
+          <Logo />
+        </Link>
       </Container>
     </footer>
   );

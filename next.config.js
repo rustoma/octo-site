@@ -11,6 +11,7 @@ const nextConfig = {
     @import "styles/functions";
     @import "styles/variables";
     @import "styles/media-queries";
+    @import "styles/extend";
     `,
   },
 };

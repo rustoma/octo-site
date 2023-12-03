@@ -1,0 +1,13 @@
+.top-nav__item {
+  position: relative;
+  display: block;
+  margin: 0 18px;
+
+  &--deep {
+    margin: 10px 0;
+  }
+
+  &--flat:first-child {
+    padding-left: 0;
+  }
+}
