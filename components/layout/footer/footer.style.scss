@@ -1,3 +1,20 @@
 .footer {
-  padding: 30px 0;
+  padding: 40px 0;
+  &__wrapper,
+  &__nav,
+  &__logo {
+    display: flex;
+    align-items: center;
+    margin-right: 48px;
+  }
+  &__wrapper {
+    justify-content: space-between;
+  }
+
+  &__copyright {
+    margin: 0;
+    color: useThemeVariable($--color-midgray);
+    font-size: useThemeVariable($--font-size-b3);
+    line-height: useThemeVariable($--line-height-b3);
+  }
 }

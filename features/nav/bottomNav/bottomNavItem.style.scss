@@ -1,0 +1,12 @@
+.bottom-nav {
+  &__list-item {
+    margin: 10px;
+
+    a {
+      color: useThemeVariable($--color-midgray);
+      font-size: useThemeVariable($--font-size-b2);
+      line-height: useThemeVariable($--line-height-b2);
+      font-weight: useThemeVariable($--p-medium);
+    }
+  }
+}

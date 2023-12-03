@@ -2,14 +2,9 @@ import React from "react";
 import clsx from "clsx";
 
 import { TopNavItem } from "@/features/nav/topNav/TopNavItem";
+import { NavItem } from "@/features/nav/types";
 
 import "./topNav.style.scss";
-
-export interface NavItem extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, "id"> {
-  id: number | string;
-  title: string;
-  items: NavItem[];
-}
 
 export interface TopNavClasses {
   root?: string;

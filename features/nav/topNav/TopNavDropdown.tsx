@@ -1,8 +1,8 @@
 import React from "react";
 import clsx from "clsx";
 
-import { NavItem } from "@/features/nav/topNav/TopNav";
 import { TopNavItem } from "@/features/nav/topNav/TopNavItem";
+import { NavItem } from "@/features/nav/types";
 
 import "./topNavDropdown.style.scss";
 

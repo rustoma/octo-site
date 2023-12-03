@@ -3,7 +3,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { NavItem } from "@/features/nav/topNav/TopNav";
+import { NavItem } from "@/features/nav/types";
 
 import "./topNavLink.style.scss";
 

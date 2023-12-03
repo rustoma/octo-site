@@ -4,9 +4,9 @@ import clsx from "clsx";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { NavItem } from "@/features/nav/topNav/TopNav";
 import { TopNavDropdown } from "@/features/nav/topNav/TopNavDropdown";
 import { TopNavLink } from "@/features/nav/topNav/TopNavLink";
+import { NavItem } from "@/features/nav/types";
 
 import "./topNavItem.style.scss";
 
