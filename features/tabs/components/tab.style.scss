@@ -1,0 +1,26 @@
+.tabs {
+  &__item {
+    list-style: none;
+    margin: 10px;
+  }
+
+  &__tab {
+    display: inline-block;
+    border: 1px solid useThemeVariable($--color-lighter);
+    border-radius: useThemeVariable($--radius-small);
+    padding: 0 18px;
+    height: 46px;
+    line-height: 46px;
+    font-weight: useThemeVariable($--p-bold);
+    font-size: useThemeVariable($--font-size-b1);
+    color: useThemeVariable($--color-midgray);
+    background: useThemeVariable($--color-white);
+    outline: none;
+
+    &--active {
+      border: 1px solid transparent;
+      color: useThemeVariable($--color-gray);
+      box-shadow: useThemeVariable($--shadow-primary);
+    }
+  }
+}
