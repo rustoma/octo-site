@@ -1,0 +1,10 @@
+.category {
+  font-size: useThemeVariable($--font-size-b3);
+  line-height: useThemeVariable($--line-height-b3);
+  font-weight: useThemeVariable($--p-medium);
+  color: useThemeVariable($--color-secondary);
+
+  &:hover {
+    color: useThemeVariable($--color-primary);
+  }
+}

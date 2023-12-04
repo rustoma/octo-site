@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Category } from "@/features/posts/components/category/Category";
 import { GridImageTextItem } from "@/features/posts/components/gridImageText/GridImageText";
 
 import "./gridImageText.style.scss";
@@ -18,9 +19,7 @@ export const GridImageTextSubItem = ({ item }: GridImageTextSubItemProps) => {
         <Image src={item.imageUrl} alt="#" width={285} height={190} />
       </Link>
       <div className="grid-it__sub-item-content">
-        <Link href={item.category.url} className="grid-it__category">
-          {item.category.title}
-        </Link>
+        <Category url={item.category.url} name={item.category.title} />
         <h5 className="grid-it__title">
           <Link href="#">{item.title}</Link>
         </h5>

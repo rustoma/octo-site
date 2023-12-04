@@ -14,13 +14,10 @@
     left: 0;
     right: 0;
     z-index: 2;
-  }
 
-  .grid-it__category.grid-it__main-item-category {
-    margin-bottom: 10px;
-    color: useThemeVariable($--color-lightest);
-    &:hover {
-      color: useThemeVariable($--color-primary);
+    .category {
+      margin-bottom: 10px;
+      color: useThemeVariable($--color-lightest);
     }
   }
 

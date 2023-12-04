@@ -1,9 +1,14 @@
 .grid-it {
   &__sub-item-content {
     padding-top: 20px;
+
+    .category {
+      margin-bottom: 8px;
+    }
   }
 
   &__sub-item-image {
+    display: block;
     border-radius: useThemeVariable($--radius);
     overflow: hidden;
   }
