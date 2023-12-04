@@ -1,0 +1,10 @@
+.grid-it {
+  &__sub-item-content {
+    padding-top: 20px;
+  }
+
+  &__sub-item-image {
+    border-radius: useThemeVariable($--radius);
+    overflow: hidden;
+  }
+}

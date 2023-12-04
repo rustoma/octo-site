@@ -1,0 +1,45 @@
+.grid-it {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  $block: grid-it;
+
+  &__item {
+    &:hover {
+      .#{$block}__title {
+        a {
+          background-size: 100% 2px;
+        }
+      }
+    }
+  }
+
+  &__sub-items-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+  }
+
+  &__category {
+    margin: 0 0 8px;
+    font-size: useThemeVariable($--font-size-b3);
+    line-height: useThemeVariable($--line-height-b3);
+    font-weight: useThemeVariable($--p-medium);
+    color: useThemeVariable($--color-secondary);
+  }
+
+  &__title {
+    a {
+      background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
+      background-size: 0 2px;
+      background-position: 0 95%;
+      transition: background-size 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+      padding: 0.1% 0;
+      background-repeat: no-repeat;
+      display: inline;
+      &:hover {
+        color: inherit;
+      }
+    }
+  }
+}
