@@ -1,7 +1,7 @@
 import React from "react";
 
-import { Container } from "@/components/container/Container";
 import { GridImageText, GridImageTextItem } from "@/features/posts/components/gridImageText/GridImageText";
+import { TabGrid } from "@/features/posts/components/tabGrid/TabGrid";
 
 import "./page.style.scss";
 
@@ -56,9 +56,8 @@ const gridItItems: GridImageTextItem[] = [
 export default function Home() {
   return (
     <main className="content">
-      <Container>
-        <GridImageText items={gridItItems} />
-      </Container>
+      <GridImageText items={gridItItems} />
+      <TabGrid />
     </main>
   );
 }
