@@ -3,13 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Category } from "@/features/posts/components/category/Category";
-import { GridImageTextItem } from "@/features/posts/components/gridImageText/GridImageText";
+import { Post } from "@/features/posts/types";
 
 import "./gridImageText.style.scss";
 import "./gridImageTextSubItem.style.scss";
 
 interface GridImageTextSubItemProps {
-  item: GridImageTextItem;
+  item: Post;
 }
 
 export const GridImageTextSubItem = ({ item }: GridImageTextSubItemProps) => {

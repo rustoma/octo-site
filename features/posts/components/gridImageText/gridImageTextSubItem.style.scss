@@ -1,4 +1,16 @@
 .grid-it {
+  &__sub-item {
+    &:hover {
+      img {
+        transform: useThemeVariable($--image-scale);
+      }
+    }
+
+    img {
+      transition: useThemeVariable($--image-transition);
+    }
+  }
+
   &__sub-item-content {
     padding-top: 20px;
 

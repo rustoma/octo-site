@@ -13,7 +13,7 @@
     &:hover {
       .#{$block}__title {
         a {
-          background-size: 100% 2px;
+          @extend %underline-hover;
         }
       }
     }
@@ -36,16 +36,7 @@
   &__title {
     margin: 0;
     a {
-      background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
-      background-size: 0 2px;
-      background-position: 0 95%;
-      transition: background-size 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
-      padding: 0.1% 0;
-      background-repeat: no-repeat;
-      display: inline;
-      &:hover {
-        color: inherit;
-      }
+      @extend %underline;
     }
   }
 }

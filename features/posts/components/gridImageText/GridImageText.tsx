@@ -3,19 +3,12 @@ import React from "react";
 import { Container } from "@/components/container/Container";
 import { GridImageTextMainItem } from "@/features/posts/components/gridImageText/GridImageTextMainItem";
 import { GridImageTextSubItem } from "@/features/posts/components/gridImageText/GridImageTextSubItem";
-import { Category } from "@/features/posts/types";
+import { Post } from "@/features/posts/types";
 
 import "./gridImageText.style.scss";
 
-export interface GridImageTextItem {
-  title: string;
-  imageUrl: string;
-  url: string;
-  category: Category;
-}
-
 interface GridImageTextProps {
-  items: GridImageTextItem[];
+  items: Post[];
 }
 
 export const GridImageText = ({ items }: GridImageTextProps) => {
