@@ -159,7 +159,10 @@ export default function Home() {
   return (
     <main className="content">
       <GridImageText items={gridItItems} />
-      <TabGrid tabs={TABS} items={{ zxc: TAB_GRID_ITEMS, [categories[1].title]: TAB_GRID_ITEMS_MOBILE }} />
+      <TabGrid
+        tabs={TABS}
+        items={{ [categories[0].title]: TAB_GRID_ITEMS, [categories[1].title]: TAB_GRID_ITEMS_MOBILE }}
+      />
     </main>
   );
 }
