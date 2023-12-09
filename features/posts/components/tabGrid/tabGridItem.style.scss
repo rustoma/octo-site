@@ -1,0 +1,59 @@
+.tab-grid-item {
+  $block: tab-grid-item;
+
+  &:hover {
+    .#{$block}__title {
+      a {
+        @extend %underline-hover;
+      }
+    }
+
+    img {
+      transform: useThemeVariable($--image-scale);
+    }
+  }
+
+  &:first-child {
+    padding: 0 0 30px;
+  }
+
+  &:not(&:first-child) {
+    padding: 30px 0;
+  }
+  display: flex;
+
+  &:not(&:last-child) {
+    border-bottom: 2px solid useThemeVariable($--color-lighter);
+  }
+
+  &__thumbnail {
+    width: 100px;
+    min-width: 100px;
+    margin-right: 20px;
+
+    a {
+      display: block;
+      overflow: hidden;
+      border-radius: useThemeVariable($--radius);
+
+      img {
+        transition: useThemeVariable($--image-transition);
+      }
+    }
+  }
+
+  &__content {
+  }
+
+  &__category {
+    display: flex;
+    margin-bottom: 15px;
+  }
+
+  &__title {
+    margin: 0;
+    a {
+      @extend %underline;
+    }
+  }
+}
