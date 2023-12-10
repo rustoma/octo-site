@@ -1,11 +1,21 @@
 import React from "react";
 
+import { Author } from "@/features/author/types";
+import { FeaturedGrid } from "@/features/posts/components/featured/FeaturedGrid";
 import { GridImageText } from "@/features/posts/components/gridImageText/GridImageText";
 import { TabGrid } from "@/features/posts/components/tabGrid/TabGrid";
 import { Category, Post } from "@/features/posts/types";
 import { TabItem } from "@/features/tabs/types";
 
 import "./page.style.scss";
+
+const AUTHORS: Author[] = [
+  {
+    id: 1,
+    name: "John",
+    imageUrl: "https://picsum.photos/100/100",
+  },
+];
 
 const categories: Category[] = [
   {
@@ -37,6 +47,7 @@ const gridItItems: Post[] = [
     url: "#",
     imageUrl: "https://picsum.photos/650/650",
     category: categories[0],
+    author: AUTHORS[0],
   },
   {
     id: 12,
@@ -44,6 +55,7 @@ const gridItItems: Post[] = [
     url: "#",
     imageUrl: "https://picsum.photos/300/200",
     category: categories[0],
+    author: AUTHORS[0],
   },
   {
     id: 13,
@@ -51,6 +63,7 @@ const gridItItems: Post[] = [
     url: "#2",
     imageUrl: "https://picsum.photos/300/200",
     category: categories[0],
+    author: AUTHORS[0],
   },
   {
     id: 14,
@@ -58,6 +71,7 @@ const gridItItems: Post[] = [
     url: "#3",
     imageUrl: "https://picsum.photos/300/200",
     category: categories[0],
+    author: AUTHORS[0],
   },
   {
     id: 15,
@@ -65,6 +79,7 @@ const gridItItems: Post[] = [
     url: "#5",
     imageUrl: "https://picsum.photos/300/200",
     category: categories[0],
+    author: AUTHORS[0],
   },
 ];
 
@@ -86,6 +101,7 @@ const TAB_GRID_ITEMS: Post[] = [
     url: "#",
     imageUrl: "https://picsum.photos/750/750",
     category: categories[0],
+    author: AUTHORS[0],
   },
   {
     id: 2,
@@ -93,6 +109,7 @@ const TAB_GRID_ITEMS: Post[] = [
     url: "#",
     imageUrl: "https://picsum.photos/100/100",
     category: categories[0],
+    author: AUTHORS[0],
   },
   {
     id: 3,
@@ -100,6 +117,7 @@ const TAB_GRID_ITEMS: Post[] = [
     url: "#",
     imageUrl: "https://picsum.photos/100/100",
     category: categories[0],
+    author: AUTHORS[0],
   },
   {
     id: 4,
@@ -107,6 +125,7 @@ const TAB_GRID_ITEMS: Post[] = [
     url: "#",
     imageUrl: "https://picsum.photos/100/100",
     category: categories[0],
+    author: AUTHORS[0],
   },
   {
     id: 5,
@@ -114,6 +133,7 @@ const TAB_GRID_ITEMS: Post[] = [
     url: "#",
     imageUrl: "https://picsum.photos/100/100",
     category: categories[0],
+    author: AUTHORS[0],
   },
 ];
 
@@ -124,6 +144,7 @@ const TAB_GRID_ITEMS_MOBILE: Post[] = [
     url: "#",
     imageUrl: "https://picsum.photos/650/650",
     category: categories[1],
+    author: AUTHORS[0],
   },
   {
     id: 7,
@@ -131,6 +152,7 @@ const TAB_GRID_ITEMS_MOBILE: Post[] = [
     url: "#",
     imageUrl: "https://picsum.photos/300/200",
     category: categories[1],
+    author: AUTHORS[0],
   },
   {
     id: 8,
@@ -138,6 +160,7 @@ const TAB_GRID_ITEMS_MOBILE: Post[] = [
     url: "#2",
     imageUrl: "https://picsum.photos/300/200",
     category: categories[1],
+    author: AUTHORS[0],
   },
   {
     id: 9,
@@ -145,6 +168,7 @@ const TAB_GRID_ITEMS_MOBILE: Post[] = [
     url: "#3",
     imageUrl: "https://picsum.photos/300/200",
     category: categories[1],
+    author: AUTHORS[0],
   },
   {
     id: 10,
@@ -152,6 +176,7 @@ const TAB_GRID_ITEMS_MOBILE: Post[] = [
     url: "#5",
     imageUrl: "https://picsum.photos/300/200",
     category: categories[1],
+    author: AUTHORS[0],
   },
 ];
 
@@ -163,6 +188,7 @@ export default function Home() {
         tabs={TABS}
         items={{ [categories[0].title]: TAB_GRID_ITEMS, [categories[1].title]: TAB_GRID_ITEMS_MOBILE }}
       />
+      <FeaturedGrid items={gridItItems} />
     </main>
   );
 }
