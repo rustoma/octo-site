@@ -1,0 +1,35 @@
+.tags-cloud {
+  background: useThemeVariable($--color-extra03);
+  padding: 30px;
+
+  &__title {
+    border-bottom: 1px solid useThemeVariable($--color-lighter);
+    padding-bottom: 7px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__items {
+    margin: -5px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    display: inline-block;
+    border: 1px solid useThemeVariable($--color-lighter);
+    font-size: 12px;
+    color: useThemeVariable($--color-gray);
+    height: 30px;
+    padding: 0 10px;
+    margin: 5px;
+    line-height: 27px;
+    border-radius: 4px;
+
+    &:hover {
+      color: useThemeVariable($--color-white);
+      background-color: useThemeVariable($--color-primary);
+      border-color: useThemeVariable($--color-primary);
+    }
+  }
+}
