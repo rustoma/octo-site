@@ -1,0 +1,41 @@
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+
+  &__content {
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__divider {
+    position: relative;
+    margin: 5px 9px;
+    width: 5px;
+    height: 5px;
+    background: useThemeVariable($--color-midgray);
+    border-radius: 100%;
+  }
+
+  &__crumb {
+    margin: 5px 0;
+    font-size: useThemeVariable($--font-size-b2);
+    line-height: useThemeVariable($--line-height-b2);
+    color: useThemeVariable($--color-heading);
+
+    &--last {
+      margin: 5px 0;
+      color: useThemeVariable($--color-gray);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 165px;
+      display: block;
+      overflow: hidden;
+    }
+    &--middle {
+    }
+  }
+}
