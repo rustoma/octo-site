@@ -1,0 +1,30 @@
+.featured-grid {
+  $block: featured-grid;
+
+  padding: 80px 0;
+  background-color: useThemeVariable($--color-extra04);
+
+  &__title {
+    margin-bottom: 0;
+    color: useThemeVariable($--color-white);
+  }
+
+  &__item {
+    &:hover {
+      .#{$block}__title {
+        a {
+          @extend %underline-hover;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    margin-top: 30px;
+    @extend %half-page-wrapper;
+  }
+
+  &__sub-items-wrapper {
+    @extend %half-page-sub-items-wrapper;
+  }
+}
