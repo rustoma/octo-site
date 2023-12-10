@@ -9,9 +9,10 @@ import "./featuredGrid.style.scss";
 
 interface FeaturedGridProps {
   items: Post[];
+  isOnDark?: boolean;
 }
 
-export const FeaturedGrid = ({ items }: FeaturedGridProps) => {
+export const FeaturedGrid = ({ items, isOnDark = false }: FeaturedGridProps) => {
   const featuredPosts = items.slice(0, 5);
   const [mainPost, ...subPosts] = featuredPosts;
 
@@ -20,7 +21,7 @@ export const FeaturedGrid = ({ items }: FeaturedGridProps) => {
       <Container>
         <h2 className="featured-grid__title">Polecane Artykuły</h2>
         <div className="featured-grid__wrapper">
-          <FeaturedGridMainItem item={mainPost} />
+          <FeaturedGridMainItem item={mainPost} isOnDark={isOnDark} />
           <div className="featured-grid__sub-items-wrapper">
             {subPosts.map((post) => (
               <GridImageTextSubItem isOnDark key={post.id} item={post} />

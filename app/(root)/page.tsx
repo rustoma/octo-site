@@ -188,7 +188,7 @@ export default function Home() {
         tabs={TABS}
         items={{ [categories[0].title]: TAB_GRID_ITEMS, [categories[1].title]: TAB_GRID_ITEMS_MOBILE }}
       />
-      <FeaturedGrid items={gridItItems} />
+      <FeaturedGrid isOnDark items={gridItItems} />
     </main>
   );
 }

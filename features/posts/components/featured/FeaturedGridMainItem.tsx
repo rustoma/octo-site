@@ -10,9 +10,10 @@ import "./featuredGridMainItem.style.scss";
 
 interface FeaturedGridMainItemProps {
   item: Post;
+  isOnDark?: boolean;
 }
 
-export const FeaturedGridMainItem = ({ item }: FeaturedGridMainItemProps) => {
+export const FeaturedGridMainItem = ({ item, isOnDark = false }: FeaturedGridMainItemProps) => {
   const { url, imageUrl, title, category, author } = item;
 
   return (
@@ -29,7 +30,7 @@ export const FeaturedGridMainItem = ({ item }: FeaturedGridMainItemProps) => {
           <Link href="#">{title}</Link>
         </h4>
         <div className="featured-grid__post-meta-wrapper">
-          <PostMeta author={author} />
+          <PostMeta author={author} isOnDark={isOnDark} />
         </div>
       </div>
     </div>
