@@ -1,4 +1,5 @@
 import React from "react";
+import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,9 +11,10 @@ import "./gridImageTextSubItem.style.scss";
 
 interface GridImageTextSubItemProps {
   item: Post;
+  isOnDark?: boolean;
 }
 
-export const GridImageTextSubItem = ({ item }: GridImageTextSubItemProps) => {
+export const GridImageTextSubItem = ({ item, isOnDark = false }: GridImageTextSubItemProps) => {
   return (
     <div className="grid-it__item grid-it__sub-item">
       <Link href={item.category.url} className="grid-it__sub-item-image">
@@ -20,7 +22,7 @@ export const GridImageTextSubItem = ({ item }: GridImageTextSubItemProps) => {
       </Link>
       <div className="grid-it__sub-item-content">
         <Category url={item.category.url} name={item.category.title} />
-        <h5 className="grid-it__title">
+        <h5 className={clsx("grid-it__title", isOnDark && "grid-it__title--light")}>
           <Link href="#">{item.title}</Link>
         </h5>
       </div>
