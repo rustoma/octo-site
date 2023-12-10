@@ -10,12 +10,6 @@
   }
 
   &__sidebar {
-    position: sticky;
-    top: 15px;
-    left: 0;
-
-    & > *:not(:first-child) {
-      margin-top: 30px;
-    }
+    @extend %sidebar;
   }
 }
