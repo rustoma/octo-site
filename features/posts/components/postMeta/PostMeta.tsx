@@ -5,6 +5,8 @@ interface PostMetaProps {
   isOnDark?: boolean;
 }
 
+import clsx from "clsx";
+
 import { Avatar } from "@/features/author/components/Avatar";
 import { Author } from "@/features/author/types";
 import { PostMetaList } from "@/features/posts/components/postMeta/PostMetaList";
@@ -20,7 +22,7 @@ export const PostMeta = ({ author, isOnDark = false }: PostMetaProps) => {
         <Avatar imageUrl={imageUrl} />
       </div>
       <div className="post-meta__content">
-        <h6 className="post-meta__author-name">{name}</h6>
+        <h6 className={clsx("post-meta__author-name", isOnDark && "post-meta__author-name--light")}>{name}</h6>
         <PostMetaList isOnDark={isOnDark} date="January 20, 2021" readingTime={4} />
       </div>
     </div>

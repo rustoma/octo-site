@@ -3,6 +3,7 @@ import React from "react";
 import { Author } from "@/features/author/types";
 import { FeaturedGrid } from "@/features/posts/components/featured/FeaturedGrid";
 import { GridImageText } from "@/features/posts/components/gridImageText/GridImageText";
+import { ListViewWithSidebar } from "@/features/posts/components/listViewWithSidebar/ListViewWithSidebar";
 import { TabGrid } from "@/features/posts/components/tabGrid/TabGrid";
 import { Category, Post } from "@/features/posts/types";
 import { TabItem } from "@/features/tabs/types";
@@ -189,6 +190,7 @@ export default function Home() {
         items={{ [categories[0].title]: TAB_GRID_ITEMS, [categories[1].title]: TAB_GRID_ITEMS_MOBILE }}
       />
       <FeaturedGrid isOnDark items={gridItItems} />
+      <ListViewWithSidebar items={gridItItems} />
     </main>
   );
 }
