@@ -1,0 +1,35 @@
+.post-meta-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -8px;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+
+  li {
+    color: useThemeVariable($--color-extra01);
+    font-size: useThemeVariable($--font-size-b4);
+    line-height: 18px;
+    margin: 8px;
+    position: relative;
+
+    &:not(:last-child)::after {
+      left: auto;
+      right: -10px;
+      position: absolute;
+      background: useThemeVariable($--color-extra01);
+      width: 4px;
+      height: 4px;
+      border-radius: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      content: "";
+    }
+  }
+
+  &--light {
+    li {
+      color: useThemeVariable($--color-midgray);
+    }
+  }
+}
