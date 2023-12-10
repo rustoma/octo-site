@@ -1,3 +1,5 @@
+import { Author } from "@/features/author/types";
+
 export interface Category {
   id: number;
   title: string;
@@ -10,4 +12,5 @@ export interface Post {
   url: string;
   imageUrl: string;
   category: Category;
+  author: Author;
 }
