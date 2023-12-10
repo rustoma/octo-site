@@ -4,9 +4,7 @@
   padding: 30px;
 
   &__wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 30px;
+    @extend %half-page-wrapper;
   }
 
   &__item {
@@ -20,9 +18,7 @@
   }
 
   &__sub-items-wrapper {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 30px;
+    @extend %half-page-sub-items-wrapper;
   }
 
   &__category {
@@ -35,6 +31,11 @@
 
   &__title {
     margin: 0;
+
+    &--light {
+      color: useThemeVariable($--color-white);
+    }
+
     a {
       @extend %underline;
     }

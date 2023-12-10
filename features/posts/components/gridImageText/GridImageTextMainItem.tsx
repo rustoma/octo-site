@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Category } from "@/features/posts/components/category/Category";
 import { Post } from "@/features/posts/types";
 
-import "./gridImageText.style.scss";
 import "./gridImageTextMainItem.style.scss";
 
 interface GridImageTextMainItemProps {
