@@ -1,0 +1,13 @@
+.header-alternate {
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
+  box-shadow: useThemeVariable($--shadow-primary);
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    max-width: 205px;
+    margin-right: 100px;
+  }
+}
