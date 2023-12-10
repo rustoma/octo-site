@@ -1,5 +1,7 @@
 import React from "react";
+import Image from "next/image";
 
+import { Container } from "@/components/container/Container";
 import { Author } from "@/features/author/types";
 import { FeaturedGrid } from "@/features/posts/components/featured/FeaturedGrid";
 import { GridImageText } from "@/features/posts/components/gridImageText/GridImageText";
@@ -191,6 +193,11 @@ export default function Home() {
       />
       <FeaturedGrid isOnDark items={gridItItems} />
       <ListViewWithSidebar items={gridItItems} />
+      <div className="home-page-advertisement">
+        <Container>
+          <Image src="/img/jpg/advertisement-long.jpg" alt="reklama" width={1230} height={200} />
+        </Container>
+      </div>
     </main>
   );
 }

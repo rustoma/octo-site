@@ -1,5 +1,7 @@
 .footer {
   padding: 40px 0;
+  background-color: useThemeVariable($--color-lightest);
+
   &__wrapper,
   &__nav,
   &__logo {
