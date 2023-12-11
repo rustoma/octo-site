@@ -1,0 +1,20 @@
+.not-found-page {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    width: 100%;
+    z-index: 10;
+  }
+
+  &__content-inner {
+    max-width: 600px;
+  }
+
+  &__image {
+    margin-bottom: 40px;
+  }
+}
