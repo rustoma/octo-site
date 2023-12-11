@@ -22,10 +22,10 @@ export const Header = () => {
             <span className="header-top__date">{renderDate()}</span>
             <ul className="header-top__menu list-style">
               <li className="header-top__menu-item">
-                <Link href="#">O nas</Link>
+                <Link href="/o-nas">O nas</Link>
               </li>
               <li className="header-top__menu-item">
-                <Link href="#">Kontakt</Link>
+                <Link href="/kontakt">Kontakt</Link>
               </li>
             </ul>
           </div>
@@ -51,48 +51,48 @@ export const Header = () => {
               items: [],
             },
             {
-              id: "Lifestyle",
-              title: "Lifestyle",
-              href: "/lifestyle",
+              id: "o-nas",
+              title: "O nas",
+              href: "/o-nas",
               items: [],
             },
             {
-              id: "Technology",
-              title: "Technology",
-              href: "/technology",
+              id: "kontakt",
+              title: "Kontakt",
+              href: "/kontakt",
               items: [],
             },
-            {
-              id: "Pages",
-              title: "Pages",
-              items: [
-                {
-                  id: "Page 1",
-                  title: "Page 1",
-                  href: "/page-1",
-                  items: [],
-                },
-                {
-                  id: "Page 2",
-                  title: "Page 2",
-                  href: "/page-2",
-                  items: [
-                    {
-                      id: "Page 1-1",
-                      title: "Page 1",
-                      href: "/page-1-1",
-                      items: [],
-                    },
-                    {
-                      id: "Page 2-2",
-                      title: "Page 1",
-                      href: "/page-2-2",
-                      items: [],
-                    },
-                  ],
-                },
-              ],
-            },
+            // {
+            //   id: "Pages",
+            //   title: "Pages",
+            //   items: [
+            //     {
+            //       id: "Page 1",
+            //       title: "Page 1",
+            //       href: "/page-1",
+            //       items: [],
+            //     },
+            //     {
+            //       id: "Page 2",
+            //       title: "Page 2",
+            //       href: "/page-2",
+            //       items: [
+            //         {
+            //           id: "Page 1-1",
+            //           title: "Page 1",
+            //           href: "/page-1-1",
+            //           items: [],
+            //         },
+            //         {
+            //           id: "Page 2-2",
+            //           title: "Page 1",
+            //           href: "/page-2-2",
+            //           items: [],
+            //         },
+            //       ],
+            //     },
+            //   ],
+            // },
           ]}
         />
       </Container>

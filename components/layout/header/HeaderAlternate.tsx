@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 import { Logo } from "@/components/icons/Logo";
 import { TopNav } from "@/features/nav/topNav/TopNav";
@@ -9,7 +10,9 @@ export const HeaderAlternate = () => {
   return (
     <header className="header-alternate">
       <div className="header-alternate__logo">
-        <Logo />
+        <Link href="/">
+          <Logo />
+        </Link>
       </div>
       <TopNav
         menuTree={[
@@ -20,47 +23,16 @@ export const HeaderAlternate = () => {
             items: [],
           },
           {
-            id: "Lifestyle",
-            title: "Lifestyle",
-            href: "/lifestyle",
+            id: "o-nas",
+            title: "O nas",
+            href: "/o-nas",
             items: [],
           },
           {
-            id: "Technology",
-            title: "Technology",
-            href: "/technology",
+            id: "kontakt",
+            title: "Kontakt",
+            href: "/kontakt",
             items: [],
-          },
-          {
-            id: "Pages",
-            title: "Pages",
-            items: [
-              {
-                id: "Page 1",
-                title: "Page 1",
-                href: "/page-1",
-                items: [],
-              },
-              {
-                id: "Page 2",
-                title: "Page 2",
-                href: "/page-2",
-                items: [
-                  {
-                    id: "Page 1-1",
-                    title: "Page 1",
-                    href: "/page-1-1",
-                    items: [],
-                  },
-                  {
-                    id: "Page 2-2",
-                    title: "Page 1",
-                    href: "/page-2-2",
-                    items: [],
-                  },
-                ],
-              },
-            ],
           },
         ]}
       />
