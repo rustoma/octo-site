@@ -1,0 +1,11 @@
+.about-us-page {
+  display: grid;
+  align-items: start;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  padding: 80px 0;
+
+  &__sidebar {
+    @extend %sidebar;
+  }
+}
