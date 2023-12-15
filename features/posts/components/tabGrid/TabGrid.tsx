@@ -4,15 +4,15 @@ import React, { useState } from "react";
 
 import { Container } from "@/components/container/Container";
 import { TabGridContent } from "@/features/posts/components/tabGrid/TabGridContent";
-import { Post } from "@/features/posts/types";
 import { Tabs } from "@/features/tabs/components/Tabs";
 import { TabItem } from "@/features/tabs/types";
+import { Article } from "@/services/article/article.types";
 
 import "./tabGrid.style.scss";
 
 interface TabGridProps {
   tabs: TabItem[];
-  items: Record<string, Post[]>;
+  items: Record<string, Article[]>;
 }
 
 export const TabGrid = ({ tabs, items }: TabGridProps) => {

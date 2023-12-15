@@ -1,18 +1,17 @@
 import React from "react";
-
-interface ListViewWithSidebarProps {
-  items: Post[];
-}
-
 import Image from "next/image";
 
 import { Container } from "@/components/container/Container";
 import { ListViewItem } from "@/features/posts/components/listViewWithSidebar/ListViewItem";
-import { Post } from "@/features/posts/types";
 import { Advertisement } from "@/features/widgets/components/advertisment/Advertisement";
 import { TagsCloud } from "@/features/widgets/components/tagsCloud/TagsCloud";
+import { Article } from "@/services/article/article.types";
 
 import "./listViewWithSidebar.style.scss";
+
+interface ListViewWithSidebarProps {
+  items: Article[];
+}
 
 export const ListViewWithSidebar = ({ items }: ListViewWithSidebarProps) => {
   return (

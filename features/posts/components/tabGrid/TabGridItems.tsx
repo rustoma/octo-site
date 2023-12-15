@@ -1,10 +1,10 @@
 import React from "react";
 
 import { TabGridItem } from "@/features/posts/components/tabGrid/TabGridItem";
-import { Post } from "@/features/posts/types";
+import { Article } from "@/services/article/article.types";
 
 interface TabGridItemsProps {
-  items: Post[];
+  items: Article[];
 }
 
 export const TabGridItems = ({ items }: TabGridItemsProps) => {

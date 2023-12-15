@@ -3,10 +3,10 @@ import clsx from "clsx";
 
 import { GridImageTextMainItem } from "@/features/posts/components/gridImageText/GridImageTextMainItem";
 import { TabGridItems } from "@/features/posts/components/tabGrid/TabGridItems";
-import { Post } from "@/features/posts/types";
+import { Article } from "@/services/article/article.types";
 
 interface TabContentProps {
-  items?: Post[];
+  items?: Article[];
   isActive: boolean;
 }
 

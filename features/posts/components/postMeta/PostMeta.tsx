@@ -1,20 +1,19 @@
 import React from "react";
+import clsx from "clsx";
+
+import { Avatar } from "@/features/author/components/Avatar";
+import { PostMetaList } from "@/features/posts/components/postMeta/PostMetaList";
+import { Author } from "@/services/author/author.types";
+
+import "./postMeta.style.scss";
 
 interface PostMetaProps {
   author: Author;
   isOnDark?: boolean;
 }
 
-import clsx from "clsx";
-
-import { Avatar } from "@/features/author/components/Avatar";
-import { Author } from "@/features/author/types";
-import { PostMetaList } from "@/features/posts/components/postMeta/PostMetaList";
-
-import "./postMeta.style.scss";
-
 export const PostMeta = ({ author, isOnDark = false }: PostMetaProps) => {
-  const { name, imageUrl } = author;
+  const { firstName, lastName, imageUrl } = author;
 
   return (
     <div className="post-meta">
@@ -22,7 +21,11 @@ export const PostMeta = ({ author, isOnDark = false }: PostMetaProps) => {
         <Avatar imageUrl={imageUrl} />
       </div>
       <div className="post-meta__content">
-        <h6 className={clsx("post-meta__author-name", isOnDark && "post-meta__author-name--light")}>{name}</h6>
+        <h6
+          className={clsx(
+            "post-meta__author-name",
+            isOnDark && "post-meta__author-name--light"
+          )}>{`${firstName} ${lastName}`}</h6>
         <PostMetaList isOnDark={isOnDark} date="January 20, 2021" readingTime={4} />
       </div>
     </div>

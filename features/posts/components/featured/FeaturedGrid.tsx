@@ -3,12 +3,12 @@ import React from "react";
 import { Container } from "@/components/container/Container";
 import { FeaturedGridMainItem } from "@/features/posts/components/featured/FeaturedGridMainItem";
 import { GridImageTextSubItem } from "@/features/posts/components/gridImageText/GridImageTextSubItem";
-import { Post } from "@/features/posts/types";
+import { Article } from "@/services/article/article.types";
 
 import "./featuredGrid.style.scss";
 
 interface FeaturedGridProps {
-  items: Post[];
+  items: Article[];
   isOnDark?: boolean;
 }
 

@@ -3,16 +3,17 @@ import React from "react";
 import { Container } from "@/components/container/Container";
 import { GridImageTextMainItem } from "@/features/posts/components/gridImageText/GridImageTextMainItem";
 import { GridImageTextSubItem } from "@/features/posts/components/gridImageText/GridImageTextSubItem";
-import { Post } from "@/features/posts/types";
+import { Article } from "@/services/article/article.types";
 
 import "./gridImageText.style.scss";
 
 interface GridImageTextProps {
-  items: Post[];
+  items: Article[];
 }
 
 export const GridImageText = ({ items }: GridImageTextProps) => {
   const [mainItem, ...subItems] = items;
+
   return (
     <section className="grid-it">
       <Container>
@@ -20,7 +21,7 @@ export const GridImageText = ({ items }: GridImageTextProps) => {
           <GridImageTextMainItem item={mainItem} />
           <div className="grid-it__sub-items-wrapper">
             {subItems.map((item) => (
-              <GridImageTextSubItem key={`${item.title + item.url}`} item={item} />
+              <GridImageTextSubItem key={`${item.title + `${item.category.slug}/${item.slug}`}`} item={item} />
             ))}
           </div>
         </div>
