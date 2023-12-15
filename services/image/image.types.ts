@@ -1,13 +1,13 @@
 export interface Image {
-  ID: number;
-  Name: string;
-  Path: string;
-  Size: number;
-  Type: string;
-  Width: number;
-  Height: number;
-  Alt: string;
-  CategoryId: number;
-  CreatedAt: string;
-  UpdatedAt: string;
+  id: number;
+  name: string;
+  path: string;
+  size: number;
+  type: string;
+  width: number;
+  height: number;
+  alt: string;
+  categoryId: number;
+  createdAt: string;
+  updatedAt: string;
 }
