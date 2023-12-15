@@ -1,13 +1,17 @@
+import { Author } from "@/services/author/author.types";
+import { Category } from "@/services/category/category.types";
+import { Image } from "@/services/image/image.types";
+
 export interface Article {
   id: number;
   title: string;
   slug: string;
   description: string | null;
-  thumbnail: number | null;
+  thumbnail: Image | null;
   publicationDate: string | null;
   isPublished: boolean;
-  authorId: number;
-  categoryId: number;
+  author: Author;
+  category: Category;
   domainId: number;
   featured: boolean;
   createdAt: string;
