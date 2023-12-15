@@ -2,197 +2,40 @@ import React from "react";
 import Image from "next/image";
 
 import { Container } from "@/components/container/Container";
-import { Author } from "@/features/author/types";
 import { FeaturedGrid } from "@/features/posts/components/featured/FeaturedGrid";
 import { GridImageText } from "@/features/posts/components/gridImageText/GridImageText";
 import { ListViewWithSidebar } from "@/features/posts/components/listViewWithSidebar/ListViewWithSidebar";
 import { TabGrid } from "@/features/posts/components/tabGrid/TabGrid";
-import { Category, Post } from "@/features/posts/types";
 import { TabItem } from "@/features/tabs/types";
+import { getArticles } from "@/services/article/article.service";
+import { Article } from "@/services/article/article.types";
+import { getCategories } from "@/services/category/category.service";
 
 import "./page.style.scss";
 
-const AUTHORS: Author[] = [
-  {
-    id: 1,
-    name: "John",
-    imageUrl: "https://picsum.photos/100/100",
-  },
-];
+export default async function Home() {
+  const articles = await getArticles({ limit: "5" });
+  const featuredArticles = await getArticles({ featured: "true", limit: "5" });
+  const categories = await getCategories();
+  const postByCategories = await Promise.all(
+    categories.map((category) => getArticles({ categoryId: `${category.id}`, limit: "6" }))
+  );
 
-const categories: Category[] = [
-  {
-    id: 1,
-    title: "Technology",
-    url: "#",
-  },
-  {
-    id: 2,
-    title: "Mobile",
-    url: "#",
-  },
-  {
-    id: 3,
-    title: "Android Dev",
-    url: "#",
-  },
-  {
-    id: 4,
-    title: "Blockchain",
-    url: "#",
-  },
-];
+  const TABS: TabItem[] = categories.map((category) => ({
+    text: category.name,
+    value: category.slug,
+  }));
 
-const gridItItems: Post[] = [
-  {
-    id: 11,
-    title: "Rocket Lab mission fails shortly after launch",
-    url: "#",
-    imageUrl: "https://picsum.photos/650/650",
-    category: categories[0],
-    author: AUTHORS[0],
-  },
-  {
-    id: 12,
-    title: "Rocket Lab mission fails shortly after launch",
-    url: "#",
-    imageUrl: "https://picsum.photos/300/200",
-    category: categories[0],
-    author: AUTHORS[0],
-  },
-  {
-    id: 13,
-    title: "Rocket Lab mission fails shortly after launch",
-    url: "#2",
-    imageUrl: "https://picsum.photos/300/200",
-    category: categories[0],
-    author: AUTHORS[0],
-  },
-  {
-    id: 14,
-    title: "Rocket Lab mission fails shortly after launch",
-    url: "#3",
-    imageUrl: "https://picsum.photos/300/200",
-    category: categories[0],
-    author: AUTHORS[0],
-  },
-  {
-    id: 15,
-    title: "Rocket Lab mission fails shortly after launch",
-    url: "#5",
-    imageUrl: "https://picsum.photos/300/200",
-    category: categories[0],
-    author: AUTHORS[0],
-  },
-];
+  const tabGridItems = categories.reduce((acc, curr, index) => {
+    return { ...acc, [curr.slug]: postByCategories[index] };
+  }, {} as Record<string, Article[]>);
 
-const TABS: TabItem[] = [
-  {
-    text: categories[0].title,
-    value: categories[0].title,
-  },
-  {
-    text: categories[1].title,
-    value: categories[1].title,
-  },
-];
-
-const TAB_GRID_ITEMS: Post[] = [
-  {
-    id: 1,
-    title: "The new Moto G Stylus and G Power are surprisingly adept cameraphones",
-    url: "#",
-    imageUrl: "https://picsum.photos/750/750",
-    category: categories[0],
-    author: AUTHORS[0],
-  },
-  {
-    id: 2,
-    title: "Motorola Moto E (2020) and Moto G Fast review: smartphone basics",
-    url: "#",
-    imageUrl: "https://picsum.photos/100/100",
-    category: categories[0],
-    author: AUTHORS[0],
-  },
-  {
-    id: 3,
-    title: "Oppo Find X2 Pro Review: Supercar Smartphone",
-    url: "#",
-    imageUrl: "https://picsum.photos/100/100",
-    category: categories[0],
-    author: AUTHORS[0],
-  },
-  {
-    id: 4,
-    title: "Dell XPS 15 (2020) Review: New Design, Familiar Problems",
-    url: "#",
-    imageUrl: "https://picsum.photos/100/100",
-    category: categories[0],
-    author: AUTHORS[0],
-  },
-  {
-    id: 5,
-    title: "Virtual Reality or Artificial Intelligence Technology",
-    url: "#",
-    imageUrl: "https://picsum.photos/100/100",
-    category: categories[0],
-    author: AUTHORS[0],
-  },
-];
-
-const TAB_GRID_ITEMS_MOBILE: Post[] = [
-  {
-    id: 6,
-    title: "Rocket Lab mission fails shortly after launch",
-    url: "#",
-    imageUrl: "https://picsum.photos/650/650",
-    category: categories[1],
-    author: AUTHORS[0],
-  },
-  {
-    id: 7,
-    title: "Rocket Lab mission fails shortly after launch",
-    url: "#",
-    imageUrl: "https://picsum.photos/300/200",
-    category: categories[1],
-    author: AUTHORS[0],
-  },
-  {
-    id: 8,
-    title: "Rocket Lab mission fails shortly after launch",
-    url: "#2",
-    imageUrl: "https://picsum.photos/300/200",
-    category: categories[1],
-    author: AUTHORS[0],
-  },
-  {
-    id: 9,
-    title: "Rocket Lab mission fails shortly after launch",
-    url: "#3",
-    imageUrl: "https://picsum.photos/300/200",
-    category: categories[1],
-    author: AUTHORS[0],
-  },
-  {
-    id: 10,
-    title: "Rocket Lab mission fails shortly after launch",
-    url: "#5",
-    imageUrl: "https://picsum.photos/300/200",
-    category: categories[1],
-    author: AUTHORS[0],
-  },
-];
-
-export default function Home() {
   return (
     <main className="content">
-      <GridImageText items={gridItItems} />
-      <TabGrid
-        tabs={TABS}
-        items={{ [categories[0].title]: TAB_GRID_ITEMS, [categories[1].title]: TAB_GRID_ITEMS_MOBILE }}
-      />
-      <FeaturedGrid isOnDark items={gridItItems} />
-      <ListViewWithSidebar items={gridItItems} />
+      <GridImageText items={articles} />
+      <TabGrid tabs={TABS} items={tabGridItems} />
+      <FeaturedGrid isOnDark items={featuredArticles} />
+      <ListViewWithSidebar items={articles} />
       <div className="home-page-advertisement">
         <Container>
           <Image src="/img/jpg/advertisement-long.jpg" alt="reklama" width={1230} height={200} />
