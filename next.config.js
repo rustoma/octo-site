@@ -3,7 +3,7 @@ const path = require("path");
 
 const nextConfig = {
   images: {
-    domains: ["localhost", "picsum.photos"],
+    domains: ["localhost", "picsum.photos", "thispersondoesnotexist.com"],
   },
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
