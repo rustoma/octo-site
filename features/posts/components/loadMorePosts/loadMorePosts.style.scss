@@ -1,0 +1,8 @@
+.additional-posts {
+  margin-top: 30px;
+
+  &__error {
+    margin-bottom: 30px;
+    color: useThemeVariable($--color-danger);
+  }
+}

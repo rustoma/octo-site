@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/container/Container";
 import { SimpleBanner } from "@/features/banners/components/simpleBanner/SimpleBanner";
 import { ListViewItem } from "@/features/posts/components/listViewWithSidebar/ListViewItem";
+import { LoadMorePosts } from "@/features/posts/components/loadMorePosts/LoadMorePosts";
 import { Advertisement } from "@/features/widgets/components/advertisment/Advertisement";
 import { TagsCloud } from "@/features/widgets/components/tagsCloud/TagsCloud";
 import { getArticles } from "@/services/article/article.service";
@@ -21,9 +22,11 @@ export const generateStaticParams = async () => {
 };
 
 const CategoryPage = async ({ params }: { params: { category: string } }) => {
+  const LIMIT = 5;
+
   const category = await getCategories({ slug: params.category });
   if (!category?.[0]) return notFound();
-  const articles = await getArticles({ limit: "5", categoryId: category[0].id.toString() });
+  const articles = await getArticles({ limit: LIMIT.toString(), categoryId: category[0].id.toString() });
 
   return (
     <>
@@ -36,6 +39,11 @@ const CategoryPage = async ({ params }: { params: { category: string } }) => {
             {articles?.map((article) => (
               <ListViewItem key={article.id} item={article} />
             ))}
+
+            {articles && articles.length === LIMIT ? (
+              <LoadMorePosts initialOffset={LIMIT} limit={5} category={category[0].id} />
+            ) : null}
+
             <div className="category-page__content-advertisement">
               <Image src="/img/jpg/advertisement-long.jpg" alt="reklama" width={810} height={115} />
             </div>
