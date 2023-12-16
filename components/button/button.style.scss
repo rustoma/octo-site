@@ -1,0 +1,93 @@
+.btn {
+  border-radius: useThemeVariable($--radius);
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s;
+
+  &--solid.btn--primary {
+    color: white;
+    background-color: useThemeVariable($--color-primary);
+    box-shadow: useThemeVariable($--shadow-primary);
+
+    &:enabled:hover {
+      background-color: useThemeVariable($--color-primary);
+    }
+  }
+
+  &--solid.btn--secondary {
+    color: white;
+    background-color: useThemeVariable($--color-secondary);
+    box-shadow: useThemeVariable($--shadow-primary);
+
+    &:enabled:hover {
+      background-color: useThemeVariable($--color-secondary);
+    }
+  }
+
+  &--solid.btn--tertiary {
+    color: white;
+    background-color: useThemeVariable($--color-tertiary);
+    box-shadow: useThemeVariable($--shadow-primary);
+
+    &:enabled:hover {
+      background-color: useThemeVariable($--color-tertiary);
+    }
+  }
+
+  &--outline.btn--primary {
+    color: useThemeVariable($--color-primary);
+    border: 1px solid useThemeVariable($--color-primary);
+
+    &:enabled:hover {
+      color: white;
+      background-color: useThemeVariable($--color-primary);
+    }
+  }
+
+  &--outline.btn--secondary {
+    color: useThemeVariable($--color-secondary);
+    border: 1px solid useThemeVariable($--color-secondary);
+
+    &:enabled:hover {
+      color: white;
+      background-color: useThemeVariable($--color-secondary);
+    }
+  }
+
+  &--outline.btn--tertiary {
+    color: useThemeVariable($--color-tertiary);
+    border: 1px solid useThemeVariable($--color-tertiary);
+
+    &:enabled:hover {
+      color: white;
+      background-color: useThemeVariable($--color-tertiary);
+    }
+  }
+
+  &--sm {
+    font-size: toRem(14);
+    line-height: toRem(16);
+    padding: 4px 12px;
+  }
+  &--md {
+    font-size: toRem(16);
+    line-height: toRem(20);
+    padding: 8px 16px;
+  }
+  &--lg {
+    font-size: toRem(18);
+    line-height: toRem(22);
+    padding: 12px 20px;
+  }
+
+  &--fit {
+    width: 100%;
+  }
+
+  &:disabled,
+  &--loading {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
