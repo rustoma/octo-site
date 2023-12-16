@@ -18,7 +18,7 @@ export const GridImageTextMainItem = ({ item }: GridImageTextMainItemProps) => {
         {item.thumbnail && (
           <Image
             src={process.env.NEXT_PUBLIC_BACKEND_HOST + item.thumbnail.path}
-            alt="#"
+            alt={item.title}
             fill
             style={{ objectFit: "cover", backgroundPosition: "center" }}
           />

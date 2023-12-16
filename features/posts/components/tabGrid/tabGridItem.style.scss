@@ -27,22 +27,20 @@
   }
 
   &__thumbnail {
-    width: 100px;
-    min-width: 100px;
     margin-right: 20px;
 
     a {
       display: block;
       overflow: hidden;
+      width: 100px;
+      height: 100px;
+      position: relative;
       border-radius: useThemeVariable($--radius);
 
       img {
         transition: useThemeVariable($--image-transition);
       }
     }
-  }
-
-  &__content {
   }
 
   &__category {

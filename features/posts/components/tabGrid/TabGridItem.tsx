@@ -17,7 +17,12 @@ export const TabGridItem = ({ item }: TabGridItemProps) => {
       <div className="tab-grid-item__thumbnail">
         <Link href={`/${item.category.slug}/${item.slug}`}>
           {item.thumbnail && (
-            <Image src={process.env.NEXT_PUBLIC_BACKEND_HOST + item.thumbnail.path} alt="#" width={100} height={100} />
+            <Image
+              src={process.env.NEXT_PUBLIC_BACKEND_HOST + item.thumbnail.path}
+              alt={item.title}
+              fill
+              style={{ objectFit: "cover", backgroundPosition: "center" }}
+            />
           )}
         </Link>
       </div>
