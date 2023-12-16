@@ -21,7 +21,7 @@ export const TabGridItem = ({ item }: TabGridItemProps) => {
               src={process.env.NEXT_PUBLIC_BACKEND_HOST + item.thumbnail.path}
               alt={item.title}
               fill
-              style={{ objectFit: "cover", backgroundPosition: "center" }}
+              style={{ objectFit: "cover", objectPosition: "center" }}
             />
           )}
         </Link>

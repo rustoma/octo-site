@@ -23,9 +23,9 @@ export const FeaturedGridMainItem = ({ item, isOnDark = false }: FeaturedGridMai
           <div className="featured-grid__main-item-image">
             <Image
               src={process.env.NEXT_PUBLIC_BACKEND_HOST + thumbnail.path}
-              alt={thumbnail.alt}
+              alt={item.title}
               fill
-              style={{ objectFit: "cover" }}
+              style={{ objectFit: "cover", objectPosition: "center" }}
             />
           </div>
         )}

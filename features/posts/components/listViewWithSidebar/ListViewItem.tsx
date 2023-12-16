@@ -20,7 +20,12 @@ export const ListViewItem = ({ item }: ListViewItemProps) => {
       <div className="list-view-item__thumbnail">
         {thumbnail && (
           <Link href={`/${category.slug}/${slug}`}>
-            <Image src={process.env.NEXT_PUBLIC_BACKEND_HOST + thumbnail.path} alt="#" fill />
+            <Image
+              src={process.env.NEXT_PUBLIC_BACKEND_HOST + thumbnail.path}
+              alt={item.title}
+              fill
+              style={{ objectFit: "cover", objectPosition: "center" }}
+            />
           </Link>
         )}
       </div>
