@@ -12,7 +12,7 @@ import "./tabGrid.style.scss";
 
 interface TabGridProps {
   tabs: TabItem[];
-  items: Record<string, Article[]>;
+  items: Record<string, Article[] | null>;
 }
 
 export const TabGrid = ({ tabs, items }: TabGridProps) => {
@@ -26,7 +26,7 @@ export const TabGrid = ({ tabs, items }: TabGridProps) => {
           <Tabs items={tabs} activeTab={activeTab} onTabClick={(value) => setActiveTab(value)} />
         </div>
 
-        {(!items[activeTab] || (Array.isArray(items[activeTab]) && !items[activeTab].length)) && (
+        {(!items[activeTab] || (Array.isArray(items[activeTab]) && !items[activeTab]?.length)) && (
           <div className="tab-grid__empty">
             <p>Brak nowych postów.</p>
           </div>

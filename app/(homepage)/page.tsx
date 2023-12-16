@@ -16,26 +16,31 @@ import "./page.style.scss";
 export default async function Home() {
   const articles = await getArticles({ limit: "5" });
   const featuredArticles = await getArticles({ featured: "true", limit: "5" });
+
   const categories = await getCategories();
-  const postByCategories = await Promise.all(
-    categories.map((category) => getArticles({ categoryId: `${category.id}`, limit: "6" }))
-  );
+  const postByCategories = categories
+    ? await Promise.all(categories.map((category) => getArticles({ categoryId: `${category.id}`, limit: "6" })))
+    : [];
 
-  const TABS: TabItem[] = categories.map((category) => ({
-    text: category.name,
-    value: category.slug,
-  }));
+  const TABS: TabItem[] =
+    categories?.map((category) => ({
+      text: category.name,
+      value: category.slug,
+    })) ?? [];
 
-  const tabGridItems = categories.reduce((acc, curr, index) => {
-    return { ...acc, [curr.slug]: postByCategories[index] };
-  }, {} as Record<string, Article[]>);
+  const tabGridItems =
+    categories && postByCategories
+      ? categories.reduce((acc, curr, index) => {
+          return { ...acc, [curr.slug]: postByCategories[index] };
+        }, {} as Record<string, Article[] | null>)
+      : {};
 
   return (
     <main className="content">
-      <GridImageText items={articles} />
+      <GridImageText items={articles ?? []} />
       <TabGrid tabs={TABS} items={tabGridItems} />
-      <FeaturedGrid isOnDark items={featuredArticles} />
-      <ListViewWithSidebar items={articles} />
+      <FeaturedGrid isOnDark items={featuredArticles ?? []} />
+      <ListViewWithSidebar items={articles ?? []} />
       <div className="home-page-advertisement">
         <Container>
           <Image src="/img/jpg/advertisement-long.jpg" alt="reklama" width={1230} height={200} />

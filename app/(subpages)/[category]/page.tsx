@@ -1,99 +1,40 @@
 import React from "react";
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 import { Container } from "@/components/container/Container";
-import { Author } from "@/features/author/types";
 import { SimpleBanner } from "@/features/banners/components/simpleBanner/SimpleBanner";
 import { ListViewItem } from "@/features/posts/components/listViewWithSidebar/ListViewItem";
-import { Category, Post } from "@/features/posts/types";
 import { Advertisement } from "@/features/widgets/components/advertisment/Advertisement";
 import { TagsCloud } from "@/features/widgets/components/tagsCloud/TagsCloud";
+import { getArticles } from "@/services/article/article.service";
+import { getCategories } from "@/services/category/category.service";
 
 import "./page.style.scss";
 
-const AUTHORS: Author[] = [
-  {
-    id: 1,
-    name: "John",
-    imageUrl: "https://picsum.photos/100/100",
-  },
-];
+export const generateStaticParams = async () => {
+  const categories = await getCategories();
 
-const categories: Category[] = [
-  {
-    id: 1,
-    title: "Technology",
-    url: "#",
-  },
-  {
-    id: 2,
-    title: "Mobile",
-    url: "#",
-  },
-  {
-    id: 3,
-    title: "Android Dev",
-    url: "#",
-  },
-  {
-    id: 4,
-    title: "Blockchain",
-    url: "#",
-  },
-];
+  return categories?.map((category) => ({
+    category: category.slug,
+  }));
+};
 
-const gridItItems: Post[] = [
-  {
-    id: 11,
-    title: "Rocket Lab mission fails shortly after launch",
-    url: "#",
-    imageUrl: "https://picsum.photos/650/650",
-    category: categories[0],
-    author: AUTHORS[0],
-  },
-  {
-    id: 12,
-    title: "Rocket Lab mission fails shortly after launch",
-    url: "#",
-    imageUrl: "https://picsum.photos/300/200",
-    category: categories[0],
-    author: AUTHORS[0],
-  },
-  {
-    id: 13,
-    title: "Rocket Lab mission fails shortly after launch",
-    url: "#2",
-    imageUrl: "https://picsum.photos/300/200",
-    category: categories[0],
-    author: AUTHORS[0],
-  },
-  {
-    id: 14,
-    title: "Rocket Lab mission fails shortly after launch",
-    url: "#3",
-    imageUrl: "https://picsum.photos/300/200",
-    category: categories[0],
-    author: AUTHORS[0],
-  },
-  {
-    id: 15,
-    title: "Rocket Lab mission fails shortly after launch",
-    url: "#5",
-    imageUrl: "https://picsum.photos/300/200",
-    category: categories[0],
-    author: AUTHORS[0],
-  },
-];
+const CategoryPage = async ({ params }: { params: { category: string } }) => {
+  const category = await getCategories({ slug: params.category });
+  if (!category?.[0]) return notFound();
+  const articles = await getArticles({ limit: "5", categoryId: category[0].id.toString() });
 
-const CategoryPage = () => {
   return (
     <>
-      <SimpleBanner title="Mobile" />
+      <SimpleBanner title={category[0].name} />
       <Container>
         <div className="category-page">
           <div className="category-page__content">
-            {gridItItems.map((item) => (
-              <ListViewItem key={item.id} item={item} />
+            {!articles && <div>Brak artykułów dla danej kategorii</div>}
+
+            {articles?.map((article) => (
+              <ListViewItem key={article.id} item={article} />
             ))}
             <div className="category-page__content-advertisement">
               <Image src="/img/jpg/advertisement-long.jpg" alt="reklama" width={810} height={115} />

@@ -6,7 +6,7 @@ import { TabGridItems } from "@/features/posts/components/tabGrid/TabGridItems";
 import { Article } from "@/services/article/article.types";
 
 interface TabContentProps {
-  items?: Article[];
+  items?: Article[] | null;
   isActive: boolean;
 }
 
