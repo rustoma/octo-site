@@ -14,9 +14,14 @@ interface GridImageTextMainItemProps {
 export const GridImageTextMainItem = ({ item }: GridImageTextMainItemProps) => {
   return (
     <div className="grid-it__item grid-it__main-item">
-      <Link href={`/${item.category.slug}/${item.slug}`}>
+      <Link href={`/${item.category.slug}/${item.slug}`} className="grid-it__main-item-image">
         {item.thumbnail && (
-          <Image src={process.env.NEXT_PUBLIC_BACKEND_HOST + item.thumbnail.path} alt="#" width={750} height={750} />
+          <Image
+            src={process.env.NEXT_PUBLIC_BACKEND_HOST + item.thumbnail.path}
+            alt="#"
+            fill
+            style={{ objectFit: "cover", backgroundPosition: "center" }}
+          />
         )}
       </Link>
 

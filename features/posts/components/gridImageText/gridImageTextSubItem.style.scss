@@ -21,7 +21,10 @@
 
   &__sub-item-image {
     display: block;
+    position: relative;
     border-radius: useThemeVariable($--radius);
     overflow: hidden;
+    width: 285px;
+    height: 190px;
   }
 }

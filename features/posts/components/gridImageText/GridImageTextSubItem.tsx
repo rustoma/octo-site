@@ -19,7 +19,12 @@ export const GridImageTextSubItem = ({ item, isOnDark = false }: GridImageTextSu
     <div className="grid-it__item grid-it__sub-item">
       <Link href={`/${item.category.slug}/${item.slug}`} className="grid-it__sub-item-image">
         {item.thumbnail && (
-          <Image src={process.env.NEXT_PUBLIC_BACKEND_HOST + item.thumbnail.path} alt="#" width={285} height={190} />
+          <Image
+            src={process.env.NEXT_PUBLIC_BACKEND_HOST + item.thumbnail.path}
+            alt={item.title}
+            fill
+            style={{ objectFit: "cover", backgroundPosition: "center" }}
+          />
         )}
       </Link>
       <div className="grid-it__sub-item-content">

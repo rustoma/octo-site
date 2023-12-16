@@ -3,8 +3,7 @@
     position: relative;
     overflow: hidden;
     border-radius: useThemeVariable($--radius);
-    padding-bottom: 100%;
-    height: 0;
+    display: flex;
 
     &:hover {
       img {
@@ -33,6 +32,13 @@
         color: useThemeVariable($--color-primary);
       }
     }
+  }
+
+  &__main-item-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: useThemeVariable($--radius);
+    flex: 1;
   }
 
   &__main-item-title {
