@@ -5,10 +5,22 @@ import Link from "next/link";
 import { Container } from "@/components/container/Container";
 import { Logo } from "@/components/icons/Logo";
 import { TopNav } from "@/features/nav/topNav/TopNav";
+import { getCategories } from "@/services/category/category.service";
 
 import "./header.style.scss";
 
-export const Header = () => {
+export const Header = async () => {
+  const categories = await getCategories();
+
+  const categoryMenuItems = categories
+    ? categories.map((category) => ({
+        id: category.id,
+        title: category.name,
+        href: `/${category.slug}`,
+        items: [],
+      }))
+    : [];
+
   const renderDate = () => {
     const date = new Date();
     return `${date.getDate()} ${date.toLocaleString("pl-Pl", { month: "long" })} ${date.getFullYear()}`;
@@ -56,43 +68,13 @@ export const Header = () => {
               href: "/o-nas",
               items: [],
             },
+            ...categoryMenuItems,
             {
               id: "kontakt",
               title: "Kontakt",
               href: "/kontakt",
               items: [],
             },
-            // {
-            //   id: "Pages",
-            //   title: "Pages",
-            //   items: [
-            //     {
-            //       id: "Page 1",
-            //       title: "Page 1",
-            //       href: "/page-1",
-            //       items: [],
-            //     },
-            //     {
-            //       id: "Page 2",
-            //       title: "Page 2",
-            //       href: "/page-2",
-            //       items: [
-            //         {
-            //           id: "Page 1-1",
-            //           title: "Page 1",
-            //           href: "/page-1-1",
-            //           items: [],
-            //         },
-            //         {
-            //           id: "Page 2-2",
-            //           title: "Page 1",
-            //           href: "/page-2-2",
-            //           items: [],
-            //         },
-            //       ],
-            //     },
-            //   ],
-            // },
           ]}
         />
       </Container>
