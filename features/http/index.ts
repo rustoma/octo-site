@@ -18,7 +18,7 @@ class HttpService {
     "x-api-key": `Bearer ${process.env.API_KEY}`,
   };
 
-  constructor(baseURL = `${process.env.BACKEND_HOST}/api/v1`) {
+  constructor(baseURL = `${process.env.NEXT_PUBLIC_BACKEND_HOST}/api/v1`) {
     this.baseUrl = baseURL;
     this.instance = (url: string, config: RequestInit) => fetch(this.baseUrl + url, { ...config, cache: "no-store" });
   }
@@ -68,3 +68,4 @@ class HttpService {
 }
 
 export const httpClient = new HttpService();
+export const httpPublicClient = new HttpService("/api");

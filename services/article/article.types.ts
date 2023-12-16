@@ -21,6 +21,7 @@ export interface Article {
 export interface ArticleFilters {
   categoryId?: string;
   limit?: string;
+  offset?: string;
   featured?: string;
   slug?: string;
 }
