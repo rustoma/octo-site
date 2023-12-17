@@ -12,12 +12,23 @@ import { getCategories } from "@/services/category/category.service";
 
 import "./page.style.scss";
 
-export const generateStaticParams = async () => {
-  const categories = await getCategories();
+export const generateStaticParams = async ({ params: { category } }: { params: { category: string } }) => {
+  const categoriesBySlug = await getCategories({ slug: category });
+  const categoryForRoute = categoriesBySlug?.[0];
 
-  return categories?.map((category) => ({
-    category: category.slug,
-  }));
+  if (categoryForRoute) {
+    const articles = await getArticles({ categoryId: `${categoryForRoute.id}` });
+
+    if (!articles) {
+      return [];
+    }
+
+    return articles.map((post) => ({
+      post: post.slug,
+    }));
+  }
+
+  return [];
 };
 
 const PostPage = async ({ params }: { params: { category: string; post: string } }) => {
