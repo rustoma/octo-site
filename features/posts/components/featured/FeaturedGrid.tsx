@@ -13,6 +13,8 @@ interface FeaturedGridProps {
 }
 
 export const FeaturedGrid = ({ items, isOnDark = false }: FeaturedGridProps) => {
+  if (Array.isArray(items) && !items.length) return null;
+
   const featuredPosts = items.slice(0, 5);
   const [mainPost, ...subPosts] = featuredPosts;
 
