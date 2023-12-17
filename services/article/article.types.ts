@@ -6,7 +6,7 @@ export interface Article {
   id: number;
   title: string;
   slug: string;
-  description: string | null;
+  body: string | null;
   thumbnail: Image | null;
   publicationDate: string | null;
   isPublished: boolean;

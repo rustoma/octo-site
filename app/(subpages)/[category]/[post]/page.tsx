@@ -34,7 +34,7 @@ export const generateStaticParams = async ({ params: { category } }: { params: {
 const PostPage = async ({ params }: { params: { category: string; post: string } }) => {
   const article = await getArticles({ slug: params.post });
   if (!article?.[0]) notFound();
-  const { title, description, category, author } = article[0];
+  const { title, body, category, author } = article[0];
 
   return (
     <Container>
@@ -44,7 +44,7 @@ const PostPage = async ({ params }: { params: { category: string; post: string }
           <div className="post-page__breadcrumbs">
             <Breadcrumbs currentPageTitle={title} />
           </div>
-          <div>{parse(description ?? "")}</div>
+          <div>{parse(body ?? "")}</div>
         </div>
         <div className="post-page__sidebar">
           <TagsCloud />
