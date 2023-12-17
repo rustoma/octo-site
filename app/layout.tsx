@@ -3,6 +3,7 @@ import { Red_Hat_Display } from "next/font/google";
 
 import GoogleAnalytics from "@/components/googleAnalytics/GoogleAnalytics";
 import { WindowDimensionsProvider } from "@/context/WindowDimensionsContext";
+import CookieBanner from "@/features/cookie/components/cookieBanner/CookieBanner";
 
 import "./globals.scss";
 
@@ -27,6 +28,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
       <html lang="pl" className={`${redHatDisplay.variable} light`}>
         <body>
           {children}
+          <CookieBanner />
           <Suspense>
             <GoogleAnalytics />
           </Suspense>
