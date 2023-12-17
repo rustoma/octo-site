@@ -5,7 +5,7 @@ export const BASIC_PAGE_ROUTES = {
   bySlug: (slug: string, filters?: BasicPageBySlugFilters) => {
     const domainId = getDomainId();
 
-    const baseRoute = `/basic-page/slug/${slug}?domainId=${domainId}`;
+    const baseRoute = `/basic-pages/slug/${slug}?domainId=${domainId}`;
 
     if (!filters) return baseRoute;
 
@@ -14,6 +14,6 @@ export const BASIC_PAGE_ROUTES = {
 
     const search = new URLSearchParams(queryParams);
 
-    return `/basic-page/slug/${slug}?${search}`;
+    return `/basic-pages/slug/${slug}?${search}`;
   },
 };
