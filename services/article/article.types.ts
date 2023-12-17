@@ -19,6 +19,7 @@ export interface Article {
 }
 
 export interface ArticleFilters {
+  domainId?: string;
   categoryId?: string;
   limit?: string;
   offset?: string;

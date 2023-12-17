@@ -12,4 +12,5 @@ export const CATEGORY_ROUTES = {
     const search = new URLSearchParams(queryParams);
     return `${baseRoute}?${search}`;
   },
+  byDomain: (domainId: number | string) => `/domain-categories/${domainId}`,
 };
