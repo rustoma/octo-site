@@ -11,3 +11,7 @@ export interface BasicPage {
 export interface BasicPageBySlugFilters {
   domainId?: string;
 }
+
+export interface BasicPagesFilters {
+  domainId?: string;
+}
