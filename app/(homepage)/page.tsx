@@ -9,15 +9,18 @@ import { TabGrid } from "@/features/posts/components/tabGrid/TabGrid";
 import { TabItem } from "@/features/tabs/types";
 import { getArticles } from "@/services/article/article.service";
 import { Article } from "@/services/article/article.types";
-import { getCategories } from "@/services/category/category.service";
+import { getCategoriesByDomain } from "@/services/category/category.service";
+import { getDomainId } from "@/utils";
 
 import "./page.style.scss";
 
 export default async function Home() {
+  const domainId = getDomainId();
+
   const articles = await getArticles({ limit: "5" });
   const featuredArticles = await getArticles({ featured: "true", limit: "5" });
 
-  const categories = await getCategories();
+  const categories = await getCategoriesByDomain(domainId);
   const postByCategories = categories
     ? await Promise.all(categories.map((category) => getArticles({ categoryId: `${category.id}`, limit: "6" })))
     : [];

@@ -5,12 +5,14 @@ import Link from "next/link";
 import { Container } from "@/components/container/Container";
 import { Logo } from "@/components/icons/Logo";
 import { TopNav } from "@/features/nav/topNav/TopNav";
-import { getCategories } from "@/services/category/category.service";
+import { getCategoriesByDomain } from "@/services/category/category.service";
+import { getDomainId } from "@/utils";
 
 import "./header.style.scss";
 
 export const Header = async () => {
-  const categories = await getCategories();
+  const domainId = getDomainId();
+  const categories = await getCategoriesByDomain(domainId);
 
   const categoryMenuItems = categories
     ? categories.map((category) => ({

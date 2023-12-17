@@ -9,28 +9,25 @@ import { LoadMorePosts } from "@/features/posts/components/loadMorePosts/LoadMor
 import { Advertisement } from "@/features/widgets/components/advertisment/Advertisement";
 import { TagsCloud } from "@/features/widgets/components/tagsCloud/TagsCloud";
 import { getArticles } from "@/services/article/article.service";
-import { getCategories } from "@/services/category/category.service";
+import { getCategoriesByDomain } from "@/services/category/category.service";
+import { getDomainId } from "@/utils";
 
 import "./page.style.scss";
 
-export const generateStaticParams = async () => {
-  const categories = await getCategories();
-
-  return categories?.map((category) => ({
-    category: category.slug,
-  }));
-};
-
 const CategoryPage = async ({ params }: { params: { category: string } }) => {
+  const domainId = getDomainId();
+
   const LIMIT = 5;
 
-  const category = await getCategories({ slug: params.category });
-  if (!category?.[0]) return notFound();
-  const articles = await getArticles({ limit: LIMIT.toString(), categoryId: category[0].id.toString() });
+  const categories = await getCategoriesByDomain(domainId);
+  const category = categories?.find((category) => category.slug === params.category);
+
+  if (!category) return notFound();
+  const articles = await getArticles({ limit: LIMIT.toString(), categoryId: category.id.toString() });
 
   return (
     <>
-      <SimpleBanner title={category[0].name} />
+      <SimpleBanner title={category.name} />
       <Container>
         <div className="category-page">
           <div className="category-page__content">
@@ -41,7 +38,7 @@ const CategoryPage = async ({ params }: { params: { category: string } }) => {
             ))}
 
             {articles && articles.length === LIMIT ? (
-              <LoadMorePosts initialOffset={LIMIT} limit={5} category={category[0].id} />
+              <LoadMorePosts initialOffset={LIMIT} limit={5} category={category.id} />
             ) : null}
 
             <div className="category-page__content-advertisement">

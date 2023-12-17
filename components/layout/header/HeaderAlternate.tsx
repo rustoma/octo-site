@@ -3,10 +3,24 @@ import Link from "next/link";
 
 import { Logo } from "@/components/icons/Logo";
 import { TopNav } from "@/features/nav/topNav/TopNav";
+import { getCategoriesByDomain } from "@/services/category/category.service";
+import { getDomainId } from "@/utils";
 
 import "./headerAlternate.style.scss";
 
-export const HeaderAlternate = () => {
+export const HeaderAlternate = async () => {
+  const domainId = getDomainId();
+  const categories = await getCategoriesByDomain(domainId);
+
+  const categoryMenuItems = categories
+    ? categories.map((category) => ({
+        id: category.id,
+        title: category.name,
+        href: `/${category.slug}`,
+        items: [],
+      }))
+    : [];
+
   return (
     <header className="header-alternate">
       <div className="header-alternate__logo">
@@ -28,6 +42,7 @@ export const HeaderAlternate = () => {
             href: "/o-nas",
             items: [],
           },
+          ...categoryMenuItems,
           {
             id: "kontakt",
             title: "Kontakt",

@@ -1,12 +1,15 @@
 import React from "react";
 import Link from "next/link";
 
-import { getCategories } from "@/services/category/category.service";
+import { getCategoriesByDomain } from "@/services/category/category.service";
+import { getDomainId } from "@/utils";
 
 import "./tagsCloud.style.scss";
 
 export const TagsCloud = async () => {
-  const categories = await getCategories();
+  const domainId = getDomainId();
+
+  const categories = await getCategoriesByDomain(domainId);
   if (!categories) return null;
 
   return (
