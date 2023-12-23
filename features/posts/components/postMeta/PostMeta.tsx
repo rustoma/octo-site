@@ -9,10 +9,12 @@ import "./postMeta.style.scss";
 
 interface PostMetaProps {
   author: Author;
+  date: string;
+  readingTime?: number;
   isOnDark?: boolean;
 }
 
-export const PostMeta = ({ author, isOnDark = false }: PostMetaProps) => {
+export const PostMeta = ({ author, date, readingTime, isOnDark = false }: PostMetaProps) => {
   const { firstName, lastName, imageUrl } = author;
 
   return (
@@ -26,7 +28,7 @@ export const PostMeta = ({ author, isOnDark = false }: PostMetaProps) => {
             "post-meta__author-name",
             isOnDark && "post-meta__author-name--light"
           )}>{`${firstName} ${lastName}`}</h6>
-        <PostMetaList isOnDark={isOnDark} date="January 20, 2021" readingTime={4} />
+        <PostMetaList isOnDark={isOnDark} date={date} readingTime={readingTime} />
       </div>
     </div>
   );

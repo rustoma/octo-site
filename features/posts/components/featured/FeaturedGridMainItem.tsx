@@ -37,7 +37,12 @@ export const FeaturedGridMainItem = ({ item, isOnDark = false }: FeaturedGridMai
           <Link href={`/${category.slug}/${slug}`}>{title}</Link>
         </h4>
         <div className="featured-grid__post-meta-wrapper">
-          <PostMeta author={author} isOnDark={isOnDark} />
+          <PostMeta
+            author={author}
+            isOnDark={isOnDark}
+            readingTime={item.readingTime ?? undefined}
+            date={item.updatedAt}
+          />
         </div>
       </div>
     </div>

@@ -11,14 +11,16 @@ interface PostBannerProps {
   title: string;
   category: CategoryType;
   author: Author;
+  date: string;
+  readingTime?: number;
 }
 
-export const PostBanner = ({ title, category, author }: PostBannerProps) => {
+export const PostBanner = ({ title, category, author, date, readingTime }: PostBannerProps) => {
   return (
     <div className="post-banner">
       <Category name={category.name} url={`/${category.slug}`} />
       <h1 className="post-banner__title">{title}</h1>
-      <PostMeta author={author} />
+      <PostMeta author={author} date={date} readingTime={readingTime} />
     </div>
   );
 };

@@ -14,6 +14,7 @@ export interface Article {
   category: Category;
   domainId: number;
   featured: boolean;
+  readingTime: number | null;
   createdAt: string;
   updatedAt: string;
 }

@@ -34,13 +34,19 @@ export const generateStaticParams = async ({ params: { category } }: { params: {
 const PostPage = async ({ params }: { params: { category: string; post: string } }) => {
   const article = await getArticles({ slug: params.post });
   if (!article?.[0]) notFound();
-  const { title, body, category, author } = article[0];
+  const { title, body, category, author, readingTime, updatedAt } = article[0];
 
   return (
     <Container>
       <div className="post-page">
         <div className="post-page__content">
-          <PostBanner title={title} category={category} author={author} />
+          <PostBanner
+            title={title}
+            category={category}
+            author={author}
+            readingTime={readingTime ?? undefined}
+            date={updatedAt}
+          />
           <div className="post-page__breadcrumbs">
             <Breadcrumbs currentPageTitle={title} />
           </div>
