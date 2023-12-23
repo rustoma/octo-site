@@ -7,16 +7,38 @@
   &__logo {
     display: flex;
     align-items: center;
-    margin-right: 48px;
+    flex-wrap: wrap;
   }
+
   &__wrapper {
     justify-content: space-between;
   }
 
+  &__logo {
+    margin-right: 48px;
+    @include respond-below(xl) {
+      max-width: 200px;
+    }
+  }
+
+  &__nav {
+    @include respond-below(xl) {
+      flex: 1;
+      margin-right: 0;
+    }
+
+    @include respond-below(lg) {
+      justify-content: center;
+    }
+  }
+
   &__copyright {
-    margin: 0;
     color: useThemeVariable($--color-midgray);
     font-size: useThemeVariable($--font-size-b3);
     line-height: useThemeVariable($--line-height-b3);
+
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
   }
 }

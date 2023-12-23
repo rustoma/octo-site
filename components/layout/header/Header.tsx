@@ -71,9 +71,12 @@ export const Header = async () => {
       <div className="header-middle">
         <Container>
           <div className="header-middle__wrapper">
-            <Link href="/">
-              <Logo />
-            </Link>
+            <div className="header-middle__logo">
+              <Link href="/">
+                <Logo />
+              </Link>
+            </div>
+
             <div className="header-middle__advertisement">
               <Image src="/img/jpg/advertisement.jpg" alt="reklama" width={728} height={92} />
             </div>

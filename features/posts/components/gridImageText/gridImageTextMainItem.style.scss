@@ -39,6 +39,14 @@
     overflow: hidden;
     border-radius: useThemeVariable($--radius);
     flex: 1;
+
+    @include respond-below(xl) {
+      @include aspect-3-2;
+    }
+
+    @include respond-below(md) {
+      @include aspect-1-1;
+    }
   }
 
   &__main-item-title {

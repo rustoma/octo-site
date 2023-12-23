@@ -3,5 +3,10 @@
     display: flex;
     flex-wrap: wrap;
     margin: -10px;
+    padding: 0;
+
+    @include respond-below(lg) {
+      justify-content: center;
+    }
   }
 }

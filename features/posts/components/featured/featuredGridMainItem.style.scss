@@ -22,6 +22,10 @@
     overflow: hidden;
     border-radius: useThemeVariable($--radius);
     height: 500px;
+
+    @include respond-below(xl) {
+      @include aspect-1-1;
+    }
   }
 
   &__main-item-content {

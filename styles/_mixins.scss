@@ -3,3 +3,23 @@
     #{$key}: $value;
   }
 }
+
+@mixin common-aspect-ratio-styles {
+  width: 100%;
+  height: 0;
+}
+
+@mixin aspect-1-1 {
+  @include common-aspect-ratio-styles;
+  padding-bottom: 100%;
+}
+
+@mixin aspect-3-2 {
+  @include common-aspect-ratio-styles;
+  padding-bottom: 66.66%;
+}
+
+@mixin aspect-16-9 {
+  @include common-aspect-ratio-styles;
+  padding-bottom: 56.25%;
+}

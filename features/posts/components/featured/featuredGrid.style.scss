@@ -4,6 +4,10 @@
   padding: 80px 0;
   background-color: useThemeVariable($--color-extra04);
 
+  @include respond-below(md) {
+    padding: 45px 0;
+  }
+
   &__title {
     margin-bottom: 0;
     color: useThemeVariable($--color-white);
@@ -22,9 +26,17 @@
   &__wrapper {
     margin-top: 30px;
     @extend %half-page-wrapper;
+
+    @include respond-below(xl) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
   }
 
   &__sub-items-wrapper {
     @extend %half-page-sub-items-wrapper;
+
+    @include respond-below(md) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
   }
 }

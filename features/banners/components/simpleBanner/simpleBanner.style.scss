@@ -1,4 +1,8 @@
 .simple-banner {
   padding: 80px 0;
   background-color: useThemeVariable($--color-lightest);
+
+  @include respond-below(md) {
+    padding: 45px 0;
+  }
 }

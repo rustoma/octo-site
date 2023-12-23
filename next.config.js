@@ -49,6 +49,7 @@ const nextConfig = {
     @import "styles/variables";
     @import "styles/media-queries";
     @import "styles/extend";
+    @import "styles/mixins";
     `,
   },
 };

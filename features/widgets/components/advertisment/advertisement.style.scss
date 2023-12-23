@@ -1,4 +1,8 @@
 .advertisement-widget {
   background: useThemeVariable($--color-extra03);
   padding: 30px;
+
+  @include respond-below(lg) {
+    display: none;
+  }
 }

@@ -22,11 +22,13 @@ export const HamburgerMenu = ({ menuTree }: HamburgerMenuProps) => {
   }, [path]);
 
   return (
-    <div className={clsx("hamburger-menu", isOpen && "hamburger-menu--open")}>
-      <HamburgerButton isOpen={isOpen} setIsOpen={setIsOpen} />
-      <nav className={clsx("hamburger-menu__navigation", isOpen && "hamburger-menu__navigation--open")}>
-        <MobileMenu menuTree={menuTree} isOpen={isOpen} />
-      </nav>
-    </div>
+    <>
+      <div className={clsx("hamburger-menu", isOpen && "hamburger-menu--open")}>
+        <HamburgerButton isOpen={isOpen} setIsOpen={setIsOpen} />
+        <nav className={clsx("hamburger-menu__navigation", isOpen && "hamburger-menu__navigation--open")}>
+          <MobileMenu menuTree={menuTree} isOpen={isOpen} />
+        </nav>
+      </div>
+    </>
   );
 };

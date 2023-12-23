@@ -1,10 +1,14 @@
 .grid-it {
   $block: grid-it;
   background-color: useThemeVariable($--color-lightest);
-  padding: 30px;
+  padding: 30px 0;
 
   &__wrapper {
     @extend %half-page-wrapper;
+
+    @include respond-below(xl) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
   }
 
   &__item {
@@ -19,6 +23,10 @@
 
   &__sub-items-wrapper {
     @extend %half-page-sub-items-wrapper;
+
+    @include respond-below(md) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
   }
 
   &__category {

@@ -11,9 +11,7 @@ export const TabGridItems = ({ items }: TabGridItemsProps) => {
   return (
     <div>
       {items.map((item) => (
-        <div key={item.id}>
-          <TabGridItem item={item} />
-        </div>
+        <TabGridItem key={item.id} item={item} />
       ))}
     </div>
   );

@@ -7,6 +7,19 @@
   gap: 20px;
   min-height: 250px;
 
+  @include respond-below(xl) {
+    grid-template-columns: 225px 1fr;
+  }
+
+  @include respond-below(lg) {
+    grid-template-columns: 295px 1fr;
+  }
+
+  @include respond-below(md) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 0;
+  }
+
   &:hover {
     img {
       transform: useThemeVariable($--image-scale);
@@ -33,6 +46,16 @@
     position: relative;
     overflow: hidden;
     border-radius: useThemeVariable($--radius);
+
+    @include respond-below(md) {
+      border-radius: useThemeVariable($--radius) useThemeVariable($--radius) 0 0;
+    }
+
+    a {
+      @include respond-below(md) {
+        @include aspect-16-9;
+      }
+    }
   }
 
   &__content {
@@ -43,6 +66,11 @@
     padding: 32px 30px;
     border-radius: useThemeVariable($--radius);
     transition: useThemeVariable($--transition);
+
+    @include respond-below(md) {
+      border-radius: 0 0 useThemeVariable($--radius) useThemeVariable($--radius);
+      padding: 32px 20px;
+    }
     .category {
       margin-bottom: 15px;
     }

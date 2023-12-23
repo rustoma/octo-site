@@ -24,7 +24,10 @@
     position: relative;
     border-radius: useThemeVariable($--radius);
     overflow: hidden;
-    width: 285px;
-    height: 190px;
+    @include aspect-3-2;
+
+    @include respond-below(md) {
+      @include aspect-16-9;
+    }
   }
 }

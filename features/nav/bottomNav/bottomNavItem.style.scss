@@ -1,4 +1,8 @@
 .bottom-nav {
+  @include respond-below(lg) {
+    margin-top: 20px;
+  }
+
   &__list-item {
     margin: 10px;
 
