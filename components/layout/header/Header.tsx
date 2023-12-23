@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { Container } from "@/components/container/Container";
 import { Logo } from "@/components/icons/Logo";
+import { HamburgerMenu } from "@/features/nav/mobileMenu/hamburgerMenu/HamburgerMenu";
 import { TopNav } from "@/features/nav/topNav/TopNav";
 import { getCategoriesByDomain } from "@/services/category/category.service";
 import { getDomainId } from "@/utils";
@@ -28,6 +29,28 @@ export const Header = async () => {
     return `${date.getDate()} ${date.toLocaleString("pl-Pl", { month: "long" })} ${date.getFullYear()}`;
   };
 
+  const menuTree = [
+    {
+      id: "Home",
+      title: "Home",
+      href: "/",
+      items: [],
+    },
+    {
+      id: "o-nas",
+      title: "O nas",
+      href: "/o-nas",
+      items: [],
+    },
+    ...categoryMenuItems,
+    {
+      id: "kontakt",
+      title: "Kontakt",
+      href: "/kontakt",
+      items: [],
+    },
+  ];
+
   return (
     <header className="header">
       <div className="header-top">
@@ -51,34 +74,15 @@ export const Header = async () => {
             <Link href="/">
               <Logo />
             </Link>
-            <Image src="/img/jpg/advertisement.jpg" alt="reklama" width={728} height={92} />
+            <div className="header-middle__advertisement">
+              <Image src="/img/jpg/advertisement.jpg" alt="reklama" width={728} height={92} />
+            </div>
           </div>
         </Container>
       </div>
       <Container>
-        <TopNav
-          menuTree={[
-            {
-              id: "Home",
-              title: "Home",
-              href: "/",
-              items: [],
-            },
-            {
-              id: "o-nas",
-              title: "O nas",
-              href: "/o-nas",
-              items: [],
-            },
-            ...categoryMenuItems,
-            {
-              id: "kontakt",
-              title: "Kontakt",
-              href: "/kontakt",
-              items: [],
-            },
-          ]}
-        />
+        <TopNav menuTree={menuTree} />
+        <HamburgerMenu menuTree={menuTree} />
       </Container>
     </header>
   );

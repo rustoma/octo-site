@@ -2,6 +2,11 @@
   .header-top {
     background-color: useThemeVariable($--color-lightest);
     padding: 12px 0;
+
+    @include respond-below(xl) {
+      padding: 20px 0;
+    }
+
     &__wrapper {
       display: flex;
       align-items: center;
@@ -43,6 +48,13 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+    }
+
+    &__advertisement {
+      margin-left: 30px;
+      img {
+        max-width: 100%;
+      }
     }
   }
 }
