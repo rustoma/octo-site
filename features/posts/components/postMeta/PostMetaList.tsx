@@ -22,7 +22,7 @@ const PostMetaListDate = ({ date }: { date: string }) => {
 };
 const PostMetaListReadingTime = ({ readingTime }: { readingTime: number }) => (
   <li className="post-meta-list__reading-time">
-    {readingTime < 1 && "mniej niż minuta czytania"}
+    {readingTime < 1 && "minuta czytania"}
     {readingTime >= 1 && `${readingTime} minut czytania`}
   </li>
 );

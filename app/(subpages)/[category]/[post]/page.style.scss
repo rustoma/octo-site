@@ -5,7 +5,8 @@
   gap: 30px;
   padding: 80px 0;
 
-  @include respond-below(md) {
+  @include respond-below(lg) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
     padding: 45px 0;
   }
 
@@ -28,5 +29,9 @@
   &__breadcrumbs {
     margin: 12px 0 40px;
     padding: 20px 0;
+
+    @include respond-below(lg) {
+      margin: 12px 0;
+    }
   }
 }

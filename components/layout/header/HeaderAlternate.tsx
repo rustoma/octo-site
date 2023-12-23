@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import { Logo } from "@/components/icons/Logo";
+import { HamburgerMenu } from "@/features/nav/mobileMenu/hamburgerMenu/HamburgerMenu";
 import { TopNav } from "@/features/nav/topNav/TopNav";
 import { getCategoriesByDomain } from "@/services/category/category.service";
 import { getDomainId } from "@/utils";
@@ -21,6 +22,28 @@ export const HeaderAlternate = async () => {
       }))
     : [];
 
+  const menuTree = [
+    {
+      id: "Home",
+      title: "Home",
+      href: "/",
+      items: [],
+    },
+    {
+      id: "o-nas",
+      title: "O nas",
+      href: "/o-nas",
+      items: [],
+    },
+    ...categoryMenuItems,
+    {
+      id: "kontakt",
+      title: "Kontakt",
+      href: "/kontakt",
+      items: [],
+    },
+  ];
+
   return (
     <header className="header-alternate">
       <div className="header-alternate__logo">
@@ -28,29 +51,8 @@ export const HeaderAlternate = async () => {
           <Logo />
         </Link>
       </div>
-      <TopNav
-        menuTree={[
-          {
-            id: "Home",
-            title: "Home",
-            href: "/",
-            items: [],
-          },
-          {
-            id: "o-nas",
-            title: "O nas",
-            href: "/o-nas",
-            items: [],
-          },
-          ...categoryMenuItems,
-          {
-            id: "kontakt",
-            title: "Kontakt",
-            href: "/kontakt",
-            items: [],
-          },
-        ]}
-      />
+      <TopNav menuTree={menuTree} />
+      <HamburgerMenu menuTree={menuTree} />
     </header>
   );
 };

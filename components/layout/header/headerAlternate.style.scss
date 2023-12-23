@@ -4,10 +4,27 @@
   padding: 0 30px;
   box-shadow: useThemeVariable($--shadow-primary);
 
+  @include respond-below(lg) {
+    padding: 20px 30px;
+    height: 62px;
+  }
+
   &__logo {
     display: flex;
     align-items: center;
     max-width: 205px;
     margin-right: 100px;
+
+    @include respond-below(lg) {
+      height: 42px;
+
+      a {
+        height: 100%;
+      }
+    }
+
+    a {
+      display: flex;
+    }
   }
 }
