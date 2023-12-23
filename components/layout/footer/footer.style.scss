@@ -19,6 +19,10 @@
     @include respond-below(xl) {
       max-width: 200px;
     }
+
+    @include respond-below(lg) {
+      margin-right: 0;
+    }
   }
 
   &__nav {

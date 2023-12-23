@@ -1,4 +1,10 @@
 .bottom-nav {
+  @include respond-below(lg) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;
