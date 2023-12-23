@@ -5,7 +5,7 @@
   box-shadow: useThemeVariable($--shadow-primary);
 
   @include respond-below(lg) {
-    padding: 20px 30px;
+    padding: 20px 15px;
     height: 62px;
   }
 
