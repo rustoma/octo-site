@@ -50,6 +50,9 @@ const nextConfig = {
     @import "styles/media-queries";
     @import "styles/extend";
     @import "styles/mixins";
+    @import ${
+      process.env.THEME !== "" && process.env.THEME !== undefined ? `"styles/${process.env.THEME}"` : '"styles/theme"'
+    };
     `,
   },
 };
