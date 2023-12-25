@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
@@ -29,6 +30,8 @@ const contactFormSchema = z.object({
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export const ContactForm = () => {
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [isSuccess, setIsSuccess] = useState<boolean | undefined>(undefined);
@@ -55,7 +58,19 @@ export const ContactForm = () => {
       setIsLoading(true);
       setIsSuccess(undefined);
       setIsError(false);
-      await sendEmail({ subject: `Wiadomość ze strony ${window.location.hostname} z podstrony kontakt`, body: data });
+
+      if (!executeRecaptcha) {
+        console.log("Recaptcha not available yet");
+        setIsError(true);
+        return;
+      }
+
+      const gRecaptchaToken = await executeRecaptcha("contactForm");
+
+      await sendEmail({
+        subject: `Wiadomość ze strony ${window.location.hostname} z podstrony kontakt`,
+        body: { ...data, gRecaptchaToken },
+      });
 
       setIsSuccess(true);
 

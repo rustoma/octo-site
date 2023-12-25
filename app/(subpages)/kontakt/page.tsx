@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { Container } from "@/components/container/Container";
 import { SimpleBanner } from "@/features/banners/components/simpleBanner/SimpleBanner";
+import { GoogleCaptchaWrapper } from "@/features/captcha/context/CaptchaProvider";
 import { ContactForm } from "@/features/forms/components/contactForm/ContactForm";
 import { Advertisement } from "@/features/widgets/components/advertisment/Advertisement";
 import { TagsCloud } from "@/features/widgets/components/tagsCloud/TagsCloud";
@@ -23,7 +24,7 @@ const ContactPage = async () => {
   const domain = await getDomain(domainId);
 
   return (
-    <>
+    <GoogleCaptchaWrapper>
       <SimpleBanner title={page.title} />
       <Container>
         <div className="contact-page">
@@ -43,7 +44,7 @@ const ContactPage = async () => {
           </div>
         </div>
       </Container>
-    </>
+    </GoogleCaptchaWrapper>
   );
 };
 
