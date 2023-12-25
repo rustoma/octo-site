@@ -1,0 +1,58 @@
+.checkbox {
+  display: inline-block;
+  &--disabled {
+    cursor: not-allowed;
+  }
+
+  &--checked {
+    background-color: useThemeVariable($--color-primary);
+  }
+
+  &--error {
+    border-color: useThemeVariable($--color-danger);
+  }
+
+  &__label-root {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+  }
+
+  &__root {
+    width: 30px;
+    height: 30px;
+    border-radius: useThemeVariable($--radius);
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    border: 2px solid useThemeVariable($--color-border);
+    color: useThemeVariable($--color-body);
+  }
+
+  &__icon {
+    height: 16px;
+    width: 16px;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 12px;
+    opacity: 0;
+    fill: useThemeVariable($--color-primary);
+    &--checked {
+      opacity: 100%;
+      fill: useThemeVariable($--color-white);
+    }
+  }
+
+  &--hidden {
+    display: none;
+  }
+
+  &__label {
+    user-select: none;
+    margin-left: 16px;
+  }
+}

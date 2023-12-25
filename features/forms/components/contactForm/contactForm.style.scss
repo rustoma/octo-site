@@ -1,0 +1,58 @@
+.contact-form {
+  margin-top: 80px;
+
+  @include respond-below(md) {
+    margin-top: 45px;
+  }
+
+  &__content {
+    margin-bottom: 50px;
+
+    @include respond-below(md) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__content-heading {
+    margin-bottom: 10px;
+  }
+
+  &__content-body {
+    font-size: useThemeVariable($--font-size-b3);
+    line-height: useThemeVariable($--line-height-b3);
+  }
+
+  &__input-group {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+
+    @include respond-below(md) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 15px;
+    }
+  }
+
+  &__input-group-item--fit,
+  &__info {
+    grid-column: 1 / -1;
+  }
+
+  &__actions {
+    text-align: right;
+    grid-column-start: 3;
+    @include respond-below(md) {
+      grid-column-start: 1;
+    }
+  }
+
+  &__info-message {
+    &--success {
+      color: useThemeVariable($--color-success);
+    }
+
+    &--error {
+      color: useThemeVariable($--color-danger);
+    }
+  }
+}

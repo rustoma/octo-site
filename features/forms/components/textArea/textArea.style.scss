@@ -1,0 +1,13 @@
+.text-area {
+  padding: 20px;
+  height: auto;
+
+  &--resize-disabled {
+    resize: none;
+  }
+
+  &--autosize {
+    overflow: hidden;
+    resize: none;
+  }
+}

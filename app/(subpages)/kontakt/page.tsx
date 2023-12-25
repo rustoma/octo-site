@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 
 import { Container } from "@/components/container/Container";
 import { SimpleBanner } from "@/features/banners/components/simpleBanner/SimpleBanner";
+import { ContactForm } from "@/features/forms/components/contactForm/ContactForm";
 import { Advertisement } from "@/features/widgets/components/advertisment/Advertisement";
 import { TagsCloud } from "@/features/widgets/components/tagsCloud/TagsCloud";
 import { getBasicPageBySlug } from "@/services/basicPage/basicPage.service";
@@ -33,6 +34,8 @@ const ContactPage = async () => {
                 Email: <a href={`mailto:${domain.email}`}>{domain?.email}</a>
               </div>
             )}
+
+            <ContactForm />
           </div>
           <div className="contact-page__sidebar">
             <TagsCloud />
