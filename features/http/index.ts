@@ -27,7 +27,7 @@ class HttpService {
     return this.defaultHeadersConfig;
   }
 
-  request(method: Method, url: string, body: BodyInit | null = null, options: Options = {}) {
+  request(method: Method, url: string, body: Record<string, unknown> | null = null, options: Options = {}) {
     const { controller, requestTimeout } = options;
 
     const internalController = controller ?? new AbortController();
@@ -44,7 +44,7 @@ class HttpService {
     };
 
     if (body) {
-      config.body = body;
+      config.body = JSON.stringify(body);
     }
 
     return this.instance(url, config);
@@ -54,15 +54,15 @@ class HttpService {
     return this.request("GET", url, null, options);
   }
 
-  post(url: string, body: BodyInit, options: Options = {}) {
+  post(url: string, body: Record<string, unknown>, options: Options = {}) {
     return this.request("POST", url, body, options);
   }
 
-  put(url: string, body: BodyInit, options: Options = {}) {
+  put(url: string, body: Record<string, unknown>, options: Options = {}) {
     return this.request("PUT", url, body, options);
   }
 
-  delete(url: string, options: Options = {}) {
+  delete(url: string, options: Record<string, unknown> = {}) {
     return this.request("DELETE", url, null, options);
   }
 }

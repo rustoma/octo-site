@@ -11,6 +11,7 @@ import { Checkbox } from "@/features/forms/components/checkbox/Checkbox";
 import { Input } from "@/features/forms/components/input/Input";
 import { TextArea } from "@/features/forms/components/textArea/TextArea";
 import { VALIDATORS } from "@/features/forms/utils/validators";
+import { sendEmail } from "@/services/email/email.service";
 
 import "./contactForm.style.scss";
 
@@ -45,6 +46,7 @@ export const ContactForm = () => {
       phone: "",
       email: "",
       consent: false,
+      sf: "",
     },
   });
 
@@ -53,8 +55,7 @@ export const ContactForm = () => {
       setIsLoading(true);
       setIsSuccess(undefined);
       setIsError(false);
-
-      // await editProductCategory(apiClient)({ ...category, ...data });
+      await sendEmail({ subject: `Wiadomość ze strony ${window.location.hostname} z podstrony kontakt`, body: data });
 
       setIsSuccess(true);
 
@@ -135,7 +136,6 @@ export const ContactForm = () => {
             <Button type="submit" loading={isLoading} disabled={isLoading}>
               Wyślij
             </Button>
-            {isLoading && <div>Loading...</div>}
           </div>
 
           <div className="contact-form__info">
