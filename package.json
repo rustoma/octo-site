@@ -20,6 +20,7 @@
     "package.json": "npx sort-package-json"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.2",
     "@types/node": "20.2.1",
     "@types/react": "18.2.45",
     "@types/react-dom": "18.2.18",
@@ -28,7 +29,9 @@
     "next": "14.0.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sharp": "^0.32.1"
+    "react-hook-form": "^7.49.2",
+    "sharp": "^0.32.1",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "@types/lodash.debounce": "^4.0.7",
