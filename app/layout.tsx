@@ -16,6 +16,7 @@ const redHatDisplay = Red_Hat_Display({
 });
 
 export const metadata = {
+  metadataBase: new URL(process.env.FRONTEND_HOST ?? ""),
   title: "Octo - new universe",
   openGraph: {
     images: "/octo-social.jpg",

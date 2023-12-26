@@ -9,7 +9,9 @@ export const generateStaticParams = async () => {
 
   const categories = await getCategoriesByDomain(process.env.DOMAIN_ID);
 
-  return categories?.map((category) => ({
+  if (!categories) return [];
+
+  return categories.map((category) => ({
     category: category.slug,
   }));
 };
