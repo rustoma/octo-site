@@ -13,6 +13,18 @@ import { getDomainId } from "@/utils";
 
 import "./page.style.scss";
 
+export const metadata = {
+  metadataBase: new URL(process.env.FRONTEND_HOST ?? ""),
+  title: `Kontakt | ${new Date().getFullYear()} - ${process.env.DOMAIN_NAME}`,
+  description: undefined,
+  alternates: {
+    canonical: "/kontakt",
+  },
+  openGraph: {
+    images: "/img/jpg/social.jpg",
+  },
+};
+
 const ContactPage = async () => {
   const domainId = getDomainId();
   const page = await getBasicPageBySlug("contact");

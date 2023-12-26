@@ -8,6 +8,18 @@ import { getBasicPageBySlug } from "@/services/basicPage/basicPage.service";
 
 import "./page.style.scss";
 
+export const metadata = {
+  metadataBase: new URL(process.env.FRONTEND_HOST ?? ""),
+  title: `Polityka prywatności | ${new Date().getFullYear()} - ${process.env.DOMAIN_NAME}`,
+  description: undefined,
+  alternates: {
+    canonical: "/polityka-prywatności",
+  },
+  openGraph: {
+    images: "/img/jpg/social.jpg",
+  },
+};
+
 const PrivacyPolicyPage = async () => {
   const page = await getBasicPageBySlug("privacy-policy");
 

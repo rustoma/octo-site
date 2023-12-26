@@ -1,4 +1,5 @@
 import React from "react";
+import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
@@ -13,6 +14,22 @@ import { getCategoriesByDomain } from "@/services/category/category.service";
 import { getDomainId } from "@/utils";
 
 import "./page.style.scss";
+
+export async function generateMetadata({ params }: { params: { category: string } }): Promise<Metadata> {
+  const { category } = params;
+
+  return {
+    metadataBase: new URL(process.env.FRONTEND_HOST ?? ""),
+    title: `${category} | ${new Date().getFullYear()} - ${process.env.DOMAIN_NAME}`,
+    description: undefined,
+    alternates: {
+      canonical: category,
+    },
+    openGraph: {
+      images: "/img/jpg/social.jpg",
+    },
+  };
+}
 
 const CategoryPage = async ({ params }: { params: { category: string } }) => {
   const domainId = getDomainId();

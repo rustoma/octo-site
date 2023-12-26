@@ -14,6 +14,12 @@ import { getDomainId } from "@/utils";
 
 import "./page.style.scss";
 
+export const metadata = {
+  alternates: {
+    canonical: "",
+  },
+};
+
 export default async function Home() {
   const domainId = getDomainId();
 

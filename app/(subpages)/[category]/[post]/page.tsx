@@ -1,5 +1,6 @@
 import React from "react";
 import parse from "html-react-parser";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { Container } from "@/components/container/Container";
@@ -30,6 +31,27 @@ export const generateStaticParams = async ({ params: { category } }: { params: {
 
   return [];
 };
+
+export async function generateMetadata({ params }: { params: { post: string } }): Promise<Metadata> {
+  const { post } = params;
+  const article = await getArticles({ slug: post });
+
+  if (!article?.[0]) return {};
+
+  const { title, slug } = article[0];
+
+  return {
+    metadataBase: new URL(process.env.FRONTEND_HOST ?? ""),
+    title: `${title} | ${new Date().getFullYear()} - ${process.env.DOMAIN_NAME}`,
+    description: undefined,
+    alternates: {
+      canonical: slug,
+    },
+    openGraph: {
+      images: "/img/jpg/social.jpg",
+    },
+  };
+}
 
 const PostPage = async ({ params }: { params: { category: string; post: string } }) => {
   const article = await getArticles({ slug: params.post });
