@@ -72,7 +72,7 @@ export const Header = async () => {
         <Container>
           <div className="header-middle__wrapper">
             <div className="header-middle__logo">
-              <Link href="/">
+              <Link href="/" aria-label="Logo - move to homepage">
                 <Logo />
               </Link>
             </div>

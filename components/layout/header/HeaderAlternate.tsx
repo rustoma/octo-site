@@ -47,7 +47,7 @@ export const HeaderAlternate = async () => {
   return (
     <header className="header-alternate">
       <div className="header-alternate__logo">
-        <Link href="/">
+        <Link href="/" aria-label="Logo - move to homepage">
           <Logo />
         </Link>
       </div>

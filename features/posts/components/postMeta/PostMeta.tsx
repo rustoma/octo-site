@@ -23,11 +23,11 @@ export const PostMeta = ({ author, date, readingTime, isOnDark = false }: PostMe
         <Avatar imageUrl={imageUrl} />
       </div>
       <div className="post-meta__content">
-        <h6
+        <h4
           className={clsx(
-            "post-meta__author-name",
+            "post-meta__author-name h6",
             isOnDark && "post-meta__author-name--light"
-          )}>{`${firstName} ${lastName}`}</h6>
+          )}>{`${firstName} ${lastName}`}</h4>
         <PostMetaList isOnDark={isOnDark} date={date} readingTime={readingTime} />
       </div>
     </div>

@@ -13,7 +13,7 @@ export const Footer = () => {
       <Container>
         <div className="footer__wrapper">
           <div className="footer__nav">
-            <Link href="/" className="footer__logo">
+            <Link href="/" className="footer__logo" aria-label="Logo - move to homepage">
               <Logo />
             </Link>
             <BottomNav

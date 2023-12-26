@@ -3,7 +3,26 @@ const path = require("path");
 
 const nextConfig = {
   images: {
-    domains: ["localhost", "picsum.photos", "thispersondoesnotexist.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "picsum.photos",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "thispersondoesnotexist.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "8080",
+        pathname: "/**",
+      },
+    ],
   },
   async headers() {
     return [

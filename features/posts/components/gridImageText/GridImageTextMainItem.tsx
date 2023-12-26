@@ -21,13 +21,15 @@ export const GridImageTextMainItem = ({ item }: GridImageTextMainItemProps) => {
             alt={item.title}
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}
+            sizes="(max-width: 767px) 100vw, (max-width: 991px) 690px, (max-width: 1199px) 930px, 600px"
+            priority
           />
         )}
       </Link>
 
       <div className="grid-it__main-item-content">
         <Category url={`/${item.category.slug}`} name={item.category.name} />
-        <h3 className="grid-it__title grid-it__main-item-title">
+        <h3 className="grid-it__title grid-it__main-item-title h5">
           <Link href={`/${item.category.slug}/${item.slug}`}>{item.title}</Link>
         </h3>
       </div>

@@ -25,6 +25,7 @@ export const ListViewItem = ({ item }: ListViewItemProps) => {
               alt={item.title}
               fill
               style={{ objectFit: "cover", objectPosition: "center" }}
+              sizes="(max-width: 767px) 100vw, 300px"
             />
           </Link>
         )}
@@ -32,9 +33,9 @@ export const ListViewItem = ({ item }: ListViewItemProps) => {
       <div className="list-view-item__content">
         <div>
           <Category url={`/${category.slug}`} name={category.name} />
-          <h4 className="list-view-item__title">
+          <h3 className="list-view-item__title h4">
             <Link href={`/${category.slug}/${slug}`}>{title}</Link>
-          </h4>
+          </h3>
         </div>
 
         <div className="list-view-item__post-meta">

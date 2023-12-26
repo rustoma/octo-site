@@ -26,6 +26,7 @@ export const FeaturedGridMainItem = ({ item, isOnDark = false }: FeaturedGridMai
               alt={item.title}
               fill
               style={{ objectFit: "cover", objectPosition: "center" }}
+              sizes="(max-width: 767px) 100vw, (max-width: 991px) 690px, (max-width: 1199px) 930px, 600px"
             />
           </div>
         )}
@@ -33,9 +34,9 @@ export const FeaturedGridMainItem = ({ item, isOnDark = false }: FeaturedGridMai
 
       <div className="featured-grid__main-item-content">
         <Category url={`/${category.slug}`} name={category.name} />
-        <h4 className="featured-grid__title featured-grid__main-item-title">
+        <h3 className="featured-grid__title featured-grid__main-item-title h4">
           <Link href={`/${category.slug}/${slug}`}>{title}</Link>
-        </h4>
+        </h3>
         <div className="featured-grid__post-meta-wrapper">
           <PostMeta
             author={author}

@@ -43,7 +43,7 @@
   }
 
   &__thumbnail {
-    position: relative;
+    display: flex;
     overflow: hidden;
     border-radius: useThemeVariable($--radius);
 
@@ -52,6 +52,8 @@
     }
 
     a {
+      width: 100%;
+      position: relative;
       @include respond-below(md) {
         @include aspect-16-9;
       }

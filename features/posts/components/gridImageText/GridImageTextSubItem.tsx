@@ -24,14 +24,15 @@ export const GridImageTextSubItem = ({ item, isOnDark = false }: GridImageTextSu
             alt={item.title}
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}
+            sizes="(max-width: 767px) 100vw, (max-width: 991px) 330px, (max-width: 1199px) 450px, 300px"
           />
         )}
       </Link>
       <div className="grid-it__sub-item-content">
         <Category url={`/${item.category.slug}`} name={item.category.name} />
-        <h5 className={clsx("grid-it__title", isOnDark && "grid-it__title--light")}>
+        <h3 className={clsx("grid-it__title h5", isOnDark && "grid-it__title--light")}>
           <Link href={`/${item.category.slug}/${item.slug}`}>{item.title}</Link>
-        </h5>
+        </h3>
       </div>
     </div>
   );

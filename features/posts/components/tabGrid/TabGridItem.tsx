@@ -22,6 +22,7 @@ export const TabGridItem = ({ item }: TabGridItemProps) => {
               alt={item.title}
               fill
               style={{ objectFit: "cover", objectPosition: "center" }}
+              sizes="100px"
             />
           )}
         </Link>
