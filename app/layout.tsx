@@ -3,6 +3,7 @@ import { Red_Hat_Display } from "next/font/google";
 
 import GoogleAnalytics from "@/components/googleAnalytics/GoogleAnalytics";
 import { WindowDimensionsProvider } from "@/context/WindowDimensionsContext";
+import { BackToTop } from "@/features/backToTop/components/BackToTop";
 import CookieBanner from "@/features/cookie/components/cookieBanner/CookieBanner";
 
 import "./globals.scss";
@@ -33,6 +34,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
           <Suspense>
             <GoogleAnalytics />
           </Suspense>
+          <BackToTop />
         </body>
       </html>
     </WindowDimensionsProvider>
