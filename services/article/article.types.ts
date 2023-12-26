@@ -15,6 +15,7 @@ export interface Article {
   domainId: number;
   featured: boolean;
   readingTime: number | null;
+  isSponsored: boolean;
   createdAt: string;
   updatedAt: string;
 }
