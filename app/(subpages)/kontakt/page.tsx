@@ -28,7 +28,7 @@ export const metadata = {
 
 const ContactPage = async () => {
   const domainId = getDomainId();
-  const page = await getBasicPageBySlug("contact");
+  const page = await getBasicPageBySlug("kontakt");
 
   if (!page) {
     return notFound();

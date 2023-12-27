@@ -24,7 +24,7 @@ export const metadata = {
 };
 
 const AboutUsPage = async () => {
-  const page = await getBasicPageBySlug("about-us");
+  const page = await getBasicPageBySlug("o-nas");
 
   if (!page) {
     return notFound();

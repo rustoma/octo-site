@@ -19,21 +19,21 @@ export const Footer = () => {
             <BottomNav
               items={[
                 {
-                  id: "kontakt",
-                  title: "Kontakt",
-                  href: "/kontakt",
+                  id: "regulamin",
+                  title: "Regulamin",
+                  href: "/regulamin",
                   items: [],
                 },
-                // {
-                //   id: "Terms of Use",
-                //   title: "Terms of Use",
-                //   href: "/terms-of-use",
-                //   items: [],
-                // },
                 {
                   id: "polityka-prywatnosci",
                   title: "Polityka prywatności",
                   href: "/polityka-prywatnosci",
+                  items: [],
+                },
+                {
+                  id: "kontakt",
+                  title: "Kontakt",
+                  href: "/kontakt",
                   items: [],
                 },
               ]}

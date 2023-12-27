@@ -10,18 +10,18 @@ import "./page.style.scss";
 
 export const metadata = {
   metadataBase: new URL(process.env.FRONTEND_HOST ?? ""),
-  title: `Polityka prywatności | ${new Date().getFullYear()} - ${process.env.DOMAIN_NAME}`,
+  title: `Regulamin | ${new Date().getFullYear()} - ${process.env.DOMAIN_NAME}`,
   description: undefined,
   alternates: {
-    canonical: "/polityka-prywatności",
+    canonical: "/regulamin",
   },
   openGraph: {
     images: "/img/jpg/social.jpg",
   },
 };
 
-const PrivacyPolicyPage = async () => {
-  const page = await getBasicPageBySlug("polityka-prywatnosci");
+const RegulationsPage = async () => {
+  const page = await getBasicPageBySlug("regulamin");
 
   if (!page) {
     return notFound();
@@ -31,12 +31,12 @@ const PrivacyPolicyPage = async () => {
     <>
       <SimpleBanner title={page.title} />
       <Container>
-        <div className="privacy-policy-page">
-          <div className="privacy-policy-page__content">{parse(page.body ?? "")}</div>
+        <div className="regulations-page">
+          <div className="regulations-page__content">{parse(page.body ?? "")}</div>
         </div>
       </Container>
     </>
   );
 };
 
-export default PrivacyPolicyPage;
+export default RegulationsPage;

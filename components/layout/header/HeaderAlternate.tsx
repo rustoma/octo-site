@@ -70,6 +70,12 @@ export const HeaderAlternate = async () => {
       items: [],
     },
     {
+      id: "regulamin",
+      title: "Regulamin",
+      href: "/regulamin",
+      items: [],
+    },
+    {
       id: "kontakt",
       title: "Kontakt",
       href: "/kontakt",
