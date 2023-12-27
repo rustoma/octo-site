@@ -10,6 +10,12 @@ const nextConfig = {
         port: "8080",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "octopulse.adsvps.pl",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
   async headers() {
