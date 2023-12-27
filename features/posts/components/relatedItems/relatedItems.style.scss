@@ -1,0 +1,26 @@
+.related-items {
+  padding: 80px;
+  background-color: useThemeVariable($--color-extra04);
+  @include respond-below(lg) {
+    padding: 45px 0;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    color: useThemeVariable($--color-white);
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 30px;
+
+    @include respond-below(lg) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @include respond-below(sm) {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+  }
+}

@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/container/Container";
 import { PostBanner } from "@/features/banners/components/postBanner/PostBanner";
 import { Breadcrumbs } from "@/features/breadcrumbs/components/Breadcrumbs";
+import { RelatedItems } from "@/features/posts/components/relatedItems/RelatedItems";
 import { Advertisement } from "@/features/widgets/components/advertisment/Advertisement";
 import { TagsCloud } from "@/features/widgets/components/tagsCloud/TagsCloud";
 import { getArticles } from "@/services/article/article.service";
@@ -56,30 +57,37 @@ export async function generateMetadata({ params }: { params: { post: string } })
 const PostPage = async ({ params }: { params: { category: string; post: string } }) => {
   const article = await getArticles({ slug: params.post });
   if (!article?.[0]) notFound();
+  const articlesFromTheSameCategory = await getArticles({ categoryId: article[0].category.id.toString(), limit: "5" });
+  const relatedArticles = articlesFromTheSameCategory
+    ? articlesFromTheSameCategory.filter((a) => a.id !== article[0].id)
+    : [];
   const { title, body, category, author, readingTime, updatedAt } = article[0];
 
   return (
-    <Container>
-      <div className="post-page">
-        <div className="post-page__content">
-          <PostBanner
-            title={title}
-            category={category}
-            author={author}
-            readingTime={readingTime ?? undefined}
-            date={updatedAt}
-          />
-          <div className="post-page__breadcrumbs">
-            <Breadcrumbs currentPageTitle={title} />
+    <>
+      <Container>
+        <div className="post-page">
+          <div className="post-page__content">
+            <PostBanner
+              title={title}
+              category={category}
+              author={author}
+              readingTime={readingTime ?? undefined}
+              date={updatedAt}
+            />
+            <div className="post-page__breadcrumbs">
+              <Breadcrumbs currentPageTitle={title} />
+            </div>
+            <div>{parse(body ?? "")}</div>
           </div>
-          <div>{parse(body ?? "")}</div>
+          <div className="post-page__sidebar">
+            <TagsCloud />
+            <Advertisement />
+          </div>
         </div>
-        <div className="post-page__sidebar">
-          <TagsCloud />
-          <Advertisement />
-        </div>
-      </div>
-    </Container>
+      </Container>
+      <RelatedItems items={relatedArticles} />
+    </>
   );
 };
 
