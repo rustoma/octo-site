@@ -6,6 +6,7 @@ import { SimpleBanner } from "@/features/banners/components/simpleBanner/SimpleB
 import { GoogleCaptchaWrapper } from "@/features/captcha/context/CaptchaProvider";
 import { ContactForm } from "@/features/forms/components/contactForm/ContactForm";
 import { Advertisement } from "@/features/widgets/components/advertisment/Advertisement";
+import { StickyWidget } from "@/features/widgets/components/stickyWidget/StickyWidget";
 import { TagsCloud } from "@/features/widgets/components/tagsCloud/TagsCloud";
 import { getBasicPageBySlug } from "@/services/basicPage/basicPage.service";
 import { getDomain } from "@/services/domain/domain.service";
@@ -52,7 +53,9 @@ const ContactPage = async () => {
           </div>
           <div className="contact-page__sidebar">
             <TagsCloud />
-            <Advertisement />
+            <StickyWidget>
+              <Advertisement />
+            </StickyWidget>
           </div>
         </div>
       </Container>

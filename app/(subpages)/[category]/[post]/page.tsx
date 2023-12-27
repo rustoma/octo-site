@@ -8,6 +8,8 @@ import { PostBanner } from "@/features/banners/components/postBanner/PostBanner"
 import { Breadcrumbs } from "@/features/breadcrumbs/components/Breadcrumbs";
 import { RelatedItems } from "@/features/posts/components/relatedItems/RelatedItems";
 import { Advertisement } from "@/features/widgets/components/advertisment/Advertisement";
+import { Recent } from "@/features/widgets/components/recent/Recent";
+import { StickyWidget } from "@/features/widgets/components/stickyWidget/StickyWidget";
 import { TagsCloud } from "@/features/widgets/components/tagsCloud/TagsCloud";
 import { getArticles } from "@/services/article/article.service";
 import { getCategories } from "@/services/category/category.service";
@@ -82,7 +84,12 @@ const PostPage = async ({ params }: { params: { category: string; post: string }
           </div>
           <div className="post-page__sidebar">
             <TagsCloud />
-            <Advertisement />
+            <StickyWidget fraction={0.3}>
+              <Advertisement />
+            </StickyWidget>
+            <StickyWidget fraction={0.7}>
+              <Recent />
+            </StickyWidget>
           </div>
         </div>
       </Container>

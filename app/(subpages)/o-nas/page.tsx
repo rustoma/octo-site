@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/container/Container";
 import { SimpleBanner } from "@/features/banners/components/simpleBanner/SimpleBanner";
 import { Advertisement } from "@/features/widgets/components/advertisment/Advertisement";
+import { StickyWidget } from "@/features/widgets/components/stickyWidget/StickyWidget";
 import { TagsCloud } from "@/features/widgets/components/tagsCloud/TagsCloud";
 import { getBasicPageBySlug } from "@/services/basicPage/basicPage.service";
 
@@ -37,7 +38,9 @@ const AboutUsPage = async () => {
           <div className="about-us-page__content">{parse(page.body ?? "")}</div>
           <div className="about-us-page__sidebar">
             <TagsCloud />
-            <Advertisement />
+            <StickyWidget>
+              <Advertisement />
+            </StickyWidget>
           </div>
         </div>
       </Container>

@@ -6,7 +6,9 @@ import "./advertisement.style.scss";
 export const Advertisement = () => {
   return (
     <div className="advertisement-widget">
-      <Image src="/img/jpg/advertisement-vertical.jpg" alt="reklama" width={390} height={780} />
+      <div className="advertisement-widget__content">
+        <Image src="/img/jpg/advertisement-vertical.jpg" alt="reklama" width={390} height={780} />
+      </div>
     </div>
   );
 };

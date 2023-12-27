@@ -8,6 +8,7 @@ import { SimpleBanner } from "@/features/banners/components/simpleBanner/SimpleB
 import { ListViewItem } from "@/features/posts/components/listViewWithSidebar/ListViewItem";
 import { LoadMorePosts } from "@/features/posts/components/loadMorePosts/LoadMorePosts";
 import { Advertisement } from "@/features/widgets/components/advertisment/Advertisement";
+import { StickyWidget } from "@/features/widgets/components/stickyWidget/StickyWidget";
 import { TagsCloud } from "@/features/widgets/components/tagsCloud/TagsCloud";
 import { getArticles } from "@/services/article/article.service";
 import { getCategoriesByDomain } from "@/services/category/category.service";
@@ -64,7 +65,9 @@ const CategoryPage = async ({ params }: { params: { category: string } }) => {
           </div>
           <div className="category-page__sidebar">
             <TagsCloud />
-            <Advertisement />
+            <StickyWidget>
+              <Advertisement />
+            </StickyWidget>
           </div>
         </div>
       </Container>

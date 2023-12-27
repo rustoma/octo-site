@@ -19,9 +19,12 @@ export const PostMeta = ({ author, date, readingTime, isOnDark = false }: PostMe
 
   return (
     <div className="post-meta">
-      <div className="post-meta__avatar">
-        <Avatar imageUrl={imageUrl} />
-      </div>
+      {author && (
+        <div className="post-meta__avatar">
+          <Avatar imageUrl={imageUrl} />
+        </div>
+      )}
+
       <div className="post-meta__content">
         <h4
           className={clsx(

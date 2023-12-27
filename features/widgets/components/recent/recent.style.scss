@@ -1,0 +1,64 @@
+.recent-widget {
+  background: useThemeVariable($--color-extra03);
+  padding: 30px;
+
+  &__title {
+    border-bottom: 1px solid useThemeVariable($--color-lighter);
+    padding-bottom: 7px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &-item {
+    $block: recent-widget-item;
+
+    display: flex;
+    &:first-child {
+      margin: 0 0 20px;
+    }
+
+    &:not(&:first-child):not(&:last-child) {
+      margin: 20px 0;
+    }
+
+    &:last-child {
+      margin: 20px 0 0;
+    }
+
+    &:hover {
+      .#{$block}__title {
+        a {
+          @extend %underline-hover;
+        }
+      }
+
+      img {
+        transform: useThemeVariable($--image-scale);
+      }
+    }
+
+    &__thumbnail {
+      margin-right: 20px;
+
+      a {
+        display: block;
+        overflow: hidden;
+        width: 100px;
+        height: 100px;
+        position: relative;
+        border-radius: useThemeVariable($--radius);
+
+        img {
+          transition: useThemeVariable($--image-transition);
+        }
+      }
+    }
+
+    &__title {
+      margin-bottom: 10px;
+      a {
+        @extend %underline;
+      }
+    }
+  }
+}
