@@ -25,7 +25,7 @@ export const ListViewItem = ({ item }: ListViewItemProps) => {
               alt={item.title}
               fill
               style={{ objectFit: "cover", objectPosition: "center" }}
-              sizes="(max-width: 767px) 100vw, 300px"
+              sizes="(max-width: 767px) 100vw, 400px"
             />
           </Link>
         )}

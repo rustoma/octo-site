@@ -21,7 +21,7 @@ export const GridImageTextMainItem = ({ item }: GridImageTextMainItemProps) => {
             alt={item.title}
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}
-            sizes="(max-width: 767px) 100vw, (max-width: 991px) 690px, (max-width: 1199px) 930px, 600px"
+            sizes="(max-width: 767px) 100vw, (max-width: 991px) 690px, (max-width: 1199px) 930px, 900px"
             priority
           />
         )}

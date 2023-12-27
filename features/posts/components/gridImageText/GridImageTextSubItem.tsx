@@ -24,7 +24,7 @@ export const GridImageTextSubItem = ({ item, isOnDark = false }: GridImageTextSu
             alt={item.title}
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}
-            sizes="(max-width: 767px) 100vw, (max-width: 991px) 330px, (max-width: 1199px) 450px, 300px"
+            sizes="(max-width: 767px) 100vw, (max-width: 991px) 330px, (max-width: 1199px) 450px, 400px"
           />
         )}
       </Link>
