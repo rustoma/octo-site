@@ -3,6 +3,10 @@
   display: block;
   margin: 0 18px;
 
+  @include respond-below(2xl) {
+    margin: 0 12px;
+  }
+
   &--deep {
     margin: 10px 0;
   }

@@ -27,9 +27,6 @@ export default async function Home() {
   const featuredArticles = await getArticles({ featured: "true", limit: "5" });
 
   const categories = await getCategoriesByDomain(domainId);
-  const postByCategories = categories
-    ? await Promise.all(categories.map((category) => getArticles({ categoryId: `${category.id}`, limit: "6" })))
-    : [];
 
   const TABS: TabItem[] =
     categories?.map((category) => ({
@@ -37,12 +34,15 @@ export default async function Home() {
       value: category.slug,
     })) ?? [];
 
-  const tabGridItems =
-    categories && postByCategories
-      ? categories.reduce((acc, curr, index) => {
-          return { ...acc, [curr.slug]: postByCategories[index] };
-        }, {} as Record<string, Article[] | null>)
-      : {};
+  const tabGridItems: Record<string, Article[] | null> = {};
+  for (const category of categories ?? []) {
+    try {
+      tabGridItems[category.slug] = await getArticles({ categoryId: `${category.id}`, limit: "6" });
+    } catch (err) {
+      console.log({ err });
+      tabGridItems[category.slug] = null;
+    }
+  }
 
   return (
     <main className="content">

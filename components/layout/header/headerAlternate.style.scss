@@ -4,7 +4,7 @@
   padding: 0 30px;
   box-shadow: useThemeVariable($--shadow-primary);
 
-  @include respond-below(lg) {
+  @include respond-below(xl) {
     padding: 20px 15px;
     height: 62px;
   }
@@ -14,6 +14,10 @@
     align-items: center;
     max-width: 205px;
     margin-right: 100px;
+
+    @include respond-below(2xl) {
+      margin-right: 40px;
+    }
 
     @include respond-below(lg) {
       height: 42px;

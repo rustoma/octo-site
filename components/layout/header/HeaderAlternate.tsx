@@ -35,7 +35,12 @@ export const HeaderAlternate = async () => {
       href: "/o-nas",
       items: [],
     },
-    ...categoryMenuItems,
+    ...categoryMenuItems.slice(0, 3),
+    {
+      id: "pozostale-kategorie",
+      title: "Pozostałe kategorie",
+      items: categoryMenuItems.slice(3),
+    },
     {
       id: "kontakt",
       title: "Kontakt",
@@ -45,11 +50,29 @@ export const HeaderAlternate = async () => {
   ];
 
   const mobileMenuTree = [
-    ...menuTree,
+    {
+      id: "Home",
+      title: "Home",
+      href: "/",
+      items: [],
+    },
+    {
+      id: "o-nas",
+      title: "O nas",
+      href: "/o-nas",
+      items: [],
+    },
+    ...categoryMenuItems,
     {
       id: "polityka-prywatnosci",
       title: "Polityka prywatności",
       href: "/polityka-prywatnosci",
+      items: [],
+    },
+    {
+      id: "kontakt",
+      title: "Kontakt",
+      href: "/kontakt",
       items: [],
     },
   ];

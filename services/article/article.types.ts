@@ -27,4 +27,5 @@ export interface ArticleFilters {
   offset?: string;
   featured?: string;
   slug?: string;
+  excludeBody?: "true";
 }

@@ -35,13 +35,17 @@ export async function generateMetadata({ params }: { params: { category: string 
 const CategoryPage = async ({ params }: { params: { category: string } }) => {
   const domainId = getDomainId();
 
-  const LIMIT = 5;
+  const LIMIT = 30;
 
   const categories = await getCategoriesByDomain(domainId);
   const category = categories?.find((category) => category.slug === params.category);
 
   if (!category) return notFound();
-  const articles = await getArticles({ limit: LIMIT.toString(), categoryId: category.id.toString() });
+  const articles = await getArticles({
+    limit: LIMIT.toString(),
+    categoryId: category.id.toString(),
+    excludeBody: "true",
+  });
 
   return (
     <>
@@ -56,7 +60,7 @@ const CategoryPage = async ({ params }: { params: { category: string } }) => {
             ))}
 
             {articles && articles.length === LIMIT ? (
-              <LoadMorePosts initialOffset={LIMIT} limit={5} category={category.id} />
+              <LoadMorePosts initialOffset={LIMIT} limit={10} category={category.id} />
             ) : null}
 
             <div className="category-page__content-advertisement">

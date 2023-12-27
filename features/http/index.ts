@@ -33,7 +33,7 @@ class HttpService {
     const internalController = controller ?? new AbortController();
     const signal = internalController.signal;
 
-    setTimeout(() => internalController.abort(), requestTimeout ?? 2000);
+    setTimeout(() => internalController.abort(), requestTimeout ?? 20000);
 
     const headers = { ...this.defaultHeaders, ...options.headers };
 
