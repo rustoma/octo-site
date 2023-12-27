@@ -51,6 +51,16 @@ export const Header = async () => {
     },
   ];
 
+  const mobileMenuTree = [
+    ...menuTree,
+    {
+      id: "polityka-prywatnosci",
+      title: "Polityka prywatności",
+      href: "/polityka-prywatnosci",
+      items: [],
+    },
+  ];
+
   return (
     <header className="header">
       <div className="header-top">
@@ -85,7 +95,7 @@ export const Header = async () => {
       </div>
       <Container>
         <TopNav menuTree={menuTree} />
-        <HamburgerMenu menuTree={menuTree} />
+        <HamburgerMenu menuTree={mobileMenuTree} />
       </Container>
     </header>
   );

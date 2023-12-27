@@ -44,6 +44,16 @@ export const HeaderAlternate = async () => {
     },
   ];
 
+  const mobileMenuTree = [
+    ...menuTree,
+    {
+      id: "polityka-prywatnosci",
+      title: "Polityka prywatności",
+      href: "/polityka-prywatnosci",
+      items: [],
+    },
+  ];
+
   return (
     <header className="header-alternate">
       <div className="header-alternate__logo">
@@ -52,7 +62,7 @@ export const HeaderAlternate = async () => {
         </Link>
       </div>
       <TopNav menuTree={menuTree} />
-      <HamburgerMenu menuTree={menuTree} />
+      <HamburgerMenu menuTree={mobileMenuTree} />
     </header>
   );
 };
