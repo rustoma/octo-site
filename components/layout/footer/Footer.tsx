@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import { Container } from "@/components/container/Container";
-import { Logo } from "@/components/icons/Logo";
+import { LogoLight } from "@/features/logos/components/LogoLight";
 import { BottomNav } from "@/features/nav/bottomNav/BottomNav";
 
 import "./footer.style.scss";
@@ -14,7 +14,7 @@ export const Footer = () => {
         <div className="footer__wrapper">
           <div className="footer__nav">
             <Link href="/" className="footer__logo" aria-label="Logo - move to homepage">
-              <Logo />
+              <LogoLight />
             </Link>
             <BottomNav
               items={[

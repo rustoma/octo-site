@@ -3,9 +3,9 @@ export const removeEmptyStringValuesFromObj = <T extends Record<string, string>>
 };
 
 export const getDomainId = (): string => {
-  if (!process.env.DOMAIN_ID) {
+  if (!process.env.NEXT_PUBLIC_DOMAIN_ID) {
     throw new Error("App config is missing");
   }
 
-  return process.env.DOMAIN_ID;
+  return process.env.NEXT_PUBLIC_DOMAIN_ID;
 };

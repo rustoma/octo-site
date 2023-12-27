@@ -1,9 +1,9 @@
 import clsx from "clsx";
 
-import "./Logo.style.scss";
+import "./octo.style.scss";
 
-export const Logo = ({ className }: { className?: string }) => (
-  <svg className={clsx("main-logo", className)} viewBox="0 0 410.3636363636364 94">
+export const OctoLight = ({ className }: { className?: string }) => (
+  <svg className={clsx("octo-logo", className)} viewBox="0 0 410.3636363636364 94">
     <g transform="matrix(1,0,0,1,0,0)" fill="#efefef">
       <rect width="104" height="94" rx="8"></rect>
     </g>

@@ -4,8 +4,10 @@
 
 .mobile-menu {
   &__item {
-    margin-top: 8px;
+    padding: 5px 0;
+    margin: 0;
     list-style: none;
+    border-bottom: 1px solid useThemeVariable($--color-midgray);
 
     &--with-children {
       display: flex;
@@ -21,8 +23,8 @@
     display: inline-block;
     cursor: pointer;
     width: calc(100% - 40px);
-    font-family: var(--theme-font-display);
-
+    font-family: useThemeVariable($--font-primary);
+    color: useThemeVariable($--color-white);
     &--active {
       color: useThemeVariable($--color-primary);
     }

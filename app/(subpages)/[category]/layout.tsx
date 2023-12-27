@@ -3,11 +3,11 @@ import { ReactNode } from "react";
 import { getCategoriesByDomain } from "@/services/category/category.service";
 
 export const generateStaticParams = async () => {
-  if (!process.env.DOMAIN_ID) {
+  if (!process.env.NEXT_PUBLIC_DOMAIN_ID) {
     return [];
   }
 
-  const categories = await getCategoriesByDomain(process.env.DOMAIN_ID);
+  const categories = await getCategoriesByDomain(process.env.NEXT_PUBLIC_DOMAIN_ID);
 
   if (!categories) return [];
 

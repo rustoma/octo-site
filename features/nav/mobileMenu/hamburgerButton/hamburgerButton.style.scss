@@ -14,8 +14,10 @@
     cursor: pointer;
     background: white;
     transition: all 0.4s ease-in-out;
+    box-shadow: useThemeVariable($--shadow-primary);
+
     &--open {
-      transform: translate(20px, -10px);
+      transform: translate(15px, -10px);
     }
   }
 

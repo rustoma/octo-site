@@ -19,14 +19,25 @@
     top: 0;
     right: 0;
     height: 100%;
-    width: 256px;
-    background: useThemeVariable($--color-white);
+    width: 450px;
+    background: useThemeVariable($--color-extra04);
     overflow-y: auto;
+
+    @include respond-below(sm) {
+      width: 100%;
+    }
+  }
+
+  &__logo {
+    margin: 16px 20px;
+    max-width: 150px;
+    display: block;
+    fill: white;
   }
 
   &__navigation {
     position: relative;
-    margin-top: 48px;
+    margin-top: 20px;
     visibility: hidden;
 
     &--open {
