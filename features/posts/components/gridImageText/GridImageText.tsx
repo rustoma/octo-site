@@ -18,7 +18,7 @@ export const GridImageText = ({ items }: GridImageTextProps) => {
     <section className="grid-it">
       <Container>
         <div className="grid-it__wrapper">
-          <GridImageTextMainItem item={mainItem} />
+          {mainItem && <GridImageTextMainItem item={mainItem} />}
           <div className="grid-it__sub-items-wrapper">
             {subItems.map((item) => (
               <GridImageTextSubItem key={`${item.title + `${item.category.slug}/${item.slug}`}`} item={item} />

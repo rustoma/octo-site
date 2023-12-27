@@ -9,8 +9,6 @@ import { Advertisement } from "@/features/widgets/components/advertisment/Advert
 import { StickyWidget } from "@/features/widgets/components/stickyWidget/StickyWidget";
 import { TagsCloud } from "@/features/widgets/components/tagsCloud/TagsCloud";
 import { getBasicPageBySlug } from "@/services/basicPage/basicPage.service";
-import { getDomain } from "@/services/domain/domain.service";
-import { getDomainId } from "@/utils";
 
 import "./page.style.scss";
 
@@ -27,14 +25,11 @@ export const metadata = {
 };
 
 const ContactPage = async () => {
-  const domainId = getDomainId();
   const page = await getBasicPageBySlug("kontakt");
 
   if (!page) {
     return notFound();
   }
-
-  const domain = await getDomain(domainId);
 
   return (
     <GoogleCaptchaWrapper>
@@ -43,11 +38,6 @@ const ContactPage = async () => {
         <div className="contact-page">
           <div className="contact-page__content">
             {parse(page.body ?? "")}
-            {domain && (
-              <div>
-                Email: <a href={`mailto:${domain.email}`}>{domain?.email}</a>
-              </div>
-            )}
 
             <ContactForm />
           </div>

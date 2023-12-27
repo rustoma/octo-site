@@ -35,6 +35,7 @@ export default async function Home() {
     })) ?? [];
 
   const tabGridItems: Record<string, Article[] | null> = {};
+
   for (const category of categories ?? []) {
     try {
       tabGridItems[category.slug] = await getArticles({ categoryId: `${category.id}`, limit: "6" });
