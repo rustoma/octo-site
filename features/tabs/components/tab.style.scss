@@ -2,6 +2,10 @@
   &__item {
     list-style: none;
     margin: 10px;
+
+    @include respond-below(md) {
+      margin: 5px;
+    }
   }
 
   &__tab {
@@ -16,6 +20,13 @@
     color: useThemeVariable($--color-midgray);
     background: useThemeVariable($--color-white);
     outline: none;
+
+    @include respond-below(md) {
+      padding: 0 8px;
+      height: 28px;
+      line-height: 28px;
+      font-size: useThemeVariable($--font-size-b4);
+    }
 
     &--active {
       border: 1px solid transparent;

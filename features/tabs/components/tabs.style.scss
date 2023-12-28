@@ -4,4 +4,8 @@
   margin: -10px;
   border: 0 none;
   padding: 0;
+
+  @include respond-below(md) {
+    margin: -5px;
+  }
 }
