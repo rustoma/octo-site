@@ -20,7 +20,7 @@ class HttpService {
 
   constructor(baseURL = `${process.env.NEXT_PUBLIC_BACKEND_HOST}/api/v1`) {
     this.baseUrl = baseURL;
-    this.instance = (url: string, config: RequestInit) => fetch(this.baseUrl + url, { ...config });
+    this.instance = (url: string, config: RequestInit) => fetch(this.baseUrl + url, { ...config, cache: "no-store" });
   }
 
   get defaultHeaders() {
