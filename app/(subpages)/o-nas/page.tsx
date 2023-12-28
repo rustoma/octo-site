@@ -8,6 +8,7 @@ import { Advertisement } from "@/features/widgets/components/advertisment/Advert
 import { StickyWidget } from "@/features/widgets/components/stickyWidget/StickyWidget";
 import { TagsCloud } from "@/features/widgets/components/tagsCloud/TagsCloud";
 import { getBasicPageBySlug } from "@/services/basicPage/basicPage.service";
+import { getDomainId } from "@/utils";
 
 import "./page.style.scss";
 
@@ -19,7 +20,7 @@ export const metadata = {
     canonical: "/o-nas",
   },
   openGraph: {
-    images: "/img/jpg/social.jpg",
+    images: `/img/jpg/social-${getDomainId()}.jpg`,
   },
 };
 

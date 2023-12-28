@@ -5,6 +5,7 @@ import { WindowDimensionsProvider } from "@/context/WindowDimensionsContext";
 import { GTM } from "@/features/analytics/components/GTM";
 import { BackToTop } from "@/features/backToTop/components/BackToTop";
 import CookieBanner from "@/features/cookie/components/cookieBanner/CookieBanner";
+import { getDomainId } from "@/utils";
 
 import "./globals.scss";
 
@@ -20,7 +21,7 @@ export const metadata = {
   metadataBase: new URL(process.env.FRONTEND_HOST ?? ""),
   title: `${process.env.DOMAIN_NAME} | ${new Date().getFullYear()}`,
   openGraph: {
-    images: "/img/jpg/social.jpg",
+    images: `/img/jpg/social-${getDomainId()}.jpg`,
   },
 };
 

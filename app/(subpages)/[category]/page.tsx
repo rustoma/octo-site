@@ -18,6 +18,7 @@ import "./page.style.scss";
 
 export async function generateMetadata({ params }: { params: { category: string } }): Promise<Metadata> {
   const { category } = params;
+  const domainId = getDomainId();
 
   return {
     metadataBase: new URL(process.env.FRONTEND_HOST ?? ""),
@@ -27,7 +28,7 @@ export async function generateMetadata({ params }: { params: { category: string 
       canonical: category,
     },
     openGraph: {
-      images: "/img/jpg/social.jpg",
+      images: `/img/jpg/social-${domainId}.jpg`,
     },
   };
 }

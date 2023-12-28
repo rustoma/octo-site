@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/container/Container";
 import { SimpleBanner } from "@/features/banners/components/simpleBanner/SimpleBanner";
 import { getBasicPageBySlug } from "@/services/basicPage/basicPage.service";
+import { getDomainId } from "@/utils";
 
 import "./page.style.scss";
 
@@ -16,7 +17,7 @@ export const metadata = {
     canonical: "/polityka-prywatności",
   },
   openGraph: {
-    images: "/img/jpg/social.jpg",
+    images: `/img/jpg/social-${getDomainId()}.jpg`,
   },
 };
 

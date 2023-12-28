@@ -13,6 +13,7 @@ import { StickyWidget } from "@/features/widgets/components/stickyWidget/StickyW
 import { TagsCloud } from "@/features/widgets/components/tagsCloud/TagsCloud";
 import { getArticles } from "@/services/article/article.service";
 import { getCategories } from "@/services/category/category.service";
+import { getDomainId } from "@/utils";
 
 import "./page.style.scss";
 
@@ -37,6 +38,7 @@ export const generateStaticParams = async ({ params: { category } }: { params: {
 
 export async function generateMetadata({ params }: { params: { post: string } }): Promise<Metadata> {
   const { post } = params;
+  const domainId = getDomainId();
   const article = await getArticles({ slug: post });
 
   if (!article?.[0]) return {};
@@ -51,7 +53,7 @@ export async function generateMetadata({ params }: { params: { post: string } })
       canonical: slug,
     },
     openGraph: {
-      images: "/img/jpg/social.jpg",
+      images: `/img/jpg/social-${domainId}.jpg`,
     },
   };
 }
