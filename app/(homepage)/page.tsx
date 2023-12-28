@@ -53,7 +53,7 @@ export default async function Home() {
       <ListViewWithSidebar items={articles ?? []} />
       <div className="home-page-advertisement">
         <Container>
-          <Image src="/img/jpg/advertisement-long.jpg" alt="reklama" width={1230} height={200} />
+          <Image src="/img/jpg/advertisement-long-3.jpg" alt="reklama" width={1230} height={200} />
         </Container>
       </div>
     </main>

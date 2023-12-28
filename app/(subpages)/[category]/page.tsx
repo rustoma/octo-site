@@ -65,7 +65,7 @@ const CategoryPage = async ({ params }: { params: { category: string } }) => {
             ) : null}
 
             <div className="category-page__content-advertisement">
-              <Image src="/img/jpg/advertisement-long.jpg" alt="reklama" width={810} height={115} />
+              <Image src="/img/jpg/advertisement-long-3.jpg" alt="reklama" width={810} height={115} />
             </div>
           </div>
           <div className="category-page__sidebar">

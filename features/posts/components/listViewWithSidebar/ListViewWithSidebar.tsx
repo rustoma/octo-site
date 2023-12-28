@@ -20,7 +20,7 @@ export const ListViewWithSidebar = ({ items }: ListViewWithSidebarProps) => {
       <Container>
         <div className="list-view__wrapper">
           <div>
-            <Image src="/img/jpg/advertisement-big.jpg" alt="reklama" width={810} height={210} />
+            <Image src="/img/jpg/advertisement-big-2.jpg" alt="reklama" width={810} height={210} />
             {items.map((item) => (
               <ListViewItem key={item.id} item={item} />
             ))}

@@ -117,7 +117,7 @@ export const Header = async () => {
             </div>
 
             <div className="header-middle__advertisement">
-              <Image src="/img/jpg/advertisement.jpg" alt="reklama" width={728} height={92} />
+              <Image src="/img/jpg/advertisement-1.jpg" alt="reklama" width={728} height={92} />
             </div>
           </div>
         </Container>
