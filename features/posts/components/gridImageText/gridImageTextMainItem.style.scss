@@ -39,8 +39,10 @@
     overflow: hidden;
     border-radius: useThemeVariable($--radius);
     flex: 1;
+    min-height: 580px;
 
     @include respond-below(xl) {
+      min-height: auto;
       @include aspect-3-2;
     }
 
