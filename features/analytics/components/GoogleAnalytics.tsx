@@ -2,7 +2,7 @@
 import React from "react";
 import Script from "next/script";
 
-import { useAnalytics } from "@/hooks/useAnalytics";
+import { useAnalytics } from "@/features/analytics/hooks/useAnalytics";
 
 const GoogleAnalytics = () => {
   useAnalytics();

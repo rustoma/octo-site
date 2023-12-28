@@ -1,8 +1,8 @@
 import React, { ReactNode, Suspense } from "react";
 import { Red_Hat_Display } from "next/font/google";
 
-import GoogleAnalytics from "@/components/googleAnalytics/GoogleAnalytics";
 import { WindowDimensionsProvider } from "@/context/WindowDimensionsContext";
+import { GTM } from "@/features/analytics/components/GTM";
 import { BackToTop } from "@/features/backToTop/components/BackToTop";
 import CookieBanner from "@/features/cookie/components/cookieBanner/CookieBanner";
 
@@ -32,7 +32,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
           {children}
           <CookieBanner />
           <Suspense>
-            <GoogleAnalytics />
+            <GTM />
           </Suspense>
           <BackToTop />
         </body>

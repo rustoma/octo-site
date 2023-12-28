@@ -11,6 +11,6 @@ export const useAnalytics = () => {
   useEffect(() => {
     const url = pathName + searchParams.toString();
 
-    pageView(process.env.NEXT_PUBLIC_GA_TRACKING_ID ?? "", url);
+    pageView(url);
   }, [pathName, searchParams]);
 };

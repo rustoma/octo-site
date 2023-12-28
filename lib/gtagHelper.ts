@@ -1,4 +1,19 @@
-export const pageView = (GA_TRACKING_ID: string, url: string) => {
-  // @ts-ignore
-  window.gtag("config", GA_TRACKING_ID, { page_path: url });  
+type WindowWithDataLayer = Window & {
+  dataLayer: Record<string, unknown>[];
+};
+
+declare const window: WindowWithDataLayer;
+
+export const pageView = (url: string) => {
+  if (typeof window.dataLayer !== "undefined") {
+    window.dataLayer.push({
+      event: "pageview",
+      page: url,
+    });
+  } else {
+    console.log({
+      event: "pageview",
+      page: url,
+    });
+  }
 };
