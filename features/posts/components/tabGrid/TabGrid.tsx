@@ -21,7 +21,7 @@ export const TabGrid = ({ tabs, items }: TabGridProps) => {
   return (
     <section className="tab-grid">
       <Container>
-        <h2 className="tab-grid__title">Top Stories</h2>
+        <h2 className="tab-grid__title">Najpopularniejsze z kategorii</h2>
         <div className="tab-grid__tabs">
           <Tabs items={tabs} activeTab={activeTab} onTabClick={(value) => setActiveTab(value)} />
         </div>
