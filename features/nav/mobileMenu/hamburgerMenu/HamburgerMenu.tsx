@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 
-import { LogoDark } from "@/features/logos/components/LogoDark";
+import { LogoLight } from "@/features/logos/components/LogoLight";
 import { HamburgerButton } from "@/features/nav/mobileMenu/hamburgerButton/HamburgerButton";
 import { MobileMenu } from "@/features/nav/mobileMenu/MobileMenu";
 import { NavItem } from "@/features/nav/types";
@@ -26,7 +26,7 @@ export const HamburgerMenu = ({ menuTree }: HamburgerMenuProps) => {
     <>
       <div className={clsx("hamburger-menu", isOpen && "hamburger-menu--open")}>
         <div className="hamburger-menu__logo">
-          <LogoDark />
+          <LogoLight />
         </div>
 
         <HamburgerButton isOpen={isOpen} setIsOpen={setIsOpen} />

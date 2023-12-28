@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-import { LogoLight } from "@/features/logos/components/LogoLight";
+import { LogoDark } from "@/features/logos/components/LogoDark";
 import { HamburgerMenu } from "@/features/nav/mobileMenu/hamburgerMenu/HamburgerMenu";
 import { TopNav } from "@/features/nav/topNav/TopNav";
 import { getCategoriesByDomain } from "@/services/category/category.service";
@@ -87,7 +87,7 @@ export const HeaderAlternate = async () => {
     <header className="header-alternate">
       <div className="header-alternate__logo">
         <Link href="/" aria-label="Logo - move to homepage">
-          <LogoLight />
+          <LogoDark />
         </Link>
       </div>
       <TopNav menuTree={menuTree} />

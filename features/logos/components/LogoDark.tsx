@@ -1,10 +1,10 @@
 import React, { ReactElement } from "react";
 
-import { OctoDark } from "@/features/logos/components/octo/OctoDark";
+import { FloorServiceDark } from "@/features/logos/components/floorService/FloorServiceDark";
 import { getDomainId } from "@/utils";
 
 const LOGOS: Record<string, ReactElement> = {
-  1: <OctoDark />,
+  1: <FloorServiceDark />,
 };
 
 export const LogoDark = () => {

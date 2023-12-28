@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/container/Container";
-import { LogoLight } from "@/features/logos/components/LogoLight";
+import { LogoDark } from "@/features/logos/components/LogoDark";
 import { HamburgerMenu } from "@/features/nav/mobileMenu/hamburgerMenu/HamburgerMenu";
 import { TopNav } from "@/features/nav/topNav/TopNav";
 import { getCategoriesByDomain } from "@/services/category/category.service";
@@ -112,7 +112,7 @@ export const Header = async () => {
           <div className="header-middle__wrapper">
             <div className="header-middle__logo">
               <Link href="/" aria-label="Logo - move to homepage">
-                <LogoLight />
+                <LogoDark />
               </Link>
             </div>
 
