@@ -23,7 +23,7 @@ const CookieBanner = () => {
               Strona korzysta z ciasteczek, aby świadczyć usługi na najwyższym poziomie. Dalsze korzystanie ze strony
               oznacza, że zgadzasz się na ich użycie zgodnie z{" "}
               <Link href="/polityka-prywatnosci">Polityką prywatności</Link> oraz akceptujesz{" "}
-              <Link href="/regulamin">Regulamin Strony.</Link>
+              <Link href="/polityka-cookies">Politykę cookies</Link>
             </p>
           </div>
 

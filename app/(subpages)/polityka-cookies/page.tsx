@@ -11,18 +11,18 @@ import "./page.style.scss";
 
 export const metadata = {
   metadataBase: new URL(process.env.FRONTEND_HOST ?? ""),
-  title: `Regulamin | ${new Date().getFullYear()} - ${process.env.DOMAIN_NAME}`,
+  title: `Polityka cookies | ${new Date().getFullYear()} - ${process.env.DOMAIN_NAME}`,
   description: undefined,
   alternates: {
-    canonical: "/regulamin",
+    canonical: "/polityka-cookies",
   },
   openGraph: {
     images: `/img/jpg/social-${getDomainId()}.jpg`,
   },
 };
 
-const RegulationsPage = async () => {
-  const page = await getBasicPageBySlug("regulamin");
+const CookiesPage = async () => {
+  const page = await getBasicPageBySlug("polityka-cookies");
 
   if (!page) {
     return notFound();
@@ -32,12 +32,12 @@ const RegulationsPage = async () => {
     <>
       <SimpleBanner title={page.title} />
       <Container>
-        <div className="regulations-page">
-          <div className="regulations-page__content">{parse(page.body ?? "")}</div>
+        <div className="cookies-page">
+          <div className="cookies-page__content">{parse(page.body ?? "")}</div>
         </div>
       </Container>
     </>
   );
 };
 
-export default RegulationsPage;
+export default CookiesPage;

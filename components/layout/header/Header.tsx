@@ -77,9 +77,9 @@ export const Header = async () => {
       items: [],
     },
     {
-      id: "regulamin",
-      title: "Regulamin",
-      href: "/regulamin",
+      id: "polityka-cookies",
+      title: "Polityka cookies",
+      href: "/polityka-cookies",
       items: [],
     },
     {

@@ -137,8 +137,9 @@ export const ContactForm = () => {
               {...register("consent")}
               label={
                 <span>
-                  Akceptuję <Link href="/regulamin">regulamin</Link>. Dane z formularza zostaną przetworzone w celu
-                  udzielenia odpowiedzi.
+                  Akceptuję <Link href="/polityka-prywatnosci">politykę prywatności</Link> oraz{" "}
+                  <Link href="/polityka-cookies">politykę cookies</Link> oraz . Dane z formularza zostaną przetworzone w
+                  celu udzielenia odpowiedzi.
                 </span>
               }
               checked={watch("consent")}
