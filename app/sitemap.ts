@@ -17,7 +17,7 @@ export default async function sitemap() {
     ? categories.map((category) => ({
         url: `${process.env.FRONTEND_HOST}/${category.slug}`,
         lastModified: new Date().toISOString(),
-        priority: 1,
+        priority: 0.8,
       }))
     : [];
 
@@ -37,7 +37,7 @@ export default async function sitemap() {
     ? basicPages.map((page) => ({
         url: `${process.env.FRONTEND_HOST}/${page.slug}`,
         lastModified: new Date(page.updatedAt).toISOString(),
-        priority: 1,
+        priority: 0.8,
       }))
     : [];
 

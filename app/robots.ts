@@ -4,7 +4,7 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
-      disallow: "/",
+      allow: "/",
     },
     host: process.env.FRONTEND_HOST,
     sitemap: `${process.env.FRONTEND_HOST}/sitemap.xml`,
