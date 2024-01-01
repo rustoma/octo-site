@@ -9,16 +9,17 @@ import "./gridImageText.style.scss";
 
 interface GridImageTextProps {
   items: Article[];
+  priority?: boolean;
 }
 
-export const GridImageText = ({ items }: GridImageTextProps) => {
+export const GridImageText = ({ items, priority }: GridImageTextProps) => {
   const [mainItem, ...subItems] = items;
 
   return (
     <section className="grid-it">
       <Container>
         <div className="grid-it__wrapper">
-          {mainItem && <GridImageTextMainItem item={mainItem} />}
+          {mainItem && <GridImageTextMainItem item={mainItem} priority={priority} />}
           <div className="grid-it__sub-items-wrapper">
             {subItems.map((item) => (
               <GridImageTextSubItem key={`${item.title + `${item.category.slug}/${item.slug}`}`} item={item} />

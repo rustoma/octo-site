@@ -47,7 +47,7 @@ export default async function Home() {
 
   return (
     <main className="content">
-      <GridImageText items={articles ?? []} />
+      <GridImageText items={articles ?? []} priority />
       <TabGrid tabs={TABS} items={tabGridItems} />
       <FeaturedGrid isOnDark items={featuredArticles ?? []} />
       <ListViewWithSidebar items={articles ?? []} />

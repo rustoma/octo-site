@@ -9,9 +9,10 @@ import "./gridImageTextMainItem.style.scss";
 
 interface GridImageTextMainItemProps {
   item: Article;
+  priority?: boolean;
 }
 
-export const GridImageTextMainItem = ({ item }: GridImageTextMainItemProps) => {
+export const GridImageTextMainItem = ({ item, priority = false }: GridImageTextMainItemProps) => {
   return (
     <div className="grid-it__item grid-it__main-item">
       <Link href={`/${item.category.slug}/${item.slug}`} className="grid-it__main-item-image">
@@ -22,7 +23,7 @@ export const GridImageTextMainItem = ({ item }: GridImageTextMainItemProps) => {
             fill
             style={{ objectFit: "cover", objectPosition: "center" }}
             sizes="(max-width: 767px) 100vw, (max-width: 991px) 690px, (max-width: 1199px) 930px, 900px"
-            priority
+            priority={priority}
           />
         )}
       </Link>
