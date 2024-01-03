@@ -23,6 +23,9 @@ export const metadata = {
   openGraph: {
     images: `/img/jpg/social-${getDomainId()}.jpg`,
   },
+  icons: {
+    icon: `/favicons/favicon-${getDomainId()}.png`
+  }
 };
 
 const RootLayout = ({ children }: { children: ReactNode }) => {

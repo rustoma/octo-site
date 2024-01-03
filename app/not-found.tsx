@@ -18,10 +18,7 @@ const NotFoundPage = () => (
               <Image src="/img/png/404-number.png" alt="liczba 404" width={320} height={130} />
             </div>
             <h1>Strona nie odnaleziona</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim, recusandae consectetur nesciunt magnam
-              facilis aliquid amet earum alias?
-            </p>
+            <p>Wygląda na to, że strona, której szukasz nie istnieje.</p>
           </div>
         </Container>
       </div>
