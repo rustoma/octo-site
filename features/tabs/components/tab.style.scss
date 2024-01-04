@@ -18,7 +18,7 @@
     font-weight: useThemeVariable($--p-bold);
     font-size: useThemeVariable($--font-size-b1);
     color: useThemeVariable($--color-midgray);
-    background: useThemeVariable($--color-white);
+    background: useThemeVariable($--bg-default);
     outline: none;
 
     @include respond-below(md) {
@@ -30,6 +30,7 @@
 
     &--active {
       border: 1px solid transparent;
+      background-color: useThemeVariable($--bg-tab-active);
       color: useThemeVariable($--color-gray);
       box-shadow: useThemeVariable($--shadow-primary);
     }

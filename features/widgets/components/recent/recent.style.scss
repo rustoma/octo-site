@@ -3,7 +3,7 @@
   padding: 30px;
 
   &__title {
-    border-bottom: 1px solid useThemeVariable($--color-lighter);
+    border-bottom: 1px solid useThemeVariable($--color-border-item);
     padding-bottom: 7px;
     margin-bottom: 20px;
     text-align: center;

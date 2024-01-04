@@ -8,6 +8,7 @@
   background-color: useThemeVariable($--color-lightest);
   border: 1px solid transparent;
   outline: none;
+  color: useThemeVariable($--color-body);
 
   &:focus,
   &:active {

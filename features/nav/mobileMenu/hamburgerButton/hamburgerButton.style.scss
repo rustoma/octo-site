@@ -12,9 +12,9 @@
     height: 40px;
     width: 40px;
     cursor: pointer;
-    background: white;
     transition: all 0.4s ease-in-out;
     box-shadow: useThemeVariable($--shadow-primary);
+    background-color: useThemeVariable($--bg-default);
 
     &--open {
       transform: translate(15px, -10px);

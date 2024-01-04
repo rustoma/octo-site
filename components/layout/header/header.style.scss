@@ -50,6 +50,7 @@
   .header-middle {
     padding: 20px 0;
     border-bottom: 1px solid useThemeVariable($--color-lightest);
+    background-color: useThemeVariable($--bg-default);
     &__wrapper {
       display: flex;
       align-items: center;
@@ -71,5 +72,9 @@
         max-width: 100%;
       }
     }
+  }
+
+  .header-bottom {
+    background-color: useThemeVariable($--bg-default);
   }
 }

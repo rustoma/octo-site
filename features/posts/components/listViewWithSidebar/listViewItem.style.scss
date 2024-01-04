@@ -27,8 +27,8 @@
 
     .#{$block}__content {
       box-shadow: useThemeVariable($--shadow-primary);
-      background: useThemeVariable($--color-white);
-      border: 1px solid useThemeVariable($--color-white);
+      background: useThemeVariable($--bg-list-view-active);
+      border: 1px solid useThemeVariable($--bg-list-view-active);
     }
 
     .#{$block}__title {

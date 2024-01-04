@@ -9,7 +9,7 @@
   padding: 20px;
   border-radius: 0 0 10px 10px;
   box-shadow: useThemeVariable($--shadow-primary);
-  background-color: #fff;
+  background-color: useThemeVariable($--bg-default);
 
   &--visible {
     display: block;

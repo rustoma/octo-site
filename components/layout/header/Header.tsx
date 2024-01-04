@@ -122,10 +122,12 @@ export const Header = async () => {
           </div>
         </Container>
       </div>
-      <Container>
-        <TopNav menuTree={menuTree} />
-        <HamburgerMenu menuTree={mobileMenuTree} />
-      </Container>
+      <div className="header-bottom">
+        <Container>
+          <TopNav menuTree={menuTree} />
+          <HamburgerMenu menuTree={mobileMenuTree} />
+        </Container>
+      </div>
     </header>
   );
 };

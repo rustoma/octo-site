@@ -1,7 +1,9 @@
 .content {
   flex: 1;
+  background-color: useThemeVariable($--bg-default);
 
   .home-page-advertisement {
+    background-color: useThemeVariable($--bg-default);
     margin-bottom: 80px;
 
     @include respond-below(md) {

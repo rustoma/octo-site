@@ -3,6 +3,7 @@
   align-items: center;
   padding: 0 30px;
   box-shadow: useThemeVariable($--shadow-primary);
+  background-color: useThemeVariable($--bg-default);
 
   @include respond-below(xl) {
     padding: 20px 15px;
