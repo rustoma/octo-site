@@ -61,7 +61,7 @@
     color: white;
 
     &--decline {
-      background-color: white;
+      background-color: useThemeVariable($--bg-default);
       color: useThemeVariable($--color-body);
 
       &:hover {
