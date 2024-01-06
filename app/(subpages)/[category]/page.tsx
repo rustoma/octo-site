@@ -11,7 +11,7 @@ import { Advertisement } from "@/features/widgets/components/advertisment/Advert
 import { StickyWidget } from "@/features/widgets/components/stickyWidget/StickyWidget";
 import { TagsCloud } from "@/features/widgets/components/tagsCloud/TagsCloud";
 import { getArticles } from "@/services/article/article.service";
-import { getCategoriesByDomain } from "@/services/category/category.service";
+import { getCategories, getCategoriesByDomain } from "@/services/category/category.service";
 import { getDomainId } from "@/utils";
 
 import "./page.style.scss";
@@ -19,10 +19,11 @@ import "./page.style.scss";
 export async function generateMetadata({ params }: { params: { category: string } }): Promise<Metadata> {
   const { category } = params;
   const domainId = getDomainId();
+  const categoriesBySlug = await getCategories({ slug: category });
 
   return {
     metadataBase: new URL(process.env.FRONTEND_HOST ?? ""),
-    title: `${category} | ${new Date().getFullYear()} - ${process.env.DOMAIN_NAME}`,
+    title: `${categoriesBySlug?.[0].name ?? category} | ${new Date().getFullYear()} - ${process.env.DOMAIN_NAME}`,
     description: undefined,
     alternates: {
       canonical: category,
