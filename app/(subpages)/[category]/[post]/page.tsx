@@ -36,8 +36,8 @@ export const generateStaticParams = async ({ params: { category } }: { params: {
   return [];
 };
 
-export async function generateMetadata({ params }: { params: { post: string } }): Promise<Metadata> {
-  const { post } = params;
+export async function generateMetadata({ params }: { params: { category: string; post: string } }): Promise<Metadata> {
+  const { post, category } = params;
   const domainId = getDomainId();
   const article = await getArticles({ slug: post });
 
@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: { params: { post: string } })
     title: `${title} | ${new Date().getFullYear()} - ${process.env.DOMAIN_NAME}`,
     description: undefined,
     alternates: {
-      canonical: slug,
+      canonical: `${category}/${slug}`,
     },
     openGraph: {
       images: `/img/jpg/social-${domainId}.jpg`,
