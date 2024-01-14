@@ -1,9 +1,9 @@
 // Default theme
 $theme-map-light: (
   //Themes colors
-  $--color-primary: #ffd700,
+  $--color-primary: #b15eff,
   // TODO
-  $--color-secondary: #fff100,
+  $--color-secondary: #c147e9,
   // TODO
   $--color-secondary-alt: #f1352a,
   $--color-tertiary: #050505,
@@ -18,9 +18,9 @@ $theme-map-light: (
   $--color-light: #e4e6ea,
   $--color-lighter: #424549,
   // TODO
-  $--color-lightest: #2e3136,
+  $--color-lightest: #232d3f,
   // TODO
-  $--color-border: #e6e6e6,
+  $--color-border: #232d3f,
   $--color-white: #ffffff,
 
   // Notify Colors
@@ -43,22 +43,23 @@ $theme-map-light: (
   // Extra Color
   $--color-extra01: #666666,
   $--color-extra02: #606770,
-  $--color-extra03: #1b1d20,
-  $--color-extra04: #1a1a1a,
+  $--color-extra03: #0f0f0f,
   // TODO
-  $--color-extra05: #65676b,
-
+  $--color-extra04: #03001c,
+  // TODO
+  $--color-extra05: white,
+  // TODO
   // TODO
   // Border color
-  $--color-border-item: #333333,
+  $--color-border-item: #443c68,
 
   // TODO
   //Background
-  $--bg-default: #1e2124,
+  $--bg-default: #191919,
   // TODO
-  $--bg-tab-active: #2e3136,
+  $--bg-tab-active: #c147e9,
   // TODO
-  $--bg-list-view-active: #2e3136,
+  $--bg-list-view-active: #232d3f,
 
   // TODO
   //Border-radius
@@ -161,7 +162,7 @@ $theme-map-dark: (
   $--color-extra04: #1a1a1a,
   // TODO
   $--color-extra05: #65676b,
-
+  // TODO
   // TODO
   // Border color
   $--color-border-item: #333333,

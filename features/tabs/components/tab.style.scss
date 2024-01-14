@@ -31,7 +31,7 @@
     &--active {
       border: 1px solid transparent;
       background-color: useThemeVariable($--bg-tab-active);
-      color: useThemeVariable($--color-gray);
+      color: useThemeVariable($--color-extra05);
       box-shadow: useThemeVariable($--shadow-primary);
     }
   }
