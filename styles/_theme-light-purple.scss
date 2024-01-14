@@ -1,0 +1,207 @@
+// Default theme
+$theme-map-light: (
+  //Themes colors
+  $--color-primary: #892cdc,
+  $--color-secondary: #bc6ff1,
+  $--color-secondary-alt: #f1352a,
+  $--color-tertiary: #050505,
+
+  // Typo Color
+  $--color-heading: #000000,
+  $--color-body: #000000,
+
+  // Gery Colors
+  $--color-gray: #65676b,
+  $--color-midgray: #878787,
+  $--color-light: #e4e6ea,
+  $--color-lighter: #ced0d4,
+  $--color-lightest: #f0f2f5,
+  $--color-border: #e6e6e6,
+  $--color-white: #ffffff,
+
+  // Notify Colors
+  $--color-success: #3eb75e,
+  $--color-danger: #ff0003,
+  $--color-warning: #ff8f3c,
+  $--color-info: #1ba2db,
+
+  //Social icon colors
+  $--color-facebook: #3b5997,
+  $--color-twitter: #1ba1f2,
+  $--color-youtube: #ed4141,
+  $--color-linkedin: #0077b5,
+  $--color-pinterest: #e60022,
+  $--color-instagram: #c231a1,
+  $--color-vimeo: #00adef,
+  $--color-twitch: #6441a3,
+  $--color-discord: #7289da,
+
+  // Extra Color
+  $--color-extra01: #666666,
+  $--color-extra02: #606770,
+  $--color-extra03: #fbfbfd,
+  $--color-extra04: #1a1a1a,
+  $--color-extra05: #242424,
+
+  // Border color
+  $--color-border-item: #ced0d4,
+
+  //Background
+  $--bg-default: #ffffff,
+  $--bg-tab-active: transparent,
+  $--bg-list-view-active: #ffffff,
+
+  //Border-radius
+  $--radius: 10px,
+  $--radius-big: 16px,
+  $--radius-small: 6px,
+  $--border-width: 2px,
+
+  //Font weight
+  //primary font
+  $--p-light: 300,
+  $--p-regular: 400,
+  $--p-medium: 500,
+  $--p-semi-bold: 600,
+  $--p-bold: 700,
+  $--p-extra-bold: 800,
+  $--p-black: 900,
+
+  //secondary font
+  $--s-light: 300,
+  $--s-regular: 400,
+  $--s-medium: 500,
+  $--s-bold: 700,
+  $--s-black: 900,
+
+  //Shadows
+  $--shadow-primary: 0px 4px 10px rgba(37, 47, 63, 0.1),
+  $--shadow-light: 0 2px 6px 0 rgba(0, 0, 0, 0.05),
+  $--shadow-dark: 0 2px 6px 0 rgba(0, 0, 0, 0.2),
+  //transition easing
+  $--transition: 0.3s,
+  $--image-transition: 0.5s,
+  // scale
+  $--image-scale: scale(1.1),
+  //Fonts Size
+  $--font-size-b1: toRem(18),
+  $--font-size-b2: toRem(16),
+  $--font-size-b3: toRem(14),
+  $--font-size-b4: toRem(12),
+  //Line Height
+  $--line-height-b1: toRem(28),
+  $--line-height-b2: toRem(24),
+  $--line-height-b3: toRem(22),
+  $--line-height-b4: toRem(16),
+  // Heading Font
+  $--h1: toRem(44),
+  $--h2: toRem(36),
+  $--h3: toRem(30),
+  $--h4: toRem(24),
+  $--h5: toRem(18),
+  $--h6: toRem(16)
+);
+
+// Secondary theme
+$theme-map-dark: (
+  //Themes colors
+  $--color-primary: #3858f6,
+  $--color-secondary: #d93e40,
+  $--color-secondary-alt: #f1352a,
+  $--color-tertiary: #050505,
+
+  // Typo Color
+  $--color-heading: #000000,
+  $--color-body: #000000,
+
+  // Gery Colors
+  $--color-gray: #65676b,
+  $--color-midgray: #878787,
+  $--color-light: #e4e6ea,
+  $--color-lighter: #ced0d4,
+  $--color-lightest: #f0f2f5,
+  $--color-border: #e6e6e6,
+  $--color-white: #ffffff,
+
+  // Notify Colors
+  $--color-success: #3eb75e,
+  $--color-danger: #ff0003,
+  $--color-warning: #ff8f3c,
+  $--color-info: #1ba2db,
+
+  //Social icon colors
+  $--color-facebook: #3b5997,
+  $--color-twitter: #1ba1f2,
+  $--color-youtube: #ed4141,
+  $--color-linkedin: #0077b5,
+  $--color-pinterest: #e60022,
+  $--color-instagram: #c231a1,
+  $--color-vimeo: #00adef,
+  $--color-twitch: #6441a3,
+  $--color-discord: #7289da,
+
+  // Extra Color
+  $--color-extra01: #666666,
+  $--color-extra02: #606770,
+  $--color-extra03: #fbfbfd,
+  $--color-extra04: #1a1a1a,
+  $--color-extra05: #242424,
+
+  // Border color
+  $--color-border-item: #ced0d4,
+
+  //Background
+  $--bg-default: #ffffff,
+  $--bg-tab-active: transparent,
+  $--bg-list-view-active: #ffffff,
+
+  //Border-radius
+  $--radius: 10px,
+  $--radius-big: 16px,
+  $--radius-small: 6px,
+  $--border-width: 2px,
+
+  //Font weight
+  //primary font
+  $--p-light: 300,
+  $--p-regular: 400,
+  $--p-medium: 500,
+  $--p-semi-bold: 600,
+  $--p-bold: 700,
+  $--p-extra-bold: 800,
+  $--p-black: 900,
+
+  //secondary font
+  $--s-light: 300,
+  $--s-regular: 400,
+  $--s-medium: 500,
+  $--s-bold: 700,
+  $--s-black: 900,
+
+  //Shadows
+  $--shadow-primary: 0px 4px 10px rgba(37, 47, 63, 0.1),
+  $--shadow-light: 0 2px 6px 0 rgba(0, 0, 0, 0.05),
+  $--shadow-dark: 0 2px 6px 0 rgba(0, 0, 0, 0.2),
+  //transition easing
+  $--transition: 0.3s,
+  $--image-transition: 0.5s,
+  // scale
+  $--image-scale: scale(1.1),
+  //Fonts Size
+  $--font-size-b1: toRem(18),
+  $--font-size-b2: toRem(16),
+  $--font-size-b3: toRem(14),
+  $--font-size-b4: toRem(12),
+  //Line Height
+  $--line-height-b1: toRem(28),
+  $--line-height-b2: toRem(24),
+  $--line-height-b3: toRem(22),
+  $--line-height-b4: toRem(16),
+  // Heading Font
+  $--h1: toRem(44),
+  $--h2: toRem(36),
+  $--h3: toRem(30),
+  $--h4: toRem(24),
+  $--h5: toRem(18),
+  $--h6: toRem(16)
+);
