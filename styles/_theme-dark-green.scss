@@ -1,9 +1,9 @@
 // Default theme
 $theme-map-light: (
   //Themes colors
-  $--color-primary: #b15eff,
+  $--color-primary: #38e54d,
   // TODO
-  $--color-secondary: #c147e9,
+  $--color-secondary: #9cff2e,
   // TODO
   $--color-secondary-alt: #f1352a,
   $--color-tertiary: #050505,
@@ -17,8 +17,9 @@ $theme-map-light: (
   $--color-midgray: #878787,
   $--color-light: #e4e6ea,
   $--color-lighter: #424549,
+  // Border tab and cloud
   // TODO
-  $--color-lightest: #232d3f,
+  $--color-lightest: #232b2b,
   // TODO
   $--color-border: #232d3f,
   $--color-white: #ffffff,
@@ -45,21 +46,20 @@ $theme-map-light: (
   $--color-extra02: #606770,
   $--color-extra03: #0f0f0f,
   // TODO
-  $--color-extra04: #03001c,
+  $--color-extra04: #191919,
   // TODO
   $--color-extra05: white,
   // TODO
-  // TODO
   // Border color
-  $--color-border-item: #443c68,
+  $--color-border-item: #393e46,
 
   // TODO
   //Background
-  $--bg-default: #191919,
+  $--bg-default: #0f0f0f,
   // TODO
-  $--bg-tab-active: #c147e9,
+  $--bg-tab-active: #38e54d,
   // TODO
-  $--bg-list-view-active: #232d3f,
+  $--bg-list-view-active: #232b2b,
 
   // TODO
   //Border-radius
