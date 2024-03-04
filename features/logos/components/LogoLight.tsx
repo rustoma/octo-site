@@ -1,5 +1,6 @@
 import React, { ReactElement } from "react";
 
+import { ArtstylModernLight } from "@/features/logos/components/artstylmodern/ArtstylModernLight";
 import { BepemamebleLight } from "@/features/logos/components/bepemameble/BepemamebleLight";
 import { BioSerwisLight } from "@/features/logos/components/bioserwis/BioSerwisLight";
 import { CawioLight } from "@/features/logos/components/cawio/CawioLight";
@@ -19,6 +20,7 @@ const LOGOS: Record<string, ReactElement> = {
   6: <BioSerwisLight />,
   7: <BepemamebleLight />,
   8: <KrismetLight />,
+  10: <ArtstylModernLight />,
 };
 
 export const LogoLight = () => {
