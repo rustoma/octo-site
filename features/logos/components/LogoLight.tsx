@@ -8,6 +8,7 @@ import { FinanceObrLight } from "@/features/logos/components/financeObr/FinanceO
 import { FloorServiceLight } from "@/features/logos/components/floorService/FloorServiceLight";
 import { KrismetLight } from "@/features/logos/components/krismet/KrismetLight";
 import { MaximLight } from "@/features/logos/components/maxim/MaximLight";
+import { MetalbudLight } from "@/features/logos/components/metalbud/MetalbudLight";
 import { RoofServiceLight } from "@/features/logos/components/roofService/RoofServiceLight";
 import { getDomainId } from "@/utils";
 
@@ -20,6 +21,7 @@ const LOGOS: Record<string, ReactElement> = {
   6: <BioSerwisLight />,
   7: <BepemamebleLight />,
   8: <KrismetLight />,
+  9: <MetalbudLight />,
   10: <ArtstylModernLight />,
 };
 
