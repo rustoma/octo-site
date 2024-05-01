@@ -1,5 +1,12 @@
 /** @type {import('next').NextConfig} */
 const path = require("path");
+const cawioRedirects = require("./features/redirects/cawio");
+const artstylmodernRedirects = require("./features/redirects/artstylmodern");
+const bepemamebleRedirects = require("./features/redirects/bepemameble");
+const bioSerwisRedirects = require("./features/redirects/bioSerwis");
+const krismetRedirects = require("./features/redirects/krismet");
+const obrachowaniRedirects = require("./features/redirects/obrachowani");
+const oczyszczalnieMetalbudRedirects = require("./features/redirects/oczyszczalnieMetalbud");
 
 const nextConfig = {
   images: {
@@ -54,6 +61,29 @@ const nextConfig = {
         ],
       },
     ];
+  },
+  async redirects() {
+    const domainId = process.env.NEXT_PUBLIC_DOMAIN_ID;
+    if (!domainId) return [];
+
+    switch (domainId) {
+      case "5":
+        return cawioRedirects;
+      case "10":
+        return artstylmodernRedirects;
+      case "7":
+        return bepemamebleRedirects;
+      case "6":
+        return bioSerwisRedirects;
+      case "8":
+        return krismetRedirects;
+      case "3":
+        return obrachowaniRedirects;
+      case "9":
+        return oczyszczalnieMetalbudRedirects;
+      default:
+        [];
+    }
   },
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
