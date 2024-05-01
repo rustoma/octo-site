@@ -1,44 +1,10 @@
-import { artstylmodern404Sitemap } from "@/features/sitemaps/404/artstylmodern";
-import { cawio404Sitemap } from "@/features/sitemaps/404/cawio";
-import { krismet404Sitemap } from "@/features/sitemaps/404/krismet";
 import { getArticles } from "@/services/article/article.service";
 import { getBasicPages } from "@/services/basicPage/basicPage.service";
 import { getCategoriesByDomain } from "@/services/category/category.service";
 import { getDomainId } from "@/utils";
 
-export async function generateSitemaps() {
-  return [{ id: "sitemap" }, { id: "404" }];
-}
-
-const get404Sitemap = (domainId: string) => {
-  switch (domainId) {
-    case "10": {
-      return artstylmodern404Sitemap;
-    }
-    case "8": {
-      return krismet404Sitemap;
-    }
-    case "5": {
-      return cawio404Sitemap;
-    }
-    default: {
-      return undefined;
-    }
-  }
-};
-
-export default async function sitemap({ id }: { id: string }) {
+export default async function sitemap() {
   const domainId = getDomainId();
-
-  if (id === "404") {
-    const sitemap = get404Sitemap(domainId);
-    if (!sitemap) return [];
-
-    const sitemapNextJs: { url: string }[] = sitemap.urlset.url.map((item) => ({
-      url: item.loc.replace("&", "&amp;"),
-    }));
-    return sitemapNextJs;
-  }
 
   const categories = await getCategoriesByDomain(domainId);
   const postByCategories = categories
