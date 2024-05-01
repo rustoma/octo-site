@@ -82,7 +82,7 @@ const nextConfig = {
       case "9":
         return oczyszczalnieMetalbudRedirects;
       default:
-        [];
+        return [];
     }
   },
   sassOptions: {
