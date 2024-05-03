@@ -9,7 +9,10 @@ import { FloorServiceLight } from "@/features/logos/components/floorService/Floo
 import { KrismetLight } from "@/features/logos/components/krismet/KrismetLight";
 import { MaximLight } from "@/features/logos/components/maxim/MaximLight";
 import { MetalbudLight } from "@/features/logos/components/metalbud/MetalbudLight";
+import { RoletywiralLight } from "@/features/logos/components/roletywiral/RoletywiralLight";
 import { RoofServiceLight } from "@/features/logos/components/roofService/RoofServiceLight";
+import { TimepiecesLight } from "@/features/logos/components/timepieces/TimepiecesLight";
+import { VilamaliaLight } from "@/features/logos/components/vilamalia/VilamaliaLight";
 import { getDomainId } from "@/utils";
 
 const LOGOS: Record<string, ReactElement> = {
@@ -23,6 +26,9 @@ const LOGOS: Record<string, ReactElement> = {
   8: <KrismetLight />,
   9: <MetalbudLight />,
   10: <ArtstylModernLight />,
+  11: <RoletywiralLight />,
+  12: <TimepiecesLight />,
+  13: <VilamaliaLight />,
 };
 
 export const LogoLight = () => {

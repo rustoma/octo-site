@@ -9,7 +9,10 @@ import { FloorServiceDark } from "@/features/logos/components/floorService/Floor
 import { KrismetDark } from "@/features/logos/components/krismet/KrismetDark";
 import { MaximDark } from "@/features/logos/components/maxim/MaximDark";
 import { MetalbudDark } from "@/features/logos/components/metalbud/MetalbudDark";
+import { RoletywiralDark } from "@/features/logos/components/roletywiral/RoletywiralDark";
 import { RoofServiceLight } from "@/features/logos/components/roofService/RoofServiceLight";
+import { TimepiecesDark } from "@/features/logos/components/timepieces/TimepiecesDark";
+import { VilamaliaDark } from "@/features/logos/components/vilamalia/VilamaliaDark";
 import { getDomainId } from "@/utils";
 
 const LOGOS: Record<string, ReactElement> = {
@@ -23,6 +26,9 @@ const LOGOS: Record<string, ReactElement> = {
   8: <KrismetDark />,
   9: <MetalbudDark />,
   10: <ArtstylModernDark />,
+  11: <RoletywiralDark />,
+  12: <TimepiecesDark />,
+  13: <VilamaliaDark />,
 };
 
 export const LogoDark = () => {
