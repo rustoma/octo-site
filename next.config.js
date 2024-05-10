@@ -7,6 +7,7 @@ const bioSerwisRedirects = require("./features/redirects/bioSerwis");
 const krismetRedirects = require("./features/redirects/krismet");
 const obrachowaniRedirects = require("./features/redirects/obrachowani");
 const oczyszczalnieMetalbudRedirects = require("./features/redirects/oczyszczalnieMetalbud");
+const roletywiral = require("./features/redirects/roletywiral");
 
 const nextConfig = {
   images: {
@@ -81,6 +82,8 @@ const nextConfig = {
         return obrachowaniRedirects;
       case "9":
         return oczyszczalnieMetalbudRedirects;
+      case "11":
+        return roletywiral;
       default:
         return [];
     }
