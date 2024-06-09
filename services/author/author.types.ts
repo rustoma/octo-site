@@ -6,4 +6,5 @@ export interface Author {
   imageUrl: string;
   createdAt: string;
   updatedAt: string;
+  domain: number | null;
 }
