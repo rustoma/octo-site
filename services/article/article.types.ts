@@ -28,4 +28,5 @@ export interface ArticleFilters {
   featured?: string;
   slug?: string;
   excludeBody?: "true";
+  isPublished?: "true" | "false";
 }
