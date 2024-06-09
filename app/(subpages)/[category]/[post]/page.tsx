@@ -82,7 +82,7 @@ const PostPage = async ({ params }: { params: { category: string; post: string }
             <div className="post-page__breadcrumbs">
               <Breadcrumbs currentPageTitle={title} />
             </div>
-            <div>{parse(body ?? "")}</div>
+            <div className="post-page__body">{parse(body ?? "")}</div>
           </div>
           <div className="post-page__sidebar">
             <TagsCloud />

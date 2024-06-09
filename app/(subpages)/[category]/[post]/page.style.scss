@@ -25,6 +25,13 @@
     }
   }
 
+  &__body {
+    a {
+      color: useThemeVariable($--color-secondary);
+      text-decoration: underline;
+    }
+  }
+
   &__breadcrumbs {
     margin: 12px 0 40px;
     padding: 20px 0;
