@@ -4,6 +4,7 @@ export interface Category {
   slug: string;
   createdAt: string;
   updatedAt: string;
+  domainId: number;
 }
 
 export interface CategoryFilters {
