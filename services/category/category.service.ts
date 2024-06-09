@@ -11,7 +11,7 @@ export const getCategories = async (filters?: CategoryFilters): Promise<Category
 };
 
 export const getCategoriesByDomain = async (domainId: number | string): Promise<Category[] | null> => {
-  const res = await httpClient.get(CATEGORY_ROUTES.byDomain(domainId));
+  const res = await httpClient.get(CATEGORY_ROUTES.index({ domainId: `${domainId}` }));
   if (!res.ok) {
     throw new Error(`${res.status} ${res.statusText}`);
   }

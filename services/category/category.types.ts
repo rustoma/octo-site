@@ -8,4 +8,5 @@ export interface Category {
 
 export interface CategoryFilters {
   slug?: string;
+  domainId?: string;
 }
