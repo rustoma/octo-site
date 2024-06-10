@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Chip } from "@/features/chip/components/Chip";
+import { CHIP_LABELS } from "@/features/chip/consts";
 import { Category } from "@/features/posts/components/category/Category";
 import { Article } from "@/services/article/article.types";
 
@@ -33,6 +35,11 @@ export const GridImageTextMainItem = ({ item, priority = false }: GridImageTextM
         <h3 className="grid-it__title grid-it__main-item-title h5">
           <Link href={`/${item.category.slug}/${item.slug}`}>{item.title}</Link>
         </h3>
+        {item.isSponsored && (
+          <div className="grid-it__chip-wrapper">
+            <Chip label={CHIP_LABELS.sponsored} size="xs" />
+          </div>
+        )}
       </div>
     </div>
   );

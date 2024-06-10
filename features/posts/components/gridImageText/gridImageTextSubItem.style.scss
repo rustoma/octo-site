@@ -30,4 +30,8 @@
       @include aspect-16-9;
     }
   }
+
+  &__chip-wrapper {
+    margin-top: 4px;
+  }
 }

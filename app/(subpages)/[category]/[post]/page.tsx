@@ -65,7 +65,7 @@ const PostPage = async ({ params }: { params: { category: string; post: string }
   const relatedArticles = articlesFromTheSameCategory
     ? articlesFromTheSameCategory.filter((a) => a.id !== article[0].id)
     : [];
-  const { title, body, category, author, readingTime, updatedAt } = article[0];
+  const { title, body, category, author, readingTime, updatedAt, isSponsored } = article[0];
 
   return (
     <>
@@ -78,6 +78,7 @@ const PostPage = async ({ params }: { params: { category: string; post: string }
               author={author}
               readingTime={readingTime ?? undefined}
               date={updatedAt}
+              isSponsored={isSponsored}
             />
             <div className="post-page__breadcrumbs">
               <Breadcrumbs currentPageTitle={title} />

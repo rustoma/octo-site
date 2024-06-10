@@ -3,6 +3,8 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Chip } from "@/features/chip/components/Chip";
+import { CHIP_LABELS } from "@/features/chip/consts";
 import { Category } from "@/features/posts/components/category/Category";
 import { Article } from "@/services/article/article.types";
 
@@ -33,6 +35,11 @@ export const GridImageTextSubItem = ({ item, isOnDark = false }: GridImageTextSu
         <h3 className={clsx("grid-it__title h5", isOnDark && "grid-it__title--light")}>
           <Link href={`/${item.category.slug}/${item.slug}`}>{item.title}</Link>
         </h3>
+        {item.isSponsored && (
+          <div className="grid-it__chip-wrapper">
+            <Chip label={CHIP_LABELS.sponsored} size="xs" />
+          </div>
+        )}
       </div>
     </div>
   );

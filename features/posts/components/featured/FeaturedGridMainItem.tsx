@@ -2,6 +2,8 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { Chip } from "@/features/chip/components/Chip";
+import { CHIP_LABELS } from "@/features/chip/consts";
 import { Category } from "@/features/posts/components/category/Category";
 import { PostMeta } from "@/features/posts/components/postMeta/PostMeta";
 import { Article } from "@/services/article/article.types";
@@ -37,6 +39,11 @@ export const FeaturedGridMainItem = ({ item, isOnDark = false }: FeaturedGridMai
         <h3 className="featured-grid__title featured-grid__main-item-title h4">
           <Link href={`/${category.slug}/${slug}`}>{title}</Link>
         </h3>
+        {item.isSponsored && (
+          <div className="featured-grid__chip-wrapper">
+            <Chip label={CHIP_LABELS.sponsored} size="xs" />
+          </div>
+        )}
         <div className="featured-grid__post-meta-wrapper">
           <PostMeta
             author={author}

@@ -1,0 +1,30 @@
+@import "styles/variables";
+@import "styles/media-queries";
+@import "styles/functions";
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: useThemeVariable($--font-size-b3);
+  background-color: useThemeVariable($--color-primary);
+  border-radius: useThemeVariable($--radius-small);
+  box-shadow: useThemeVariable($--shadow-primary);
+  line-height: 1;
+
+  &--xs {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+
+  &--sm {
+    padding: 8px;
+    font-size: useThemeVariable($--font-size-b4);
+  }
+
+  &--md {
+    padding: 8px 16px;
+    font-size: useThemeVariable($--font-size-b3);
+  }
+}
