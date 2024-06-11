@@ -36,23 +36,11 @@ export const Header = async () => {
       href: "/",
       items: [],
     },
-    {
-      id: "o-nas",
-      title: "O nas",
-      href: "/o-nas",
-      items: [],
-    },
     ...categoryMenuItems.slice(0, 3),
     {
       id: "pozostale-kategorie",
       title: "Pozostałe kategorie",
       items: categoryMenuItems.slice(3),
-    },
-    {
-      id: "kontakt",
-      title: "Kontakt",
-      href: "/kontakt",
-      items: [],
     },
   ];
 
