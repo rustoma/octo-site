@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useCallback, useState } from "react";
 
 import { Container } from "@/components/container/Container";
