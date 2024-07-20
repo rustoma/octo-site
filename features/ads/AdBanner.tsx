@@ -24,7 +24,7 @@ const AdBanner: React.FC<AdComponentProps> = ({ adSlot, adFormat = "auto", adLay
   return (
     <ins
       className="adsbygoogle"
-      style={{ display: "block" }}
+      style={{ display: "block", overflow: "hidden" }}
       data-ad-client="ca-pub-6904919818397768"
       data-ad-slot={adSlot}
       data-ad-format={adFormat}

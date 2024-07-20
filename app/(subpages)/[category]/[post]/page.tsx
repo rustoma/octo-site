@@ -5,10 +5,10 @@ import { notFound } from "next/navigation";
 
 import { Container } from "@/components/container/Container";
 import AdBanner from "@/features/ads/AdBanner";
+import { AddPostWide } from "@/features/ads/AdPostWide";
 import { PostBanner } from "@/features/banners/components/postBanner/PostBanner";
 import { Breadcrumbs } from "@/features/breadcrumbs/components/Breadcrumbs";
 import { RelatedItems } from "@/features/posts/components/relatedItems/RelatedItems";
-import { Advertisement } from "@/features/widgets/components/advertisment/Advertisement";
 import { Recent } from "@/features/widgets/components/recent/Recent";
 import { StickyWidget } from "@/features/widgets/components/stickyWidget/StickyWidget";
 import { TagsCloud } from "@/features/widgets/components/tagsCloud/TagsCloud";
@@ -90,7 +90,6 @@ const PostPage = async ({ params }: { params: { category: string; post: string }
             <TagsCloud />
             <StickyWidget fraction={0.3}>
               <AdBanner adSlot="7791135465" adFormat="autorelaxed" />
-              {/*<Advertisement />*/}
             </StickyWidget>
             <StickyWidget fraction={0.7}>
               <Recent />
@@ -99,9 +98,8 @@ const PostPage = async ({ params }: { params: { category: string; post: string }
           </div>
         </div>
       </Container>
-      <Container>
-        <AdBanner adSlot="8825015537" adFormat="auto" adResponsive />
-      </Container>
+
+      <AddPostWide />
       <RelatedItems items={relatedArticles} />
     </>
   );

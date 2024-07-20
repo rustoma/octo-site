@@ -1,6 +1,5 @@
 import React from "react";
 import { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import { Container } from "@/components/container/Container";
@@ -8,7 +7,6 @@ import AdBanner from "@/features/ads/AdBanner";
 import { SimpleBanner } from "@/features/banners/components/simpleBanner/SimpleBanner";
 import { ListViewItem } from "@/features/posts/components/listViewWithSidebar/ListViewItem";
 import { LoadMorePosts } from "@/features/posts/components/loadMorePosts/LoadMorePosts";
-import { Advertisement } from "@/features/widgets/components/advertisment/Advertisement";
 import { StickyWidget } from "@/features/widgets/components/stickyWidget/StickyWidget";
 import { TagsCloud } from "@/features/widgets/components/tagsCloud/TagsCloud";
 import { getArticles } from "@/services/article/article.service";
@@ -68,14 +66,12 @@ const CategoryPage = async ({ params }: { params: { category: string } }) => {
 
             <div className="category-page__content-advertisement">
               <AdBanner adSlot="1225727110" adFormat="auto" adResponsive />
-              {/*<Image src="/img/jpg/advertisement-long-3.jpg" alt="reklama" width={810} height={115} />*/}
             </div>
           </div>
           <div className="category-page__sidebar">
             <TagsCloud />
             <StickyWidget>
               <AdBanner adSlot="7791135465" adFormat="autorelaxed" />
-              {/*<Advertisement />*/}
             </StickyWidget>
           </div>
         </div>

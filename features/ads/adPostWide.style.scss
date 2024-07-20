@@ -1,0 +1,7 @@
+.ad-post-wide {
+  margin-bottom: 80px;
+
+  @include respond-below(md) {
+    margin-bottom: 45px;
+  }
+}

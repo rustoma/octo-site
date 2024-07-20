@@ -1,8 +1,6 @@
 import React from "react";
-import Image from "next/image";
 
-import { Container } from "@/components/container/Container";
-import AdBanner from "@/features/ads/AdBanner";
+import { AdHomeWide } from "@/features/ads/AdHomeWide";
 import { FeaturedGrid } from "@/features/posts/components/featured/FeaturedGrid";
 import { GridImageText } from "@/features/posts/components/gridImageText/GridImageText";
 import { ListViewWithSidebar } from "@/features/posts/components/listViewWithSidebar/ListViewWithSidebar";
@@ -49,22 +47,13 @@ export default async function Home() {
   return (
     <main className="content">
       <GridImageText items={articles ?? []} priority />
-      <Container>
-        <AdBanner adSlot="8825015537" adFormat="auto" adResponsive />
-      </Container>
+      <AdHomeWide />
       <TabGrid tabs={TABS} items={tabGridItems} />
       <FeaturedGrid isOnDark items={featuredArticles ?? []} />
-      <Container>
-        <AdBanner adSlot="8825015537" adFormat="auto" adResponsive />
-      </Container>
+      <AdHomeWide />
       <ListViewWithSidebar items={articles ?? []} />
       <div className="home-page-advertisement">
-        <Container>
-          <AdBanner adSlot="8825015537" adFormat="auto" adResponsive />
-        </Container>
-        {/*<Container>*/}
-        {/*  <Image src="/img/jpg/advertisement-long-3.jpg" alt="reklama" width={1230} height={200} />*/}
-        {/*</Container>*/}
+        <AdHomeWide />
       </div>
     </main>
   );

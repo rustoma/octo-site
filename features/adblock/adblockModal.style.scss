@@ -1,0 +1,96 @@
+.adblock-modal {
+  &-content-wrapper {
+    background: #fff;
+    height: auto;
+    width: 100%;
+  }
+
+  &-content {
+    padding: 30px 50px;
+    @include respond-below(sm) {
+      padding: 30px 8px;
+    }
+  }
+
+  &-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #fa3123;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    width: 40px;
+    height: 40px;
+  }
+
+  &-image-container-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  &-image-container {
+    width: 100px;
+    text-align: center;
+    margin-bottom: -20px;
+  }
+
+  &-image-title {
+    font-size: 30px;
+    font-weight: 700;
+    border: 4px dotted rgba(250, 49, 35, 1);
+    border-radius: 50%;
+    text-align: center;
+    color: rgba(250, 49, 35, 1);
+    padding: 27px 0;
+    font-family: inherit;
+  }
+
+  &-text {
+    text-align: center;
+    font-family: inherit;
+    font-weight: 700;
+  }
+
+  &-title {
+    font-size: 30px;
+    @include respond-below(sm) {
+      font-size: 18px;
+    }
+  }
+
+  &-body {
+    margin: 20px auto;
+    font-weight: 500;
+    @include respond-below(sm) {
+      font-size: 12px;
+    }
+  }
+
+  &-button {
+    margin-top: 20px;
+    line-height: 1em;
+    border-radius: 30px;
+    padding: 15px 20px;
+    width: 100%;
+    background: #fa3123;
+    color: #fff;
+    transition: 0.2s;
+    border: 2px solid #fa3123;
+
+    @include respond-below(sm) {
+      padding: 8px 12px;
+      font-size: 16px;
+    }
+
+    &:hover {
+      background: #fff;
+      color: #fa3123;
+      border: 2px solid #fa3123;
+    }
+  }
+}

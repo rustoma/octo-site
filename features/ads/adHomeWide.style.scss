@@ -1,0 +1,7 @@
+.ad-wide-home {
+  margin-top: 80px;
+
+  @include respond-below(md) {
+    margin-top: 45px;
+  }
+}
