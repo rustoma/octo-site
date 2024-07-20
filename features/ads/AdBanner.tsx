@@ -32,7 +32,7 @@ const AdBanner: React.FC<AdComponentProps> = ({
 
   return (
     <ins
-      className={className}
+      className={`adsbygoogle ${className}`}
       style={{ display: "block", overflow: "hidden", height: height ? `${height}px` : "auto" }}
       data-ad-client="ca-pub-6904919818397768"
       data-ad-slot={adSlot}
