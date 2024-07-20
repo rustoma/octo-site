@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 
 import { Container } from "@/components/container/Container";
-import AdBanner from "@/features/ads/AdBanner";
 import { LogoDark } from "@/features/logos/components/LogoDark";
 import { HamburgerMenu } from "@/features/nav/mobileMenu/hamburgerMenu/HamburgerMenu";
 import { TopNav } from "@/features/nav/topNav/TopNav";
@@ -104,9 +103,9 @@ export const Header = async () => {
               </Link>
             </div>
 
-            <div className="header-middle__advertisement">
-              <AdBanner adSlot="8825015537" adFormat="auto" height={92} />
-            </div>
+            {/*<div className="header-middle__advertisement">*/}
+            {/*  <AdBanner adSlot="8825015537" adFormat="auto" height={92} />*/}
+            {/*</div>*/}
           </div>
         </Container>
       </div>
