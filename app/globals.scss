@@ -47,3 +47,7 @@ a {
 :root.dark {
   @include spread-map($theme-map-dark);
 }
+
+[data-ad-status="unfilled"] {
+  display: none;
+}

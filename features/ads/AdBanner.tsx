@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
 
 interface AdComponentProps {
   adSlot: string;
@@ -19,10 +19,6 @@ const AdBanner: React.FC<AdComponentProps> = ({
   adResponsive = "",
   className,
 }) => {
-  const adRef = useRef<HTMLModElement | null>(null);
-
-  const [isBannerVisible, setIsBannerVisible] = useState(true);
-
   useEffect(() => {
     try {
       /* eslint-disable  @typescript-eslint/no-explicit-any */
@@ -34,19 +30,8 @@ const AdBanner: React.FC<AdComponentProps> = ({
     }
   }, []);
 
-  console.log("Atr", adRef.current?.getAttribute("data-ad-status"));
-
-  if (adRef.current && adRef.current?.getAttribute("data-ad-status") === "unfilled") {
-    setIsBannerVisible(false);
-  }
-
-  if (!isBannerVisible) {
-    return null;
-  }
-
   return (
     <ins
-      ref={adRef}
       className={className}
       style={{ display: "block", overflow: "hidden", height: height ? `${height}px` : "auto" }}
       data-ad-client="ca-pub-6904919818397768"
