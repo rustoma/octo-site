@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
 interface AdComponentProps {
   adSlot: string;
@@ -8,6 +8,8 @@ interface AdComponentProps {
   adLayout?: string;
   adResponsive?: boolean;
   height?: number;
+  onAdUnfilled?: () => void;
+  className?: string;
 }
 
 const AdBanner: React.FC<AdComponentProps> = ({
@@ -16,7 +18,11 @@ const AdBanner: React.FC<AdComponentProps> = ({
   adFormat = "auto",
   adLayout = "",
   adResponsive = "",
+  className,
+  onAdUnfilled,
 }) => {
+  const adRef = useRef<HTMLModElement | null>(null);
+
   useEffect(() => {
     try {
       /* eslint-disable  @typescript-eslint/no-explicit-any */
@@ -28,9 +34,14 @@ const AdBanner: React.FC<AdComponentProps> = ({
     }
   }, []);
 
+  if (adRef.current && adRef.current?.getAttribute("data-ad-status") === "unfilled") {
+    onAdUnfilled?.();
+  }
+
   return (
     <ins
-      className="adsbygoogle"
+      ref={adRef}
+      className={className}
       style={{ display: "block", overflow: "hidden", height: height ? `${height}px` : "auto" }}
       data-ad-client="ca-pub-6904919818397768"
       data-ad-slot={adSlot}
