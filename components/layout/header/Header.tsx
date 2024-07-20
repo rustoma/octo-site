@@ -105,7 +105,7 @@ export const Header = async () => {
             </div>
 
             <div className="header-middle__advertisement">
-              <AdBanner adSlot="8825015537" adFormat="auto" adResponsive height={92} />
+              <AdBanner adSlot="8825015537" adFormat="auto" height={92} />
             </div>
           </div>
         </Container>
