@@ -7,9 +7,16 @@ interface AdComponentProps {
   adFormat?: "auto" | "autorelaxed";
   adLayout?: string;
   adResponsive?: boolean;
+  height?: number;
 }
 
-const AdBanner: React.FC<AdComponentProps> = ({ adSlot, adFormat = "auto", adLayout = "", adResponsive = "" }) => {
+const AdBanner: React.FC<AdComponentProps> = ({
+  height,
+  adSlot,
+  adFormat = "auto",
+  adLayout = "",
+  adResponsive = "",
+}) => {
   useEffect(() => {
     try {
       /* eslint-disable  @typescript-eslint/no-explicit-any */
@@ -24,7 +31,7 @@ const AdBanner: React.FC<AdComponentProps> = ({ adSlot, adFormat = "auto", adLay
   return (
     <ins
       className="adsbygoogle"
-      style={{ display: "block", overflow: "hidden" }}
+      style={{ display: "block", overflow: "hidden", height: height ? `${height}px` : "auto" }}
       data-ad-client="ca-pub-6904919818397768"
       data-ad-slot={adSlot}
       data-ad-format={adFormat}

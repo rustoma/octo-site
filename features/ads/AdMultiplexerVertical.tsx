@@ -7,7 +7,7 @@ import "./adMultiplexerVertical.style.scss";
 export const AdMultiplexerVertical = () => {
   return (
     <aside className="ad-multi-vertical">
-      <AdBanner adSlot="7791135465" adFormat="autorelaxed" />
+      <AdBanner adSlot="7791135465" adFormat="autorelaxed" height={540} />
     </aside>
   );
 };
