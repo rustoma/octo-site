@@ -1,7 +1,9 @@
+import React from "react";
 import parse from "html-react-parser";
 import { notFound } from "next/navigation";
 
 import { Container } from "@/components/container/Container";
+import AdBanner from "@/features/ads/AdBanner";
 import { SimpleBanner } from "@/features/banners/components/simpleBanner/SimpleBanner";
 import { GoogleCaptchaWrapper } from "@/features/captcha/context/CaptchaProvider";
 import { ContactForm } from "@/features/forms/components/contactForm/ContactForm";
@@ -39,13 +41,14 @@ const ContactPage = async () => {
         <div className="contact-page">
           <div className="contact-page__content">
             {parse(page.body ?? "")}
-
             <ContactForm />
+            <AdBanner adSlot="1225727110" adFormat="auto" adResponsive />
           </div>
           <div className="contact-page__sidebar">
             <TagsCloud />
             <StickyWidget>
-              <Advertisement />
+              <AdBanner adSlot="7791135465" adFormat="autorelaxed" />
+              {/*<Advertisement />*/}
             </StickyWidget>
           </div>
         </div>

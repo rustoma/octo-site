@@ -4,6 +4,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { Container } from "@/components/container/Container";
+import AdBanner from "@/features/ads/AdBanner";
 import { PostBanner } from "@/features/banners/components/postBanner/PostBanner";
 import { Breadcrumbs } from "@/features/breadcrumbs/components/Breadcrumbs";
 import { RelatedItems } from "@/features/posts/components/relatedItems/RelatedItems";
@@ -88,13 +89,18 @@ const PostPage = async ({ params }: { params: { category: string; post: string }
           <div className="post-page__sidebar">
             <TagsCloud />
             <StickyWidget fraction={0.3}>
-              <Advertisement />
+              <AdBanner adSlot="7791135465" adFormat="autorelaxed" />
+              {/*<Advertisement />*/}
             </StickyWidget>
             <StickyWidget fraction={0.7}>
               <Recent />
+              <AdBanner adSlot="1225727110" adFormat="auto" adResponsive />
             </StickyWidget>
           </div>
         </div>
+      </Container>
+      <Container>
+        <AdBanner adSlot="8825015537" adFormat="auto" adResponsive />
       </Container>
       <RelatedItems items={relatedArticles} />
     </>

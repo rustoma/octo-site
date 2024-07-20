@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/container/Container";
+import AdBanner from "@/features/ads/AdBanner";
 import { LogoDark } from "@/features/logos/components/LogoDark";
 import { HamburgerMenu } from "@/features/nav/mobileMenu/hamburgerMenu/HamburgerMenu";
 import { TopNav } from "@/features/nav/topNav/TopNav";
@@ -105,7 +106,8 @@ export const Header = async () => {
             </div>
 
             <div className="header-middle__advertisement">
-              <Image src="/img/jpg/advertisement-1.jpg" alt="reklama" width={728} height={92} />
+              <AdBanner adSlot="8825015537" adFormat="auto" adResponsive />
+              {/*<Image src="/img/jpg/advertisement-1.jpg" alt="reklama" width={728} height={92} />*/}
             </div>
           </div>
         </Container>

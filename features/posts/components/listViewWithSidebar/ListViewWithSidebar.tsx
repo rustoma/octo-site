@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import { Container } from "@/components/container/Container";
+import AdBanner from "@/features/ads/AdBanner";
 import { ListViewItem } from "@/features/posts/components/listViewWithSidebar/ListViewItem";
 import { Advertisement } from "@/features/widgets/components/advertisment/Advertisement";
 import { StickyWidget } from "@/features/widgets/components/stickyWidget/StickyWidget";
@@ -28,7 +29,8 @@ export const ListViewWithSidebar = ({ items }: ListViewWithSidebarProps) => {
           <div className="list-view__sidebar">
             <TagsCloud />
             <StickyWidget>
-              <Advertisement />
+              {/*<Advertisement />*/}
+              <AdBanner adSlot="7791135465" adFormat="autorelaxed" />
             </StickyWidget>
           </div>
         </div>
