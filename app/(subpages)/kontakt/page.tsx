@@ -4,10 +4,10 @@ import { notFound } from "next/navigation";
 
 import { Container } from "@/components/container/Container";
 import AdBanner from "@/features/ads/AdBanner";
+import { AdMultiplexerVertical } from "@/features/ads/AdMultiplexerVertical";
 import { SimpleBanner } from "@/features/banners/components/simpleBanner/SimpleBanner";
 import { GoogleCaptchaWrapper } from "@/features/captcha/context/CaptchaProvider";
 import { ContactForm } from "@/features/forms/components/contactForm/ContactForm";
-import { Advertisement } from "@/features/widgets/components/advertisment/Advertisement";
 import { StickyWidget } from "@/features/widgets/components/stickyWidget/StickyWidget";
 import { TagsCloud } from "@/features/widgets/components/tagsCloud/TagsCloud";
 import { getBasicPageBySlug } from "@/services/basicPage/basicPage.service";
@@ -47,8 +47,7 @@ const ContactPage = async () => {
           <div className="contact-page__sidebar">
             <TagsCloud />
             <StickyWidget>
-              <AdBanner adSlot="7791135465" adFormat="autorelaxed" />
-              {/*<Advertisement />*/}
+              <AdMultiplexerVertical />
             </StickyWidget>
           </div>
         </div>

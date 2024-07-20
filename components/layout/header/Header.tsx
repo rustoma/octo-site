@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/container/Container";
@@ -107,7 +106,6 @@ export const Header = async () => {
 
             <div className="header-middle__advertisement">
               <AdBanner adSlot="8825015537" adFormat="auto" adResponsive />
-              {/*<Image src="/img/jpg/advertisement-1.jpg" alt="reklama" width={728} height={92} />*/}
             </div>
           </div>
         </Container>

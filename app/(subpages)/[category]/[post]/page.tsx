@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 
 import { Container } from "@/components/container/Container";
 import AdBanner from "@/features/ads/AdBanner";
+import { AdMultiplexerVertical } from "@/features/ads/AdMultiplexerVertical";
 import { AddPostWide } from "@/features/ads/AdPostWide";
 import { PostBanner } from "@/features/banners/components/postBanner/PostBanner";
 import { Breadcrumbs } from "@/features/breadcrumbs/components/Breadcrumbs";
@@ -89,7 +90,7 @@ const PostPage = async ({ params }: { params: { category: string; post: string }
           <div className="post-page__sidebar">
             <TagsCloud />
             <StickyWidget fraction={0.3}>
-              <AdBanner adSlot="7791135465" adFormat="autorelaxed" />
+              <AdMultiplexerVertical />
             </StickyWidget>
             <StickyWidget fraction={0.7}>
               <Recent />
