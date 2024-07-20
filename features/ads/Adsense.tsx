@@ -10,7 +10,7 @@ export const Adsense = () => {
         id="ads-banner"
         async
         strategy="lazyOnload"
-        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=6904919818397768`}
+        src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6904919818397768`}
         crossOrigin="anonymous"
       />
     </>
