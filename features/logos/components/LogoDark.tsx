@@ -11,8 +11,11 @@ import { MaximDark } from "@/features/logos/components/maxim/MaximDark";
 import { MetalbudDark } from "@/features/logos/components/metalbud/MetalbudDark";
 import { RoletywiralDark } from "@/features/logos/components/roletywiral/RoletywiralDark";
 import { RoofServiceLight } from "@/features/logos/components/roofService/RoofServiceLight";
+import { SaunyBasenyDark } from "@/features/logos/components/saunyBaseny/SaunyBasenyDark";
+import { TalentHuntersDark } from "@/features/logos/components/talentHunters/TalentHuntersDark";
 import { TimepiecesDark } from "@/features/logos/components/timepieces/TimepiecesDark";
 import { VilamaliaDark } from "@/features/logos/components/vilamalia/VilamaliaDark";
+import { WielkopolskaesDark } from "@/features/logos/components/wielkopolskaes/WielkopolskaesDark";
 import { getDomainId } from "@/utils";
 
 const LOGOS: Record<string, ReactElement> = {
@@ -29,6 +32,9 @@ const LOGOS: Record<string, ReactElement> = {
   11: <RoletywiralDark />,
   12: <TimepiecesDark />,
   13: <VilamaliaDark />,
+  14: <SaunyBasenyDark />,
+  15: <WielkopolskaesDark />,
+  16: <TalentHuntersDark />,
 };
 
 export const LogoDark = () => {
