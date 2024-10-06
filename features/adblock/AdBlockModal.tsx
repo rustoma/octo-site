@@ -4,12 +4,14 @@ import React, { useState } from "react";
 import { useDetectAdBlock } from "adblock-detect-react";
 
 import Modal from "@/components/modal/Modal";
+import { useDictionary } from "@/context/DictionaryContext";
 
 import "./adblockModal.style.scss";
 
 export const AdBlockModal = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const adBlockDetected = useDetectAdBlock();
+  const { t } = useDictionary();
 
   React.useEffect(() => {
     if (adBlockDetected) {
@@ -32,11 +34,8 @@ export const AdBlockModal = () => {
             </div>
           </div>
           <div className="adblock-modal-text">
-            <h3 className="adblock-modal-title">Prosimy o wyłączenie adblockera</h3>
-            <p className="adblock-modal-body">
-              Rozumiemy, że reklamy mogą być uciążliwe, ale prosimy o wyrozumiałość i wsparcie przez wyłączenie
-              adblockera.
-            </p>
+            <h3 className="adblock-modal-title">{t.adBlock.title}</h3>
+            <p className="adblock-modal-body">{t.adBlock.description}</p>
           </div>
           <button className="adblock-modal-button" onClick={() => setIsModalOpen(false)}>
             OK

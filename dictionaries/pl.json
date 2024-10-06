@@ -27,5 +27,21 @@
     "otherCategories": "Pozostałe kategorie",
     "contact": "Kontakt",
     "aboutUs": "O nas"
+  },
+  "notFound": {
+    "title": "Strona nie odnaleziona",
+    "description": "Wygląda na to, że strona, której szukasz nie istnieje."
+  },
+  "cookieBanner": {
+    "description": "Strona korzysta z ciasteczek, aby świadczyć usługi na najwyższym poziomie. Dalsze korzystanie ze strony oznacza, że zgadzasz się na ich użycie zgodnie z",
+    "secondDescription": "oraz akceptujesz",
+    "privacyPolicyLinkText": "Polityką prywatności",
+    "cookiePolicyLinkText": "Politykę cookies",
+    "acceptText": "Akceptuję",
+    "deniedText": "Nie akceptuję i opuszczam serwis"
+  },
+  "adBlock": {
+    "title": "Prosimy o wyłączenie adblockera",
+    "description": "Rozumiemy, że reklamy mogą być uciążliwe, ale prosimy o wyrozumiałość i wsparcie przez wyłączenie adblockera."
   }
 }

@@ -31,7 +31,9 @@ export const Header = async () => {
 
   const renderDate = () => {
     const date = new Date();
-    return `${date.getDate()} ${date.toLocaleString("pl-Pl", { month: "long" })} ${date.getFullYear()}`;
+    return `${date.getDate()} ${date.toLocaleString(process.env.LANGUAGE === "de" ? "de-DE" : "pl-Pl", {
+      month: "long",
+    })} ${date.getFullYear()}`;
   };
 
   const menuTree = [

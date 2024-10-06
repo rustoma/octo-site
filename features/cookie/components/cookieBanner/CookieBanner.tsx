@@ -3,9 +3,17 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
+import { useDictionary } from "@/context/DictionaryContext";
+
 import "./cookieBanner.style.scss";
 
-const CookieBanner = () => {
+interface CookieBannerProps {
+  privacyPolicyLink: string;
+  cookiesPolicyLink: string;
+}
+
+const CookieBanner = ({ privacyPolicyLink, cookiesPolicyLink }: CookieBannerProps) => {
+  const { t } = useDictionary();
   const [isCookieConsent, setIsCookieConsent] = useState(true);
   const router = useRouter();
 
@@ -20,10 +28,9 @@ const CookieBanner = () => {
         <div className="cookie-banner">
           <div className="cookie-banner__content">
             <p>
-              Strona korzysta z ciasteczek, aby świadczyć usługi na najwyższym poziomie. Dalsze korzystanie ze strony
-              oznacza, że zgadzasz się na ich użycie zgodnie z{" "}
-              <Link href="/polityka-prywatnosci">Polityką prywatności</Link> oraz akceptujesz{" "}
-              <Link href="/polityka-cookies">Politykę cookies</Link>
+              {t.cookieBanner.description} <Link href={privacyPolicyLink}>{t.cookieBanner.privacyPolicyLinkText}</Link>{" "}
+              {t.cookieBanner.secondDescription}{" "}
+              <Link href={cookiesPolicyLink}>{t.cookieBanner.cookiePolicyLinkText}</Link>
             </p>
           </div>
 
@@ -34,12 +41,12 @@ const CookieBanner = () => {
                 localStorage.setItem("cookieConsent", "true");
                 setIsCookieConsent(true);
               }}>
-              Akceptuję
+              {t.cookieBanner.acceptText}
             </button>
             <button
               className="cookie-banner__button cookie-banner__button--decline"
               onClick={() => router.push("https://google.com")}>
-              Nie akceptuję i opuszczam serwis
+              {t.cookieBanner.deniedText}
             </button>
           </div>
         </div>
