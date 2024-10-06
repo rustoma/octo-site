@@ -46,7 +46,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
   return (
     <WindowDimensionsProvider>
       <html
-        lang="pl"
+        lang={process.env.LANGUAGE === "de" ? "de" : "pl"}
         className={`${
           displayFont[(process.env.DISPLAY_FONT ?? "redHatDisplay") as keyof typeof displayFont].variable
         } light`}>

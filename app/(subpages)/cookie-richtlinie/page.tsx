@@ -7,10 +7,10 @@ import { getDomainId } from "@/utils";
 
 export const metadata = {
   metadataBase: new URL(process.env.FRONTEND_HOST ?? ""),
-  title: `Polityka cookies | ${new Date().getFullYear()} - ${process.env.DOMAIN_NAME}`,
+  title: `Cookie-Richtlinie | ${new Date().getFullYear()} - ${process.env.DOMAIN_NAME}`,
   description: undefined,
   alternates: {
-    canonical: "/polityka-cookies",
+    canonical: "/cookie-richtlinie",
   },
   openGraph: {
     images: `/img/jpg/social-${getDomainId()}.jpg`,
@@ -18,7 +18,7 @@ export const metadata = {
 };
 
 const Cookies = async () => {
-  const page = await getBasicPageBySlug("polityka-cookies");
+  const page = await getBasicPageBySlug("cookie-richtlinie");
 
   if (!page) {
     return notFound();

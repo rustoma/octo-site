@@ -8,24 +8,30 @@ interface PostMetaListProps {
 
 import clsx from "clsx";
 
+import { getDictionary } from "@/dictionaries/dictionaries";
+
 import "./postMetaList.style.scss";
 
 const PostMetaListDate = ({ date }: { date: string }) => {
   const renderDate = (date: string) => {
     const dateObject = new Date(date);
-    return `${dateObject.getDate()} ${dateObject.toLocaleString("pl-Pl", {
+    return `${dateObject.getDate()} ${dateObject.toLocaleString(process.env.LANGUAGE === "de" ? "de-DE" : "pl-Pl", {
       month: "long",
     })} ${dateObject.getFullYear()}`;
   };
 
   return <li className="post-meta-list__date">{renderDate(date)}</li>;
 };
-const PostMetaListReadingTime = ({ readingTime }: { readingTime: number }) => (
-  <li className="post-meta-list__reading-time">
-    {readingTime < 1 && "minuta czytania"}
-    {readingTime >= 1 && `${readingTime} minut czytania`}
-  </li>
-);
+const PostMetaListReadingTime = async ({ readingTime }: { readingTime: number }) => {
+  const t = await getDictionary();
+
+  return (
+    <li className="post-meta-list__reading-time">
+      {readingTime < 1 && t.postMetaListDate.singleReadingTime}
+      {readingTime >= 1 && `${readingTime} ${t.postMetaListDate.pluralReadingTime}`}
+    </li>
+  );
+};
 
 export const PostMetaList = ({ date, readingTime, isOnDark }: PostMetaListProps) => {
   return (

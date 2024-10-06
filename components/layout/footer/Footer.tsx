@@ -2,12 +2,15 @@ import React from "react";
 import Link from "next/link";
 
 import { Container } from "@/components/container/Container";
+import { getDictionary } from "@/dictionaries/dictionaries";
 import { LogoDark } from "@/features/logos/components/LogoDark";
 import { BottomNav } from "@/features/nav/bottomNav/BottomNav";
 
 import "./footer.style.scss";
 
-export const Footer = () => {
+export const Footer = async () => {
+  const t = await getDictionary();
+
   return (
     <footer className="footer">
       <Container>
@@ -19,26 +22,26 @@ export const Footer = () => {
             <BottomNav
               items={[
                 {
-                  id: "o-nas",
-                  title: "O nas",
+                  id: t.menu.aboutUs,
+                  title: t.menu.aboutUs,
                   href: "/o-nas",
                   items: [],
                 },
                 {
-                  id: "polityka-prywatnosci",
-                  title: "Polityka prywatności",
+                  id: t.menu.privacyPolicy,
+                  title: t.menu.privacyPolicy,
                   href: "/polityka-prywatnosci",
                   items: [],
                 },
                 {
-                  id: "polityka-cookies",
-                  title: "Polityka cookies",
+                  id: t.menu.cookiesPolicy,
+                  title: t.menu.cookiesPolicy,
                   href: "/polityka-cookies",
                   items: [],
                 },
                 {
-                  id: "kontakt",
-                  title: "Kontakt",
+                  id: t.menu.contact,
+                  title: t.menu.contact,
                   href: "/kontakt",
                   items: [],
                 },

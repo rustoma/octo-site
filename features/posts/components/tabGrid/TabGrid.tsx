@@ -13,22 +13,24 @@ import "./tabGrid.style.scss";
 interface TabGridProps {
   tabs: TabItem[];
   items: Record<string, Article[] | null>;
+  title: string;
+  emptyStateTitle: string;
 }
 
-export const TabGrid = ({ tabs, items }: TabGridProps) => {
+export const TabGrid = ({ tabs, items, title, emptyStateTitle }: TabGridProps) => {
   const [activeTab, setActiveTab] = useState(tabs[0]?.value);
 
   return (
     <section className="tab-grid">
       <Container>
-        <h2 className="tab-grid__title">Najpopularniejsze z kategorii</h2>
+        <h2 className="tab-grid__title">{title}</h2>
         <div className="tab-grid__tabs">
           <Tabs items={tabs} activeTab={activeTab} onTabClick={(value) => setActiveTab(value)} />
         </div>
 
         {(!items[activeTab] || (Array.isArray(items[activeTab]) && !items[activeTab]?.length)) && (
           <div className="tab-grid__empty">
-            <p>Brak nowych postów.</p>
+            <p>{emptyStateTitle}</p>
           </div>
         )}
 

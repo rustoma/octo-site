@@ -2,17 +2,19 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+import { getDictionary } from "@/dictionaries/dictionaries";
 import { PostMetaList } from "@/features/posts/components/postMeta/PostMetaList";
 import { getArticles } from "@/services/article/article.service";
 
 import "./recent.style.scss";
 
 export const Recent = async () => {
+  const t = await getDictionary();
   const articles = (await getArticles({ limit: "3" })) ?? [];
 
   return (
     <div className="recent-widget">
-      <h5 className="recent-widget__title">Najnowsze</h5>
+      <h5 className="recent-widget__title">{t.widgets.recent.title}</h5>
       <div className="recent-widget__items">
         {articles.map((item) => (
           <div key={item.id} className="recent-widget-item">

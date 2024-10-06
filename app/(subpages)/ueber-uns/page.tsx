@@ -1,30 +1,30 @@
 import React from "react";
 import { notFound } from "next/navigation";
 
-import { CookiesPage } from "@/features/pages/cookiePolicy/CookiePolicyPage";
+import { AboutUsPage } from "@/features/pages/aboutUs/AboutUsPage";
 import { getBasicPageBySlug } from "@/services/basicPage/basicPage.service";
 import { getDomainId } from "@/utils";
 
 export const metadata = {
   metadataBase: new URL(process.env.FRONTEND_HOST ?? ""),
-  title: `Polityka cookies | ${new Date().getFullYear()} - ${process.env.DOMAIN_NAME}`,
+  title: `Über uns | ${new Date().getFullYear()} - ${process.env.DOMAIN_NAME}`,
   description: undefined,
   alternates: {
-    canonical: "/polityka-cookies",
+    canonical: "/uber-uns",
   },
   openGraph: {
     images: `/img/jpg/social-${getDomainId()}.jpg`,
   },
 };
 
-const Cookies = async () => {
-  const page = await getBasicPageBySlug("polityka-cookies");
+const AboutUs = async () => {
+  const page = await getBasicPageBySlug("uber-uns");
 
   if (!page) {
     return notFound();
   }
 
-  return <CookiesPage page={page} />;
+  return <AboutUsPage page={page} />;
 };
 
-export default Cookies;
+export default AboutUs;

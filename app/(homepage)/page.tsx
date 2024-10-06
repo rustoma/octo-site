@@ -1,5 +1,6 @@
 import React from "react";
 
+import { getDictionary } from "@/dictionaries/dictionaries";
 import { AdHomeWide } from "@/features/ads/AdHomeWide";
 import { FeaturedGrid } from "@/features/posts/components/featured/FeaturedGrid";
 import { GridImageText } from "@/features/posts/components/gridImageText/GridImageText";
@@ -21,6 +22,8 @@ export const metadata = {
 
 export default async function Home() {
   const domainId = getDomainId();
+
+  const t = await getDictionary();
 
   const articles = await getArticles({ limit: "5" });
   const featuredArticles = await getArticles({ featured: "true", limit: "5" });
@@ -48,7 +51,7 @@ export default async function Home() {
     <main className="content">
       <GridImageText items={articles ?? []} priority />
       <AdHomeWide />
-      <TabGrid tabs={TABS} items={tabGridItems} />
+      <TabGrid tabs={TABS} items={tabGridItems} title={t.tabGrid.title} emptyStateTitle={t.tabGrid.emptyStateTitle} />
       <FeaturedGrid isOnDark items={featuredArticles ?? []} />
       <AdHomeWide />
       <ListViewWithSidebar items={articles ?? []} />

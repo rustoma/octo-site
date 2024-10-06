@@ -1,0 +1,31 @@
+{
+  "widgets": {
+    "tagsCloud": {
+      "title": "Kategorie DE"
+    },
+    "recent": {
+      "title": "Najnowsze DE"
+    }
+  },
+  "featuredGrid": {
+    "title": "Polecane Artykuły DE"
+  },
+  "tabGrid": {
+    "title": "Najpopularniejsze z kategorii DE",
+    "emptyStateTitle": "Brak nowych postów. DE"
+  },
+  "relatedItems": {
+    "title": "Podobne artykuły DE"
+  },
+  "postMetaListDate": {
+    "singleReadingTime": "minuta czytania de",
+    "pluralReadingTime": "minut czytania de"
+  },
+  "menu": {
+    "privacyPolicy": "Polityka prywatności de",
+    "cookiesPolicy": "Polityka cookies de",
+    "otherCategories": "Pozostałe kategorie de",
+    "contact": "Kontakt de",
+    "aboutUs": "O nas de"
+  }
+}

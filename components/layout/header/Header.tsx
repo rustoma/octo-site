@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 import { Container } from "@/components/container/Container";
+import { getDictionary } from "@/dictionaries/dictionaries";
 import { LogoDark } from "@/features/logos/components/LogoDark";
 import { HamburgerMenu } from "@/features/nav/mobileMenu/hamburgerMenu/HamburgerMenu";
 import { TopNav } from "@/features/nav/topNav/TopNav";
@@ -12,6 +13,8 @@ import "./header.style.scss";
 
 export const Header = async () => {
   const domainId = getDomainId();
+  const t = await getDictionary();
+
   const categories = await getCategoriesByDomain(domainId);
 
   const categoryMenuItems = categories
@@ -37,8 +40,8 @@ export const Header = async () => {
     },
     ...categoryMenuItems.slice(0, 3),
     {
-      id: "pozostale-kategorie",
-      title: "Pozostałe kategorie",
+      id: t.menu.otherCategories,
+      title: t.menu.otherCategories,
       items: categoryMenuItems.slice(3),
     },
   ];
@@ -51,27 +54,27 @@ export const Header = async () => {
       items: [],
     },
     {
-      id: "o-nas",
-      title: "O nas",
+      id: t.menu.aboutUs,
+      title: t.menu.aboutUs,
       href: "/o-nas",
       items: [],
     },
     ...categoryMenuItems,
     {
-      id: "polityka-prywatnosci",
-      title: "Polityka prywatności",
+      id: t.menu.privacyPolicy,
+      title: t.menu.privacyPolicy,
       href: "/polityka-prywatnosci",
       items: [],
     },
     {
-      id: "polityka-cookies",
-      title: "Polityka cookies",
+      id: t.menu.cookiesPolicy,
+      title: t.menu.cookiesPolicy,
       href: "/polityka-cookies",
       items: [],
     },
     {
-      id: "kontakt",
-      title: "Kontakt",
+      id: t.menu.contact,
+      title: t.menu.contact,
       href: "/kontakt",
       items: [],
     },
@@ -85,10 +88,10 @@ export const Header = async () => {
             <span className="header-top__date">{renderDate()}</span>
             <ul className="header-top__menu list-style">
               <li className="header-top__menu-item">
-                <Link href="/o-nas">O nas</Link>
+                <Link href="/o-nas">{t.menu.aboutUs}</Link>
               </li>
               <li className="header-top__menu-item">
-                <Link href="/kontakt">Kontakt</Link>
+                <Link href="/kontakt">{t.menu.contact}</Link>
               </li>
             </ul>
           </div>
