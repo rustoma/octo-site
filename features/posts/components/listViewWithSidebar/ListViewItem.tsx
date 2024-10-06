@@ -46,7 +46,7 @@ export const ListViewItem = ({ item }: ListViewItemProps) => {
         </div>
 
         <div className="list-view-item__post-meta">
-          {/*<PostMeta author={author} date={item.updatedAt} readingTime={item.readingTime ?? undefined} />*/}
+          <PostMeta author={author} date={item.updatedAt} readingTime={item.readingTime ?? undefined} />
         </div>
       </div>
     </div>

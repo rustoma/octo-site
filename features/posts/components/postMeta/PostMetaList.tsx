@@ -8,7 +8,7 @@ interface PostMetaListProps {
 
 import clsx from "clsx";
 
-import { getDictionary } from "@/dictionaries/dictionaries";
+import { PostMetaListReadingTime } from "@/features/posts/components/postMeta/PostMetaListReadingTime";
 
 import "./postMetaList.style.scss";
 
@@ -21,16 +21,6 @@ const PostMetaListDate = ({ date }: { date: string }) => {
   };
 
   return <li className="post-meta-list__date">{renderDate(date)}</li>;
-};
-const PostMetaListReadingTime = async ({ readingTime }: { readingTime: number }) => {
-  const t = await getDictionary();
-
-  return (
-    <li className="post-meta-list__reading-time">
-      {readingTime < 1 && t.postMetaListDate.singleReadingTime}
-      {readingTime >= 1 && `${readingTime} ${t.postMetaListDate.pluralReadingTime}`}
-    </li>
-  );
 };
 
 export const PostMetaList = ({ date, readingTime, isOnDark }: PostMetaListProps) => {
