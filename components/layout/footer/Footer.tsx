@@ -5,11 +5,13 @@ import { Container } from "@/components/container/Container";
 import { getDictionary } from "@/dictionaries/dictionaries";
 import { LogoDark } from "@/features/logos/components/LogoDark";
 import { BottomNav } from "@/features/nav/bottomNav/BottomNav";
+import { getStaticPageRoutesByLang } from "@/features/nav/utils";
 
 import "./footer.style.scss";
 
 export const Footer = async () => {
   const t = await getDictionary();
+  const { aboutUs, contact, cookiesPolicy, privacyPolicy } = getStaticPageRoutesByLang(process.env.LANGUAGE);
 
   return (
     <footer className="footer">
@@ -24,25 +26,25 @@ export const Footer = async () => {
                 {
                   id: t.menu.aboutUs,
                   title: t.menu.aboutUs,
-                  href: "/o-nas",
+                  href: aboutUs,
                   items: [],
                 },
                 {
                   id: t.menu.privacyPolicy,
                   title: t.menu.privacyPolicy,
-                  href: "/polityka-prywatnosci",
+                  href: privacyPolicy,
                   items: [],
                 },
                 {
                   id: t.menu.cookiesPolicy,
                   title: t.menu.cookiesPolicy,
-                  href: "/polityka-cookies",
+                  href: cookiesPolicy,
                   items: [],
                 },
                 {
                   id: t.menu.contact,
                   title: t.menu.contact,
-                  href: "/kontakt",
+                  href: contact,
                   items: [],
                 },
               ]}

@@ -5,6 +5,7 @@ import { getDictionary } from "@/dictionaries/dictionaries";
 import { LogoDark } from "@/features/logos/components/LogoDark";
 import { HamburgerMenu } from "@/features/nav/mobileMenu/hamburgerMenu/HamburgerMenu";
 import { TopNav } from "@/features/nav/topNav/TopNav";
+import { getStaticPageRoutesByLang } from "@/features/nav/utils";
 import { getCategoriesByDomain } from "@/services/category/category.service";
 import { getDomainId } from "@/utils";
 
@@ -14,6 +15,7 @@ export const HeaderAlternate = async () => {
   const domainId = getDomainId();
   const t = await getDictionary();
   const categories = await getCategoriesByDomain(domainId);
+  const { aboutUs, contact, cookiesPolicy, privacyPolicy } = getStaticPageRoutesByLang(process.env.LANGUAGE);
 
   const categoryMenuItems = categories
     ? categories.map((category) => ({
@@ -49,26 +51,26 @@ export const HeaderAlternate = async () => {
     {
       id: t.menu.aboutUs,
       title: t.menu.aboutUs,
-      href: "/o-nas",
+      href: aboutUs,
       items: [],
     },
     ...categoryMenuItems,
     {
       id: t.menu.privacyPolicy,
       title: t.menu.privacyPolicy,
-      href: "/polityka-prywatnosci",
+      href: privacyPolicy,
       items: [],
     },
     {
       id: t.menu.cookiesPolicy,
       title: t.menu.cookiesPolicy,
-      href: "/polityka-cookies",
+      href: cookiesPolicy,
       items: [],
     },
     {
       id: t.menu.contact,
       title: t.menu.contact,
-      href: "/kontakt",
+      href: contact,
       items: [],
     },
   ];
