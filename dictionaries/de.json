@@ -1,47 +1,47 @@
 {
   "widgets": {
     "tagsCloud": {
-      "title": "Kategorie DE"
+      "title": "Kategorien"
     },
     "recent": {
-      "title": "Najnowsze DE"
+      "title": "Neueste"
     }
   },
   "featuredGrid": {
-    "title": "Polecane Artykuły DE"
+    "title": "Empfohlene Artikel"
   },
   "tabGrid": {
-    "title": "Najpopularniejsze z kategorii DE",
-    "emptyStateTitle": "Brak nowych postów. DE"
+    "title": "Beliebteste aus der Kategorie",
+    "emptyStateTitle": "Keine neuen Beiträge."
   },
   "relatedItems": {
-    "title": "Podobne artykuły DE"
+    "title": "Ähnliche Artikel"
   },
   "postMetaListDate": {
-    "singleReadingTime": "minuta czytania de",
-    "pluralReadingTime": "minut czytania de"
+    "singleReadingTime": "Leseminute",
+    "pluralReadingTime": "Leseminuten"
   },
   "menu": {
-    "privacyPolicy": "Polityka prywatności de",
-    "cookiesPolicy": "Polityka cookies de",
-    "otherCategories": "Pozostałe kategorie de",
-    "contact": "Kontakt de",
-    "aboutUs": "O nas de"
+    "privacyPolicy": "Datenschutzerklärung",
+    "cookiesPolicy": "Cookie-Richtlinie",
+    "otherCategories": "Weitere Kategorien",
+    "contact": "Kontakt",
+    "aboutUs": "Über uns"
   },
   "notFound": {
-    "title": "Strona nie odnaleziona de",
-    "description": "Wygląda na to, że strona, której szukasz nie istnieje. de"
+    "title": "Seite nicht gefunden",
+    "description": "Es scheint, dass die gesuchte Seite nicht existiert."
   },
   "cookieBanner": {
-    "description": "de Strona korzysta z ciasteczek, aby świadczyć usługi na najwyższym poziomie. Dalsze korzystanie ze strony oznacza, że zgadzasz się na ich użycie zgodnie z",
-    "secondDescription": "de oraz akceptujesz",
-    "privacyPolicyLinkText": "de Polityką prywatności",
-    "cookiePolicyLinkText": "de Politykę cookies",
-    "acceptText": "de Akceptuję",
-    "deniedText": "de Nie akceptuję i opuszczam serwis"
+    "description": "Diese Website verwendet Cookies, um Dienste auf höchstem Niveau anzubieten. Wenn Sie die Website weiterhin nutzen, stimmen Sie der Verwendung von Cookies gemäß",
+    "secondDescription": "zu und akzeptieren die",
+    "privacyPolicyLinkText": "Datenschutzerklärung",
+    "cookiePolicyLinkText": "Cookie-Richtlinie",
+    "acceptText": "Akzeptieren",
+    "deniedText": "Nicht akzeptieren und die Seite verlassen"
   },
   "adBlock": {
-    "title": "de Prosimy o wyłączenie adblockera",
-    "description": "de Rozumiemy, że reklamy mogą być uciążliwe, ale prosimy o wyrozumiałość i wsparcie przez wyłączenie adblockera."
+    "title": "Bitte deaktivieren Sie Ihren Adblocker",
+    "description": "Wir verstehen, dass Werbung störend sein kann, bitten jedoch um Verständnis und Unterstützung, indem Sie Ihren Adblocker deaktivieren."
   }
 }
