@@ -28,6 +28,9 @@
     "contact": "Kontakt",
     "aboutUs": "Über uns"
   },
+  "category": {
+    "noCategories": "Keine Artikel für diese Kategorie."
+  },
   "notFound": {
     "title": "Seite nicht gefunden",
     "description": "Es scheint, dass die gesuchte Seite nicht existiert."
@@ -43,5 +46,25 @@
   "adBlock": {
     "title": "Bitte deaktivieren Sie Ihren Adblocker",
     "description": "Wir verstehen, dass Werbung störend sein kann, bitten jedoch um Verständnis und Unterstützung, indem Sie Ihren Adblocker deaktivieren."
+  },
+  "contact": {
+    "title": "Kontaktieren Sie uns",
+    "subtitle": "Haben Sie Fragen? Möchten Sie eine Zusammenarbeit beginnen? Hinterlassen Sie eine Nachricht, und wir werden uns so schnell wie möglich bei Ihnen melden.",
+    "send": "Senden",
+    "error": "Oops, das Senden der Nachricht ist fehlgeschlagen.",
+    "success": "Ihre Nachricht wurde gesendet.",
+    "privacyPolicy": "Datenschutzerklärung",
+    "cookiesPolicy": "Cookie-Richtlinie",
+    "accept": "Ich akzeptiere",
+    "and": "und",
+    "dataProcessText": "Die Daten aus dem Formular werden zur Beantwortung verarbeitet.",
+    "fieldIsRequired": "Dieses Feld ist erforderlich",
+    "correctPhoneNumber": "Bitte geben Sie eine gültige Telefonnummer an",
+    "correctEmail": "Bitte geben Sie eine gültige E-Mail-Adresse an",
+    "correctConsent": "Die Zustimmung zu den Nutzungsbedingungen ist erforderlich",
+    "name": "Name*",
+    "phone": "Telefon",
+    "email": "E-Mail*",
+    "message": "Nachricht*"
   }
 }

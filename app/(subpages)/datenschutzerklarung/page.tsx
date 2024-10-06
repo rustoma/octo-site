@@ -10,7 +10,7 @@ export const metadata = {
   title: `Datenschutzerklärung | ${new Date().getFullYear()} - ${process.env.DOMAIN_NAME}`,
   description: undefined,
   alternates: {
-    canonical: "/datenschutzerklaerung",
+    canonical: "/datenschutzerklarung",
   },
   openGraph: {
     images: `/img/jpg/social-${getDomainId()}.jpg`,
@@ -18,7 +18,7 @@ export const metadata = {
 };
 
 const PrivacyPolicy = async () => {
-  const page = await getBasicPageBySlug("datenschutzerklaerung");
+  const page = await getBasicPageBySlug("datenschutzerklarung");
 
   if (!page) {
     return notFound();

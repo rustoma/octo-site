@@ -8,6 +8,7 @@ import Link from "next/link";
 import { z } from "zod";
 
 import { Button } from "@/components/button/Button";
+import { DictionaryContextType, useDictionary } from "@/context/DictionaryContext";
 import { Checkbox } from "@/features/forms/components/checkbox/Checkbox";
 import { Input } from "@/features/forms/components/input/Input";
 import { TextArea } from "@/features/forms/components/textArea/TextArea";
@@ -16,21 +17,28 @@ import { sendEmail } from "@/services/email/email.service";
 
 import "./contactForm.style.scss";
 
-const contactFormSchema = z.object({
-  name: VALIDATORS.required("Pole jest wymagane"),
-  phone: VALIDATORS.phoneNumber("Podaj poprawny numer telefonu"),
-  email: VALIDATORS.required("Pole jest wymagane").email("Podaj poprawny email"),
-  message: VALIDATORS.required("Pole jest wymagane"),
-  consent: z.boolean().refine((value) => value, {
-    message: "Akceptacja regulaminu jest wymagana",
-  }),
-  sf: z.string().optional(),
-});
+const getContactFormSchema = ({ t }: DictionaryContextType) =>
+  z.object({
+    name: VALIDATORS.required(t.contact.fieldIsRequired),
+    phone: VALIDATORS.phoneNumber(t.contact.correctPhoneNumber),
+    email: VALIDATORS.required(t.contact.fieldIsRequired).email(t.contact.correctEmail),
+    message: VALIDATORS.required(t.contact.fieldIsRequired),
+    consent: z.boolean().refine((value) => value, {
+      message: t.contact.correctConsent,
+    }),
+    sf: z.string().optional(),
+  });
 
-type ContactFormData = z.infer<typeof contactFormSchema>;
+type ContactFormData = z.infer<ReturnType<typeof getContactFormSchema>>;
 
-export const ContactForm = () => {
+interface ContactFormProps {
+  policyPrivacyLink: string;
+  cookiePrivacyLink: string;
+}
+
+export const ContactForm = ({ policyPrivacyLink, cookiePrivacyLink }: ContactFormProps) => {
   const { executeRecaptcha } = useGoogleReCaptcha();
+  const { t } = useDictionary();
 
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -43,7 +51,7 @@ export const ContactForm = () => {
     reset,
     watch,
   } = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema),
+    resolver: zodResolver(getContactFormSchema({ t })),
     defaultValues: {
       name: "",
       phone: "",
@@ -86,17 +94,15 @@ export const ContactForm = () => {
   return (
     <div className="contact-form">
       <div className="contact-form__content">
-        <h4 className="contact-form__content-heading">Skontaktuj się z nami</h4>
-        <p className="contact-form__content-body">
-          Masz pytania? Chciałbyś nawiązać współpracę? Zostaw wiadmość, a odezwiemy się najszybciej jak to możliwe.
-        </p>
+        <h4 className="contact-form__content-heading">{t.contact.title}</h4>
+        <p className="contact-form__content-body">{t.contact.subtitle}</p>
       </div>
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="contact-form__input-group">
           <Input
             {...register("name")}
-            label="Imię*"
+            label={t.contact.name}
             error={!!errors.name?.message}
             hint={errors.name?.message?.toString()}
             fit
@@ -104,7 +110,7 @@ export const ContactForm = () => {
 
           <Input
             {...register("phone")}
-            label="Telefon"
+            label={t.contact.phone}
             error={!!errors.phone?.message}
             hint={errors.phone?.message?.toString()}
             fit
@@ -112,7 +118,7 @@ export const ContactForm = () => {
 
           <Input
             {...register("email")}
-            label="Email*"
+            label={t.contact.email}
             error={!!errors.email?.message}
             hint={errors.email?.message?.toString()}
             fit
@@ -124,7 +130,7 @@ export const ContactForm = () => {
             <TextArea
               value={watch("message")}
               {...register("message")}
-              label="Wiadomość*"
+              label={t.contact.message}
               error={!!errors.message?.message}
               hint={errors.message?.message?.toString()}
               fit
@@ -137,9 +143,8 @@ export const ContactForm = () => {
               {...register("consent")}
               label={
                 <span>
-                  Akceptuję <Link href="/polityka-prywatnosci">politykę prywatności</Link> oraz{" "}
-                  <Link href="/polityka-cookies">politykę cookies</Link>. Dane z formularza zostaną przetworzone w celu
-                  udzielenia odpowiedzi.
+                  {t.contact.accept} <Link href={policyPrivacyLink}>{t.contact.privacyPolicy}</Link> {t.contact.and}{" "}
+                  <Link href={cookiePrivacyLink}>{t.contact.cookiesPolicy}</Link>. {t.contact.dataProcessText}
                 </span>
               }
               checked={watch("consent")}
@@ -150,20 +155,16 @@ export const ContactForm = () => {
 
           <div className="contact-form__actions">
             <Button type="submit" loading={isLoading} disabled={isLoading}>
-              Wyślij
+              {t.contact.send}
             </Button>
           </div>
 
           <div className="contact-form__info">
             {isError && (
-              <p className="contact-form__info-message contact-form__info-message--error">
-                Ops, wysyłanie wiadomości się nie powiodło.
-              </p>
+              <p className="contact-form__info-message contact-form__info-message--error">{t.contact.error}</p>
             )}
             {isSuccess && (
-              <p className="contact-form__info-message contact-form__info-message--success">
-                Twoja wiadomość została wysłana.
-              </p>
+              <p className="contact-form__info-message contact-form__info-message--success">{t.contact.success}</p>
             )}
           </div>
         </div>

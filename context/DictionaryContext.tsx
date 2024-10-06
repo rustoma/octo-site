@@ -5,9 +5,9 @@ import React from "react";
 
 import dictionaryPL from "@/dictionaries/pl.json";
 
-type DictionaryContextType = {
+export interface DictionaryContextType {
   t: typeof dictionaryPL;
-};
+}
 
 export const DictionaryContext = createContext<DictionaryContextType>({
   t: dictionaryPL,

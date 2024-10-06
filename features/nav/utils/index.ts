@@ -2,8 +2,8 @@ export const getStaticPageRoutesByLang = (lang?: string) => {
   switch (lang) {
     case "de": {
       return {
-        aboutUs: "/uber-uns```",
-        privacyPolicy: "/datenschutzerklaerung",
+        aboutUs: "/uber-uns",
+        privacyPolicy: "/datenschutzerklarung",
         cookiesPolicy: "/cookie-richtlinie",
         contact: "/kontakt",
       };

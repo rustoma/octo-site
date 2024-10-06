@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 
 import { Container } from "@/components/container/Container";
+import { getDictionary } from "@/dictionaries/dictionaries";
 import AdBanner from "@/features/ads/AdBanner";
 import { AdMultiplexerVertical } from "@/features/ads/AdMultiplexerVertical";
 import { SimpleBanner } from "@/features/banners/components/simpleBanner/SimpleBanner";
@@ -39,6 +40,7 @@ const CategoryPage = async ({ params }: { params: { category: string } }) => {
 
   const LIMIT = 30;
 
+  const t = await getDictionary();
   const categories = await getCategoriesByDomain(domainId);
   const category = categories?.find((category) => category.slug === params.category);
 
@@ -55,7 +57,7 @@ const CategoryPage = async ({ params }: { params: { category: string } }) => {
       <Container>
         <div className="category-page">
           <div className="category-page__content">
-            {!articles && <div>Brak artykułów dla danej kategorii</div>}
+            {!articles && <div>{t.category.noCategories}</div>}
 
             {articles?.map((article) => (
               <ListViewItem key={article.id} item={article} />

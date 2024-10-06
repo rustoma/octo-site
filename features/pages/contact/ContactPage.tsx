@@ -15,16 +15,18 @@ import "./contactPage.style.scss";
 
 interface ContactPageProps {
   page: BasicPage;
+  policyPrivacyLink: string;
+  cookiePrivacyLink: string;
 }
 
-export const ContactPage = ({ page }: ContactPageProps) => (
+export const ContactPage = ({ page, policyPrivacyLink, cookiePrivacyLink }: ContactPageProps) => (
   <GoogleCaptchaWrapper>
     <SimpleBanner title={page.title} />
     <Container>
       <div className="contact-page">
         <div className="contact-page__content">
           {parse(page.body ?? "")}
-          <ContactForm />
+          <ContactForm policyPrivacyLink={policyPrivacyLink} cookiePrivacyLink={cookiePrivacyLink} />
           <AdBanner adSlot="1225727110" adFormat="auto" adResponsive />
         </div>
         <div className="contact-page__sidebar">
