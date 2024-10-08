@@ -15,6 +15,7 @@ import { SaunyBasenyDark } from "@/features/logos/components/saunyBaseny/SaunyBa
 import { TalentHuntersDark } from "@/features/logos/components/talentHunters/TalentHuntersDark";
 import { TimepiecesDark } from "@/features/logos/components/timepieces/TimepiecesDark";
 import { VilamaliaDark } from "@/features/logos/components/vilamalia/VilamaliaDark";
+import { WebBrandsDark } from "@/features/logos/components/webBrands/WebBrandsDark";
 import { WielkopolskaesDark } from "@/features/logos/components/wielkopolskaes/WielkopolskaesDark";
 import { getDomainId } from "@/utils";
 
@@ -35,6 +36,7 @@ const LOGOS: Record<string, ReactElement> = {
   14: <SaunyBasenyDark />,
   15: <WielkopolskaesDark />,
   16: <TalentHuntersDark />,
+  17: <WebBrandsDark />,
 };
 
 export const LogoDark = () => {

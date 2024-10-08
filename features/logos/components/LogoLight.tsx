@@ -15,6 +15,7 @@ import { SaunyBasenyLight } from "@/features/logos/components/saunyBaseny/SaunyB
 import { TalentHuntersLight } from "@/features/logos/components/talentHunters/TalentHuntersLight";
 import { TimepiecesLight } from "@/features/logos/components/timepieces/TimepiecesLight";
 import { VilamaliaLight } from "@/features/logos/components/vilamalia/VilamaliaLight";
+import { WebBrandsLight } from "@/features/logos/components/webBrands/WebBrandsLight";
 import { WielkopolskaesLight } from "@/features/logos/components/wielkopolskaes/WielkopolskaesLight";
 import { getDomainId } from "@/utils";
 
@@ -35,6 +36,7 @@ const LOGOS: Record<string, ReactElement> = {
   14: <SaunyBasenyLight />,
   15: <WielkopolskaesLight />,
   16: <TalentHuntersLight />,
+  17: <WebBrandsLight />,
 };
 
 export const LogoLight = () => {
