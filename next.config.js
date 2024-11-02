@@ -8,6 +8,9 @@ const krismetRedirects = require("./features/redirects/krismet");
 const obrachowaniRedirects = require("./features/redirects/obrachowani");
 const oczyszczalnieMetalbudRedirects = require("./features/redirects/oczyszczalnieMetalbud");
 const roletywiral = require("./features/redirects/roletywiral");
+const saunyBaseny = require("./features/redirects/saunyBaseny");
+const wielkopolskaes = require("./features/redirects/wielkopolskaes");
+const talentHunters = require("./features/redirects/talentHunters");
 
 const nextConfig = {
   images: {
@@ -84,6 +87,12 @@ const nextConfig = {
         return oczyszczalnieMetalbudRedirects;
       case "11":
         return roletywiral;
+      case "14":
+        return saunyBaseny;
+      case "15":
+        return wielkopolskaes;
+      case "16":
+        return talentHunters;
       default:
         return [];
     }
